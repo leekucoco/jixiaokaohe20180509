@@ -63,7 +63,7 @@ class AppraisalTicket(models.Model):
 
 class EvaluateResult(models.Model):
     evaluateoftheyear = models.ForeignKey(Evaluate, null=True, blank=True,verbose_name="年度测评",related_name="result_evaluate")
-    user = models.ForeignKey(User, verbose_name="用户")
+    user = models.ForeignKey(User, verbose_name="用户",help_text="用户")
     ceoscore = models.DecimalField(max_digits=6, decimal_places=2, default=0, null=True, blank=True, verbose_name="董事长给分", help_text="董事长给分")
     departleaderscore= models.DecimalField(max_digits=6, decimal_places=2, default=0, null=True, blank=True, verbose_name="部门领导给分", help_text="部门领导给分")
     bankleadersocre= models.DecimalField(max_digits=6, decimal_places=2, default=0, null=True, blank=True, verbose_name="主管行长给分", help_text="主管行长给分")
