@@ -1,7 +1,7 @@
 import xadmin
 from .models import AppraisalProcedure,AppraisalTicket,Evaluate,EvaluateResult
 from django.contrib.auth import get_user_model
-#User = get_user_model()
+User = get_user_model()
 # class SalaryRecordAdmin(object):
 #     list_display = ["user","extrainfo","date", "checkonworkfile",
 #                     "baseandwelfareaddfile","insuranceandfundfile",
