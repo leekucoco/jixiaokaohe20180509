@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="root@222.170.66.227:10024" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="root@222.170.66.227:10024">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/project/jixiaokaohe" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="serveron67">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/project/jixiaokaohe" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

@@ -1,0 +1,72 @@
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10748)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket uwsgi.sock removed.
+*** Starting uWSGI 2.0.17 (64bit) on [Tue May  8 22:38:11 2018] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-16) on 20 April 2018 06:26:54
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 8
+current working directory: /root/project/jixiaokaohe
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/py3jkvenv/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to .
+your processes number limit is 126337
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1060 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uWSGI http bound on 0.0.0.0:8080 fd 3
+uwsgi socket 0 bound to UNIX address uwsgi.sock fd 6
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.4 (default, Mar 30 2018, 01:45:35)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+Python main interpreter initialized at 0xfe3d60
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 405560 bytes (396 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xfe3d60 pid: 21255 (default app)
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+spawned uWSGI master process (pid: 21255)
+spawned uWSGI worker 1 (pid: 21262, cores: 1)
+spawned uWSGI worker 2 (pid: 21263, cores: 1)
+spawned uWSGI worker 3 (pid: 21264, cores: 1)
+spawned uWSGI worker 4 (pid: 21265, cores: 1)
+spawned uWSGI http 1 (pid: 21266)
+[pid: 21262|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 832 bytes} [Wed May  9 10:38:26 2018] GET / => generated 8114 bytes in 442 msecs (HTTP/1.0 200) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 21263|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 822 bytes} [Wed May  9 10:38:27 2018] GET /favicon.ico => generated 17968 bytes in 343 msecs (HTTP/1.0 404) 3 headers in 103 bytes (1 switches on core 0)
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'evaluate.models.Evaluate'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+[pid: 21264|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 899 bytes} [Wed May  9 10:38:28 2018] GET /evaluate/ => generated 9733 bytes in 459 msecs (HTTP/1.0 200) 6 headers in 319 bytes (1 switches on core 0)
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'evaluate.models.AppraisalTicket'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+[pid: 21265|app: 0|req: 1/4] 127.0.0.1 () {44 vars in 912 bytes} [Wed May  9 10:38:33 2018] GET /appraisaticket/ => generated 126197 bytes in 704 msecs (HTTP/1.0 200) 6 headers in 321 bytes (1 switches on core 0)
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'salary.models.SalaryRecord'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+[pid: 21262|app: 0|req: 2/5] 127.0.0.1 () {44 vars in 908 bytes} [Wed May  9 10:38:37 2018] GET /salaryrecord/ => generated 12085 bytes in 58 msecs (HTTP/1.0 200) 6 headers in 320 bytes (1 switches on core 0)
+[pid: 21263|app: 0|req: 2/6] 127.0.0.1 () {44 vars in 896 bytes} [Wed May  9 10:38:40 2018] GET /depart/ => generated 133529 bytes in 396 msecs (HTTP/1.0 200) 6 headers in 321 bytes (1 switches on core 0)
+[pid: 21264|app: 0|req: 2/7] 127.0.0.1 () {44 vars in 914 bytes} [Wed May  9 10:38:44 2018] GET /indexdepartuser/ => generated 75296 bytes in 177 msecs (HTTP/1.0 200) 6 headers in 320 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 21265|app: 0|req: 2/8] 127.0.0.1 () {38 vars in 722 bytes} [Wed May  9 10:55:08 2018] GET /favicon.ico => generated 17968 bytes in 16 msecs (HTTP/1.0 404) 3 headers in 103 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 21266)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket uwsgi.sock removed.

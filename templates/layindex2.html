@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>EasyWeb-RESTful</title>
+	<link rel="stylesheet" href="/static/assets/libs/layui/css/layui.css" />
+	<link rel="stylesheet" href="/static/assets/css/comment.css" />
+</head>
+
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+		<!-- 头部 -->
+		<div class="layui-header">
+			<div class="layui-logo">EasyWeb-RESTful</div>
+			<ul class="layui-nav layui-layout-left">
+		      <li class="layui-nav-item"><a href="javascript:;" id="switchNav"><i class="layui-icon">&#xe668;</i></a></li>
+		    </ul>
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item">
+					<a href="javascript:;">
+						<img id="userHead" src="/static/assets/images/head.jpg" class="layui-nav-img"> <span id="userNickName"></span>
+					</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="javascript:;"><i class="layui-icon">&#xe612;</i> 个人信息</a>
+						</dd>
+						<dd>
+							<a href="javascript:;"><i class="layui-icon">&#xe631;</i> 修改密码</a>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:loginOut();">退出登录</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 侧边栏 -->
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<ul class="layui-nav layui-nav-tree" id="index-nav" lay-filter="index-nav" style="margin-top: 15px;">
+				</ul>
+			</div>
+		</div>
+		<!-- 主体部分 -->
+		<div class="layui-body" id="main-content" style="padding: 15px;">
+			
+		</div>
+		<!-- 底部 -->
+		<div class="layui-footer">
+			Copyright © 2018 EasyWeb All rights reserved.
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/assets/libs/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/static/assets/libs/q.js"></script>
+	<script type="text/javascript" src="/static/assets/libs/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/static/assets/js/comment.js"></script>
+	<script type="text/javascript" src="/static/assets/js/index.js"></script>
+	<!-- 侧导航渲染模板 -->
+	<script id="sideNav" type="text/html">
+		{% verbatim %}layui.each(d, function(index, item){ {% endverbatim %}
+
+		<li class="layui-nav-item">
+			<a class="" href="javascript:;"><i class="layui-icon">{{ item.permissionIcon }}</i>&emsp;<cite>{{ item.permissionName }}</cite></a>
+			<dl class="layui-nav-child">
+				{% verbatim %}layui.each(item.subMenus, function(index, subItem){ {% endverbatim %}
+				<dd>
+					<a href="#!{{ subItem.permissionValue }}">{{ subItem.permissionName }}</a>
+				</dd>
+				{% verbatim %} }); {% endverbatim %}
+			</dl>
+		</li>
+		{% verbatim %} }); {% endverbatim %}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,418 @@
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7fcde7042278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f6e5d4b6278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f75ca655278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f082220b278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f5d75a7f278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f791d907278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7fd70f2ce278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f50704a6208
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7fd1b5143278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f894fc4e208
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@localhost.localdomain v3.1.26.post2 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Dqrcbankjxkh:0x7f00be918278
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: {min=4, max=10} (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Dqrcbankjxkh.celery.debug_task
+  . coefficient.task.add
+  . coefficient.task.ensurerankleveltask
+  . coefficient.task.helpmsg
+  . evaluate.task.createevaluateresult
+  . evaluate.task.createprocedurerecord
+  . evaluate.task.destroyprocedurerecord
+  . evaluate.task.refreshevaluateresult
+  . salary.task.createsalaryrecord
+  . salary.task.destroysalaryrecord
+  . salary.task.helpmsg
+

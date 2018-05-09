@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@2cf605f4-7c78-4d13-b5c1-c77d2e6d3500" />
+        <remote-mappings server-id="python@sftp://root@222.170.66.227:10024/root/.virtualenvs/py3jkvenv/bin/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/project/jixiaokaohe" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>
