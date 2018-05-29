@@ -8,6 +8,18 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 @shared_task
+def updateworkattendance(status,filename,id):
+    sr = SalaryRecord.objects.get(id=id)
+    #print(sr.checkonworkfile.file)
+    filenametest = sr.checkonworkfile.path
+    f = open(filenametest,"r")
+    text = f.readline()
+    print(text)
+    print(sr)
+    print(status,filename,id)
+    return "updat"
+
+@shared_task
 def helpmsg():
     return "help msg"
 

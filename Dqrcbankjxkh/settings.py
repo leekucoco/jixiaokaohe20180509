@@ -145,7 +145,7 @@ AUTHENTICATION_BACKENDS = (
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'WeAdmin/static/')
 
 MEDIA_URL = "/media/"
 

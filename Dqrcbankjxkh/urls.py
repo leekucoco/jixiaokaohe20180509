@@ -81,13 +81,13 @@ urlpatterns = [
 
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
 
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
 
-    url(r'^index/', TemplateView.as_view(template_name="index.html"), name="index"),
-
-    url(r'^laylogin/', TemplateView.as_view(template_name="laylogin.html"), name="laylogin"),
-    url(r'^layindex2/', TemplateView.as_view(template_name="layindex2.html"), name="layindex2"),
-    url(r'^laybackground/', TemplateView.as_view(template_name="laybackground.html"), name="layindex"),
+    # url(r'^index/', TemplateView.as_view(template_name="index.html"), name="index"),
+    #
+    # url(r'^laylogin/', TemplateView.as_view(template_name="laylogin.html"), name="laylogin"),
+    # url(r'^layindex2/', TemplateView.as_view(template_name="layindex2.html"), name="layindex2"),
+    # url(r'^laybackground/', TemplateView.as_view(template_name="laybackground.html"), name="layindex"),
     url(r'docs/', include_docs_urls(title="后台管理")),
 
     #drf自带的token认证模式

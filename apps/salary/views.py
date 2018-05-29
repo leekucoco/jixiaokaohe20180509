@@ -7,7 +7,7 @@ from rest_framework.pagination import PageNumberPagination
 from .models import SalaryRecord,FSalary
 from django.contrib.auth import get_user_model
 User = get_user_model()
-from .task import createsalaryrecord,destroysalaryrecord
+from .task import createsalaryrecord,destroysalaryrecord,updateworkattendance
 from datetime import datetime
 from utils.permissions import IsSuperUser
 
@@ -36,8 +36,21 @@ class SalaryRecordViewset(viewsets.ModelViewSet):
         destroysalaryrecord.delay(instance)
 
     def perform_update(self, serializer):
+        #print(serializer.validated_data["checkonworkfile"])
+        #print(serializer.validated_data["status"])
         serializer.validated_data["update_time"] = datetime.now()
         serializer.save()
+        filename = serializer.validated_data["checkonworkfile"]
+        status = serializer.validated_data["status"]
+        # if status == "CHECKONWORKATTENDANCECOMPLETE":
+            #sr = SalaryRecord.objects.get(id = serializer.instance.id)
+            #fs = FSalary.objects.filter(srecord_id=serializer.instance.id)
+        updateworkattendance.delay(status,filename,serializer.instance.id)
+            # print(fs,len(fs))
+            # print(status,filename,serializer.instance.id)
+        # else:
+        #     print("pass")
+
 
 
 

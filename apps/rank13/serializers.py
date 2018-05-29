@@ -17,9 +17,9 @@ class Rank13DemandsSerializer(serializers.ModelSerializer):
 class AgentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Agent
-        fields = ("name",)
+        fields = "__all__"
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ("name",)
+        fields = "__all__"

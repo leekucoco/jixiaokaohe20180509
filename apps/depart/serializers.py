@@ -9,7 +9,12 @@ class DepartSerializer(serializers.ModelSerializer):
         fields = ("id","agent", "name", "dept_type", "parent_dept", "manager", "leader", "basesalary")
 
 class IndexUserDepartSerializer(serializers.ModelSerializer):
-
+    username = serializers.SerializerMethodField()
+    departname = serializers.SerializerMethodField()
+    def get_username(self,obj):
+        return obj.user.name
+    def get_departname(self,obj):
+        return obj.depart.name
     class Meta:
         model = IndexUserDepart
         fields = "__all__"
