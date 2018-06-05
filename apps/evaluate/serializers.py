@@ -18,6 +18,15 @@ class AppraisalTicketSerializer(serializers.ModelSerializer):
     update_time = serializers.DateTimeField(read_only=True)
     evaluatepersonname = serializers.SerializerMethodField()
     appraisedpersonname =serializers.SerializerMethodField()
+    appraisalproceduretype = serializers.SerializerMethodField()
+    def get_appraisalproceduretype(self,obj):
+        if obj.appraisalprocedure.appraisalchoices=="DEMOCRATICAPPRAISAL":
+            return "民主测评程序"
+        elif obj.appraisalprocedure.appraisalchoices=="LEADERVALUATE":
+            return "有权人测评程序"
+        elif obj.appraisalprocedure.appraisalchoices=="QUALIFICATIONS":
+            return "任职资格测评程序"
+
     def get_evaluatepersonname(self,obj):
         return obj.evaluateperson.name
     def get_appraisedpersonname(self,obj):

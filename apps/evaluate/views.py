@@ -44,13 +44,13 @@ class AppraisalTicketViewset(viewsets.ModelViewSet):
     def get_queryset(self):
         #return FSalary.objects.filter(user=self.request.user)
         if self.request.user.is_superuser:
-            return AppraisalTicket.objects.all()
+            return AppraisalTicket.objects.filter(evaluateperson=self.request.user,appraisalprocedure__evaluateoftheyear__state="UNLOCK")
         # elif self.request.user.is_staff:
         #     userdepart = self.request.user.user_depart.depart
         #     users = User.objects.filter(user_depart__depart=userdepart)
         #     return AppraisalTicket.objects.filter(evaluateperson__in=users)
         else:
-            return AppraisalTicket.objects.filter(evaluateperson=self.request.user)
+            return AppraisalTicket.objects.filter(evaluateperson=self.request.user,appraisalprocedure__evaluateoftheyear__state="UNLOCK")
 
     def get_permissions(self):
         if self.action == "retrieve":

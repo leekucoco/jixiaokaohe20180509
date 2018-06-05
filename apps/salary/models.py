@@ -17,6 +17,7 @@ class SalaryRecord(models.Model):
         ("TOTALSALARYCOMPLETE", "已生成薪酬合计"),
         ("INSURANCEANDFUNDCOMPELTE", "已经录入五险一金并生成应发薪酬"),
         ("TAXANDOTHERDEDUCTIONS", "已完成税费及其他扣除项录入生成实发薪酬"),
+        ("LOCK", "封账"),
     )
     user = models.ForeignKey(User, verbose_name="用户")
     extrainfo = models.TextField(null=True,blank=True,verbose_name="备注",default=str(date.today().month)+"月工资记录")

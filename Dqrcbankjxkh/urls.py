@@ -8,8 +8,6 @@ from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 from rest_framework_jwt.views import obtain_jwt_token
 
-# from goods.views import GoodsListViewSet, CategoryViewset, HotSearchsViewset, BannerViewset
-# from goods.views import IndexCategoryViewset
 from users.views import  UserViewset
 from user_operation.views import UploadFileViewset
 # from trade.views import ShoppingCartViewset, OrderViewset
@@ -17,7 +15,7 @@ from depart.views import DepartViewset,IndexUserDeparViewset
 from coefficient.views import CoefficientDetailViewset
 from certificates.views import CerficatesViewset,IndexUserCertificateViewset
 from rank13.views import Rank13CoefficentViewset,AgentViewset,PostViewset,Rank13DemandsViewset
-from salary.views import SalaryRecordViewset,FSalaryViewset
+from salary.views import SalaryRecordViewset,FSalaryViewset,FSalaryRecordDataView
 from evaluate.views import AppraisalProcedureViewset,AppraisalTicketViewset,EvaluateResultViewset,EvaluateViewset
 
 router = DefaultRouter()
@@ -27,6 +25,8 @@ router.register(r'appraisaticket', AppraisalTicketViewset, base_name="appraisati
 router.register(r'evaluateresult', EvaluateResultViewset, base_name="evaluateresult")
 router.register(r'fsalary', FSalaryViewset, base_name="fsalary")
 router.register(r'salaryrecord', SalaryRecordViewset, base_name="salaryrecord")
+# router.register(r'alipaytest', AlipayViewset, base_name="alipay")
+
 router.register(r'rank13coefficent', Rank13CoefficentViewset, base_name="rank13coefficent")
 router.register(r'rank13demands', Rank13DemandsViewset, base_name="rank13demands")
 router.register(r'agent', AgentViewset, base_name="agent")
@@ -96,7 +96,7 @@ urlpatterns = [
     #jwt的认证接口
     url(r'^login/', obtain_jwt_token),
 
-    # url(r'^alipay/return/', AlipayView.as_view(), name="alipay"),
+    url(r'^api/fsalaryrecorddata/', FSalaryRecordDataView.as_view(), name="fsalaryrecorddata"),
 ]
 
 

@@ -240,6 +240,13 @@ CELERYBEAT_SCHEDULE = {
         #'schedule': crontab(minute=1, hour=0),
         "args": ()
     },
+    u'更新未封账工资明细': {
+        "task": "salary.task.updatesrecord",
+        "schedule": crontab(minute=0, hour='*/1'),
+        #"schedule": crontab(minute='*/1'),
+        "args": (),
+    },
+
     # #定时任务三:每个月的１号的6:00启动，执行任务(back_up2)
     # u'生成统计报表': {
     #         'task': 'app.tasks.back_up2',

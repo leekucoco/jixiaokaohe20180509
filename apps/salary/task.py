@@ -4,20 +4,42 @@ from celery import shared_task,task
 import time,json
 from celery.schedules import crontab
 from .models import FSalary,SalaryRecord
+from django.db.models import Q
 from django.contrib.auth import get_user_model
+from openpyxl import load_workbook
 User = get_user_model()
 
 @shared_task
-def updateworkattendance(status,filename,id):
-    sr = SalaryRecord.objects.get(id=id)
-    #print(sr.checkonworkfile.file)
-    filenametest = sr.checkonworkfile.path
-    f = open(filenametest,"r")
-    text = f.readline()
-    print(text)
-    print(sr)
-    print(status,filename,id)
-    return "updat"
+def updatesrecord():
+    data = {}
+    successcount = 0
+    errcount = 0
+    users = User.objects.all()
+    for u in users:
+        try:
+            user_id = u.id
+            srecord = SalaryRecord.objects.filter(~Q(status= 'LOCK'))
+            if srecord:
+                srecord = srecord[0]
+                fs = FSalary.objects.get(user_id = user_id,srecord=srecord)
+                fs.basesalaryresult = fs.calcbasesalaryreslut()
+                fs.welfareresult = fs.calcwelfareresult()
+                fs.totalsalaryresult = fs.calctotalsalaryresult()
+                fs.totalpayamount = fs.calctotalpayamount()
+                fs.finalpayingamount = fs.calcfinalpayingamount()
+                #print(fs)
+                fs.save()
+                successcount = successcount + 1
+            else:
+                data["status"] = "全部封账"
+        except Exception as e:
+            data[u.username] = str(e)
+            errcount = errcount + 1
+    data["successcount"] = successcount
+    data["errcount"] = errcount
+    json_str = json.dumps(data)
+    return json_str
+
 
 @shared_task
 def helpmsg():
