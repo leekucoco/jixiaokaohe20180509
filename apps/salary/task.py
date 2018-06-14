@@ -8,6 +8,8 @@ from django.db.models import Q
 from django.contrib.auth import get_user_model
 from openpyxl import load_workbook
 User = get_user_model()
+from extra_apps.YunPianMsgSender import YunPianMsg
+from Dqrcbankjxkh.settings import APIKEY,TPLID
 
 @shared_task
 def updatesrecord():
@@ -42,8 +44,85 @@ def updatesrecord():
 
 
 @shared_task
-def helpmsg():
-    return "help msg"
+def sendmsg(id):
+    ym = YunPianMsg(APIKEY,TPLID)
+    # fsitem = {"mobile":"13329502095","name":"李晓龙","totalsalaryresult":"5300.21",
+    # "totlainsuranceandfund":"897","performancepay":"10000","totalpayamount":"6700",
+    # "finalpayingamount":"5678.32"}
+    # cd = ym.yunpianmsg(**fsitem)
+    # print(cd,id)
+    data = {}
+    successcount = 0
+    errcount = 0
+    u = User.objects.get(username = "510412")
+    try:
+        user_id = u.id
+        user_mobile = u.mobile
+        user_name = u.name
+        srecord = SalaryRecord.objects.filter(id=id)
+        if srecord:
+            fsitem = {}
+            srecord = srecord[0]
+            fs = FSalary.objects.get(user_id = user_id,srecord=srecord)
+            fsitem["mobile"] = user_mobile
+            fsitem["name"] = user_name
+            fsitem["basesalaryresult"] = fs.basesalaryresult
+            fsitem["welfareresult"] = fs.welfareresult
+            fsitem["totalsalaryresult"] = fs.totalsalaryresult
+            fsitem["endowmentinsurance"] = fs.endowmentinsurance
+            fsitem["medicalinsurance"] = fs.medicalinsurance
+            fsitem["unemploymentinsurance"] = fs.unemploymentinsurance
+            fsitem["housingprovidentfund"] = fs.housingprovidentfund
+            fsitem["companyfund"] = fs.companyfund
+            fsitem["totlainsuranceandfund"] = fs.totlainsuranceandfund
+            fsitem["totalpayamount"] = fs.totalpayamount
+            fsitem["personaltax"] = fs.personaltax
+            fsitem["finalpayingamount"] = fs.finalpayingamount
+            cd = ym.yunpianmsg(**fsitem)
+            successcount = successcount + 1
+        else:
+            data["status"] = "无此记录"
+    except Exception as e:
+        data[u.username] = str(e)
+        errcount = errcount + 1
+
+
+    #users = User.objects.all()
+    # for u in users:
+    #     try:
+    #         user_id = u.id
+    #         user_mobile = u.mobile
+    #         user_name = u.name
+    #         srecord = SalaryRecord.objects.filter(id=id)
+    #         if srecord:
+    #             fsitem = {}
+    #             srecord = srecord[0]
+    #             fs = FSalary.objects.get(user_id = user_id,srecord=srecord)
+    #             fsitem["mobile"] = user_mobile
+    #             fsitem["name"] = user_name
+    #             fsitem["basesalaryresult"] = fs.basesalaryresult
+    #             fsitem["welfareresult"] = fs.welfareresult
+    #             fsitem["totalsalaryresult"] = fs.totalsalaryresult
+    #             fsitem["endowmentinsurance"] = fs.endowmentinsurance
+    #             fsitem["medicalinsurance"] = fs.medicalinsurance
+    #             fsitem["unemploymentinsurance"] = fs.unemploymentinsurance
+    #             fsitem["housingprovidentfund"] = fs.housingprovidentfund
+    #             fsitem["companyfund"] = fs.companyfund
+    #             fsitem["totlainsuranceandfund"] = fs.totlainsuranceandfund
+    #             fsitem["totalpayamount"] = fs.totalpayamount
+    #             fsitem["personaltax"] = fs.personaltax
+    #             fsitem["finalpayingamount"] = fs.finalpayingamount
+    #             cd = ym.yunpianmsg(**fsitem)
+    #             successcount = successcount + 1
+    #         else:
+    #             data["status"] = "无此记录"
+    #     except Exception as e:
+    #         data[u.username] = str(e)
+    #         errcount = errcount + 1
+    data["successcount"] = successcount
+    data["errcount"] = errcount
+    json_str = json.dumps(data)
+    return json_str
 
 @shared_task
 def createsalaryrecord(salaryrecord):

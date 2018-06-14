@@ -27,7 +27,7 @@ class FSalaryAdmin(object):
                     "welfareresult","basesalaryadd","welfareresultadd",
                     "totalsalaryresult","endowmentinsurance",
                     "medicalinsurance","unemploymentinsurance",
-                    "housingprovidentfund","totlainsuranceandfund",
+                    "housingprovidentfund","companyfund","totlainsuranceandfund",
                     "totalpayamount","personaltax","partymemberdues",
                     "otherdeductions","finalpayingamount","add_time",]
     #list_editable = ["name", ]

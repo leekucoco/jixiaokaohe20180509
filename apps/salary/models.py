@@ -18,6 +18,7 @@ class SalaryRecord(models.Model):
         ("INSURANCEANDFUNDCOMPELTE", "已经录入五险一金并生成应发薪酬"),
         ("TAXANDOTHERDEDUCTIONS", "已完成税费及其他扣除项录入生成实发薪酬"),
         ("LOCK", "封账"),
+        ("SENDMSG","发送短信"),
     )
     user = models.ForeignKey(User, verbose_name="用户")
     extrainfo = models.TextField(null=True,blank=True,verbose_name="备注",default=str(date.today().month)+"月工资记录")
@@ -79,6 +80,8 @@ class FSalary(models.Model):
                                               verbose_name="补发基本薪酬", help_text="补发基本薪酬")
     welfareresultadd = models.DecimalField(max_digits=10, decimal_places=2, default=0,
                                            verbose_name="补发福利薪酬", help_text="补发福利薪酬")
+    # performancepay = models.DecimalField(max_digits=10, decimal_places=2, default=0,
+    #                                        verbose_name="绩效薪酬", help_text="绩效薪酬")
     totalsalaryresult = models.DecimalField(max_digits=10, decimal_places=2, default=0,
                                            verbose_name="薪酬合计", help_text="薪酬合计")
     endowmentinsurance = models.DecimalField(max_digits=10, decimal_places=2, default=0,
@@ -89,8 +92,10 @@ class FSalary(models.Model):
                                            verbose_name="失业保险", help_text="失业保险")
     housingprovidentfund = models.DecimalField(max_digits=10, decimal_places=2, default=0,
                                            verbose_name="住房公积金", help_text="住房公积金")
+    companyfund = models.DecimalField(max_digits=10, decimal_places=2, default=0,
+                                      verbose_name="企业年金", help_text="企业年金")
     totlainsuranceandfund = models.DecimalField(max_digits=10, decimal_places=2, default=0,
-                                           verbose_name="三险一金合计", help_text="三险一金合计")
+                                           verbose_name="三险二金合计", help_text="三险二金合计")
     totalpayamount = models.DecimalField(max_digits=10, decimal_places=2, default=0,
                                            verbose_name="应发薪酬", help_text="应发薪酬")
     personaltax = models.DecimalField(max_digits=10, decimal_places=2, default=0,
@@ -272,6 +277,7 @@ class FSalary(models.Model):
         wsr = self.calcwelfareresult()
         bsadd = self.basesalaryadd
         wsadd = self.welfareresultadd
+        # peformp = self.performancepay
         return bsr+wsr+bsadd+wsadd
     def calctotalpayamount(self):
         tr = self.calctotalsalaryresult()

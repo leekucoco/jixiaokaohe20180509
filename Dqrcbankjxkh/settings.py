@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rank13.apps.Rank13Config',
     'salary.apps.SalaryConfig',
     'evaluate.apps.EvaluateConfig',
+    'performance.apps.PerformanceConfig',
     'djcelery',
     #'gunicorn',
 ]
@@ -184,7 +185,8 @@ REGEX_MOBILE = "^1[358]\d{9}$|^147\d{8}$|^176\d{8}$"
 
 
 #云片网设置
-APIKEY = ""
+APIKEY = '704cb5785af88430dc0267e42184108c'
+TPLID = 2341326
 
 
 #支付宝相关配置

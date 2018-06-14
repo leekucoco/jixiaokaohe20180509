@@ -76,10 +76,15 @@ layui.use('table', function(){
               ,{field:'status',width:100,  title:"工资记录状态"
                 ,templet: function (d) {
                     if (d.status == "LOCK"){
-                        return "已封账"
+                        return "已经封账"
+                    }else if(d.status == "SENDMSG"){
+                        return "短信已发"
+                    }else if(d.status == "UNCOMPELTE"){
+                        return "取消封账"
                     }else{
                         return "未封账"
                     }
+
                  }
             }
 

@@ -62,12 +62,14 @@ layui.use('table', function(){
              ,{field:'welfareresult',width:120,  title:"福利薪酬结果"}
              ,{field:'basesalaryadd',width:120,  title:"补发基本薪酬"}
              ,{field:'welfareresultadd',width:120,  title:"补发福利薪酬"}
+             // ,{field:'performancepay',width:120,  title:"绩效薪酬"}
              ,{field:'totalsalaryresult',width:120,  title:"薪酬合计"}
              ,{field:'endowmentinsurance',width:120,  title:"养老保险"}
              ,{field:'medicalinsurance',width:120,  title:"医疗保险"}
              ,{field:'unemploymentinsurance',width:120,  title:"失业保险"}
              ,{field:'housingprovidentfund',width:120,  title:"住房公积金"}
-             ,{field:'totlainsuranceandfund',width:120,  title:"三险一金合计"}
+             ,{field:'companyfund',width:120,  title:"企业年金"}
+             ,{field:'totlainsuranceandfund',width:120,  title:"三险二金合计"}
              ,{field:'totalpayamount',width:120,  title:"应发薪酬"}
              ,{field:'personaltax',width:120,  title:"个人所得税"}
              ,{field:'partymemberdues',width:120,  title:"代扣党费"}

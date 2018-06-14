@@ -7,7 +7,7 @@ from rest_framework.pagination import PageNumberPagination
 from .models import SalaryRecord,FSalary
 from django.contrib.auth import get_user_model
 User = get_user_model()
-from .task import createsalaryrecord,destroysalaryrecord
+from .task import createsalaryrecord,destroysalaryrecord,sendmsg
 from datetime import datetime
 from utils.permissions import IsSuperUser
 from rest_framework import filters
@@ -25,6 +25,14 @@ class FSalaryPagination(PageNumberPagination):
     max_page_size = 100
 
 
+
+class FSalaryRecordFilter(drffilters.FilterSet):
+
+    add_time = drffilters.DateTimeFromToRangeFilter()
+    class Meta:
+        model = SalaryRecord
+        fields = ['status','user__username','add_time']
+
 class SalaryRecordViewset(viewsets.ModelViewSet):
     """
     工资记录操作
@@ -34,6 +42,10 @@ class SalaryRecordViewset(viewsets.ModelViewSet):
     serializer_class = SalaryRecordSerializer
     pagination_class = FSalaryPagination
     #lookup_field = "goods_id"
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_class = FSalaryRecordFilter
+    #search_fields = ('user__name','user__idcardnumber','rank13demands__post__name',)
+    ordering_fields = ('add_time','update_time')
 
     def perform_create(self, serializer):
         salaryrecord = serializer.save()
@@ -48,11 +60,11 @@ class SalaryRecordViewset(viewsets.ModelViewSet):
         serializer.validated_data["update_time"] = datetime.now()
         serializer.save()
 
-        # status = serializer.validated_data["status"]
-        # if status == "CHECKONWORKATTENDANCECOMPLETE":
-        #     updateworkattendance.delay(status, serializer.instance.id)
-        # else:
-        #     print("pass")
+        status = serializer.validated_data["status"]
+        if status == "SENDMSG":
+            sendmsg.delay(serializer.instance.id)
+        else:
+            pass
 
 
 
@@ -64,7 +76,7 @@ class SalaryRecordViewset(viewsets.ModelViewSet):
         #     return SalaryRecordSerializer
         return SalaryRecordSerializer
     def get_queryset(self):
-        return SalaryRecord.objects.filter(user=self.request.user)
+        return SalaryRecord.objects.filter(user=self.request.user).order_by("-add_time")
 
     def get_permissions(self):
         return [IsSuperUser(),permissions.IsAdminUser()]
@@ -110,13 +122,13 @@ class FSalaryViewset(viewsets.ModelViewSet):
     def get_queryset(self):
         #return FSalary.objects.filter(user=self.request.user)
         if self.request.user.is_superuser:
-            return FSalary.objects.all()
+            return FSalary.objects.all().order_by("-add_time")
         elif self.request.user.is_staff:
             userdepart = self.request.user.user_depart.depart
             users = User.objects.filter(user_depart__depart=userdepart)
-            return FSalary.objects.filter(user__in=users)
+            return FSalary.objects.filter(user__in=users).order_by("-add_time")
         else:
-            return FSalary.objects.filter(user=self.request.user)
+            return FSalary.objects.filter(user=self.request.user).order_by("-add_time")
     def get_permissions(self):
         if self.action == "retrieve":
             return [permissions.IsAuthenticated()]
@@ -256,6 +268,8 @@ class FSalaryRecordDataView(APIView):
             json_str = json.dumps(resdata)
             return Response(json_str)
         elif status == "LOCK":
+            pass
+        elif status == "SENDMSG":
             pass
         else:
             return Response("无法确认上传数据处理程序")
