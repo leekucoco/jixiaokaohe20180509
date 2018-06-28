@@ -1,4 +1,4 @@
-[pid: 8505|app: 0|req: 1/4] 127.0.0.1 () {46 vars in 1133 bytes} [Thu Jun 14 10:16:04 2018] GET /api/fsalary/?page=1&limit=10 => generated 11103 bytes in 596 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+ [pid: 8505|app: 0|req: 1/4] 127.0.0.1 () {46 vars in 1133 bytes} [Thu Jun 14 10:16:04 2018] GET /api/fsalary/?page=1&limit=10 => generated 11103 bytes in 596 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
 [pid: 8502|app: 0|req: 2/5] 127.0.0.1 () {46 vars in 1143 bytes} [Thu Jun 14 10:16:08 2018] GET /api/salaryrecord/?page=1&limit=10 => generated 796 bytes in 12 msecs (HTTP/1.0 200) 5 headers in 148 bytes (1 switches on core 0)
 [pid: 8503|app: 0|req: 2/6] 127.0.0.1 () {46 vars in 1140 bytes} [Thu Jun 14 10:16:10 2018] GET /api/cofficient/?page=1&limit=10 => generated 10971 bytes in 276 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
 /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'evaluate.models.AppraisalTicket'> QuerySet.
@@ -188,3 +188,25 @@ thunder lock: enabled
 probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
 bind(): Address already in use [core/socket.c line 769]
 [pid: 30734|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 1133 bytes} [Thu Jun 14 15:52:59 2018] GET /api/fsalary/?page=1&limit=10 => generated 10863 bytes in 601 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23028|app: 0|req: 3/17] 127.0.0.1 () {46 vars in 1139 bytes} [Thu Jun 21 16:12:47 2018] GET /api/cofficient/?page=1&limit=10 => generated 10971 bytes in 267 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23029|app: 0|req: 3/18] 127.0.0.1 () {46 vars in 1132 bytes} [Thu Jun 21 16:12:50 2018] GET /api/fsalary/?page=1&limit=10 => generated 10863 bytes in 25 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23026|app: 0|req: 7/19] 127.0.0.1 () {50 vars in 951 bytes} [Fri Jun 22 08:52:17 2018] POST /login/ => generated 1851 bytes in 75 msecs (HTTP/1.0 200) 6 headers in 170 bytes (1 switches on core 0)
+[pid: 23027|app: 0|req: 7/20] 127.0.0.1 () {46 vars in 1095 bytes} [Fri Jun 22 08:52:22 2018] GET /api/cofficient/?page=1&limit=10 => generated 10971 bytes in 199 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'evaluate.models.AppraisalTicket'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+[pid: 23028|app: 0|req: 4/21] 127.0.0.1 () {46 vars in 1104 bytes} [Fri Jun 22 08:52:27 2018] GET /api/appraisaticket/?page=1&limit=10 => generated 2422 bytes in 38 msecs (HTTP/1.0 200) 5 headers in 149 bytes (1 switches on core 0)
+[pid: 23029|app: 0|req: 4/22] 127.0.0.1 () {46 vars in 1088 bytes} [Fri Jun 22 08:52:31 2018] GET /api/fsalary/?page=1&limit=10 => generated 10863 bytes in 23 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23026|app: 0|req: 8/23] 127.0.0.1 () {46 vars in 1098 bytes} [Fri Jun 22 08:52:32 2018] GET /api/salaryrecord/?page=1&limit=10 => generated 796 bytes in 11 msecs (HTTP/1.0 200) 5 headers in 148 bytes (1 switches on core 0)
+[pid: 23027|app: 0|req: 8/24] 127.0.0.1 () {46 vars in 1139 bytes} [Mon Jun 25 15:14:13 2018] GET /api/cofficient/?page=1&limit=10 => generated 10971 bytes in 197 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23028|app: 0|req: 5/25] 127.0.0.1 () {46 vars in 1139 bytes} [Wed Jun 27 08:12:19 2018] GET /api/cofficient/?page=1&limit=10 => generated 35 bytes in 2 msecs (HTTP/1.0 401) 6 headers in 192 bytes (1 switches on core 0)
+[pid: 23029|app: 0|req: 5/26] 127.0.0.1 () {46 vars in 1139 bytes} [Wed Jun 27 08:12:24 2018] GET /api/cofficient/?page=1&limit=10 => generated 35 bytes in 2 msecs (HTTP/1.0 401) 6 headers in 192 bytes (1 switches on core 0)
+[pid: 23026|app: 0|req: 9/27] 127.0.0.1 () {50 vars in 1002 bytes} [Wed Jun 27 08:12:35 2018] POST /login/ => generated 1851 bytes in 73 msecs (HTTP/1.0 200) 6 headers in 170 bytes (1 switches on core 0)
+[pid: 23027|app: 0|req: 9/28] 127.0.0.1 () {46 vars in 1139 bytes} [Wed Jun 27 08:12:38 2018] GET /api/cofficient/?page=1&limit=10 => generated 10971 bytes in 199 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23028|app: 0|req: 6/29] 127.0.0.1 () {46 vars in 1148 bytes} [Wed Jun 27 08:12:43 2018] GET /api/appraisaticket/?page=1&limit=10 => generated 2422 bytes in 37 msecs (HTTP/1.0 200) 5 headers in 149 bytes (1 switches on core 0)
+[pid: 23029|app: 0|req: 6/30] 127.0.0.1 () {46 vars in 1132 bytes} [Wed Jun 27 08:12:48 2018] GET /api/fsalary/?page=1&limit=10 => generated 10863 bytes in 24 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23026|app: 0|req: 10/31] 127.0.0.1 () {46 vars in 1142 bytes} [Wed Jun 27 08:12:51 2018] GET /api/salaryrecord/?page=1&limit=10 => generated 796 bytes in 10 msecs (HTTP/1.0 200) 5 headers in 148 bytes (1 switches on core 0)
+[pid: 23027|app: 0|req: 10/32] 127.0.0.1 () {52 vars in 1189 bytes} [Wed Jun 27 10:30:07 2018] PATCH /api/salaryrecord/42/ => generated 751 bytes in 44 msecs (HTTP/1.0 200) 6 headers in 194 bytes (1 switches on core 0)
+[pid: 23028|app: 0|req: 7/33] 127.0.0.1 () {46 vars in 1132 bytes} [Thu Jun 28 10:59:22 2018] GET /api/fsalary/?page=1&limit=10 => generated 10863 bytes in 25 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 23029|app: 0|req: 7/34] 127.0.0.1 () {46 vars in 1142 bytes} [Thu Jun 28 10:59:24 2018] GET /api/salaryrecord/?page=1&limit=10 => generated 796 bytes in 11 msecs (HTTP/1.0 200) 5 headers in 148 bytes (1 switches on core 0)
+[pid: 23026|app: 0|req: 11/35] 127.0.0.1 () {54 vars in 1326 bytes} [Thu Jun 28 10:59:52 2018] PATCH /api/salaryrecord/42/ => generated 781 bytes in 20 msecs (HTTP/1.0 200) 6 headers in 194 bytes (1 switches on core 0)
+[pid: 23027|app: 0|req: 11/36] 127.0.0.1 () {52 vars in 1193 bytes} [Thu Jun 28 11:00:04 2018] POST /api/fsalaryrecorddata/ => generated 40 bytes in 17 msecs (HTTP/1.0 200) 6 headers in 179 bytes (1 switches on core 0)

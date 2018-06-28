@@ -227,11 +227,13 @@ class FSalaryRecordDataView(APIView):
                         medicalinsurance = Decimal(r["medicalinsurance"])
                         unemploymentinsurance = Decimal(r["unemploymentinsurance"])
                         housingprovidentfund = Decimal(r["housingprovidentfund"])
+                        companyfund = Decimal(r["companyfund"])
                         totlainsuranceandfund = Decimal(r["totlainsuranceandfund"])
                         fsobj.endowmentinsurance = endowmentinsurance
                         fsobj.medicalinsurance = medicalinsurance
                         fsobj.unemploymentinsurance = unemploymentinsurance
                         fsobj.housingprovidentfund = housingprovidentfund
+                        fsobj.companyfund = companyfund
                         fsobj.totlainsuranceandfund = totlainsuranceandfund
                         fsobj.save()
                         successcount = successcount + 1
