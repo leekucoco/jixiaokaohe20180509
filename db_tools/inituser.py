@@ -7,7 +7,8 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 
 from datetime import datetime,date
 pwd = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(pwd+"../")
+sys.path.append(pwd)
+sys.path.append("..")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Dqrcbankjxkh.settings")
 import django
 django.setup()
@@ -74,7 +75,10 @@ def initusers():
         dic["cmanagerrank"] = parselevel(UserProfile.CMANAGERRANK_CHOICES,l2[6])
         dic["cmanagerlevel"] = parselevel(UserProfile.CMANAGERLEVEL_CHOICES,l2[7])
         dic["education"] = parselevel(UserProfile.EDUCATION_CHOICES,l2[13])
-        dic["title"] = parselevel(UserProfile.TITLE_CHOICES,l2[14])
+        if l2[14] != "":
+            dic["title"] = parselevel(UserProfile.TITLE_CHOICES,l2[14])
+        else:
+            dic["title"] = 0
         if l2[15] != "":
             dic["primccbp"] = int(l2[15])
         else:
@@ -84,14 +88,126 @@ def initusers():
             dic["intermediateccbp"] = int(l2[16])
         else:
             dic["intermediateccbp"] = 0
-        dic["internel_trainer"] = parselevel(UserProfile.INTERNEL_TRAINER_CHOICES,l2[17])
+        if l2[17] != "":
+
+            dic["internel_trainer"] = parselevel(UserProfile.INTERNEL_TRAINER_CHOICES,l2[17])
+        else:
+            dic["internel_trainer"] = 1
         try:
             User.objects.create(**dic)
+            # u = User.objects.get(idcardnumber=dic["idcardnumber"])
+
+            #print(dic)
+            pass
         except Exception:
             pass
-        count = count +1
+
         #print(dic)
     print("成功生成用户%d"%count)
+
+
+
+def updateuserbaseinfo():
+    wb = load_workbook("table.xlsx")
+
+    sheet = wb.get_sheet_by_name("coe")
+    l1 = []
+    # f = open("log4.txt","a+")
+    count = 0
+    for row in sheet.iter_rows('A1:AM707'):
+        l2 = []
+        dic = {}
+
+        for cell in row[0:18]:
+            if cell.value != None:
+                t = cell.value
+                l2.append(t)
+            else:
+                t = ""
+                l2.append(t)
+
+        datinfo = str(l2[12])
+        dat = datinfo.split(".")
+        if dat != "":
+            if len(dat) == 2:
+                stdate = date(int(dat[0]), int(dat[1]), 1)
+            elif len(dat) == 1:
+                stdate = date(int(dat[0]), 1, 1)
+            else:
+                stdate = date.today()
+        else:
+            stdate = ""
+
+        dic["joinedyears"] = stdate
+        dic["idcardnumber"] = l2[1]
+        dic["username"] = l2[2]
+        dic["name"] = l2[3]
+        dic["mobile"] = l2[4]
+        if l2[5] != "":
+            dic["clerkrank"] = parselevel(UserProfile.CLERKRANK_CHONCES,l2[5])
+        else:
+            dic["clerkrank"] = 1
+        if l2[6] != "":
+            dic["cmanagerrank"] = parselevel(UserProfile.CMANAGERRANK_CHOICES,l2[6])
+        else:
+            dic["cmanagerrank"] = 1
+        if l2[7] != "":
+            dic["cmanagerlevel"] = parselevel(UserProfile.CMANAGERLEVEL_CHOICES,l2[7])
+        else:
+            dic["cmanagerlevel"] = 1
+        dic["education"] = parselevel(UserProfile.EDUCATION_CHOICES,l2[13])
+
+        if l2[14] != "":
+            dic["title"] = parselevel(UserProfile.TITLE_CHOICES,l2[14])
+        else:
+            dic["title"] = 0
+        if l2[15] != "":
+            dic["primccbp"] = int(l2[15])
+        else:
+            dic["primccbp"] = 0
+        if l2[16] != "":
+
+            dic["intermediateccbp"] = int(l2[16])
+        else:
+            dic["intermediateccbp"] = 0
+        if l2[17] != "":
+
+            dic["internel_trainer"] = parselevel(UserProfile.INTERNEL_TRAINER_CHOICES,l2[17])
+        else:
+            dic["internel_trainer"] = 1
+        try:
+
+            u = User.objects.get(idcardnumber=dic["idcardnumber"])
+            #print(u)
+            if u.education != dic["education"] or u.title != dic["title"]\
+                    or u.internel_trainer != dic["internel_trainer"] or u.clerkrank != dic["clerkrank"]\
+                    or u.cmanagerrank != dic["cmanagerrank"] or u.cmanagerlevel != dic["cmanagerlevel"] :
+                u.education = dic["education"]
+                #print(u.education)
+                u.title = dic["title"]
+                u.internel_trainer = dic["internel_trainer"]
+                u.clerkrank = dic["clerkrank"]
+                u.cmanagerrank = dic["cmanagerrank"]
+                u.cmanagerlevel = dic["cmanagerlevel"]
+                count = count + 1
+                # print(count)
+                u.save()
+
+            else:
+                pass
+
+            #print(dic)
+            pass
+        except Exception:
+            pass
+
+        #print(dic)
+    print("成功更新用户学历%d"%count)
+
+
+
+
+
 
 
 def inituserspassword():
@@ -407,6 +523,8 @@ if __name__=="__main__":
         initcoe()
     elif sys.argv[1] == "inituserdepart":
         inituserdepart()
+    elif sys.argv[1] == "updateuserbaseinfo":
+        updateuserbaseinfo()
     else:
         print(" 无效指令")
 

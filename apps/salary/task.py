@@ -25,6 +25,12 @@ def updatesrecord():
                 srecord = srecord[0]
                 fs = FSalary.objects.get(user_id = user_id,srecord=srecord)
                 fs.basesalaryresult = fs.calcbasesalaryreslut()
+                fs.ywslary = fs.calcywslary()
+                fs.edslary = fs.calcedslary()
+                fs.tislary = fs.calctislary()
+                fs.itslary = fs.calcittrainersalary()
+                fs.cmslary = fs.calccmanagersalary()
+                fs.fltotal = fs.gettotal()
                 fs.welfareresult = fs.calcwelfareresult()
                 fs.totalsalaryresult = fs.calctotalsalaryresult()
                 fs.totalpayamount = fs.calctotalpayamount()

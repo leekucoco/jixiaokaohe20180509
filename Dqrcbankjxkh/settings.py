@@ -232,7 +232,7 @@ CELERYBEAT_SCHEDULE = {
     u'更新用户等级系数': {
         "task": "coefficient.task.ensurerankleveltask",
         "schedule": crontab(minute=0,hour='*/1'),
-        #"schedule": crontab(minute='*/5'),
+        # "schedule": crontab(minute='*/2'),
         "args": (),
     },
     #定时任务二:　每天的凌晨12:30分，执行任务(back_up1)
@@ -245,7 +245,7 @@ CELERYBEAT_SCHEDULE = {
     u'更新未封账工资明细': {
         "task": "salary.task.updatesrecord",
         "schedule": crontab(minute=0, hour='*/1'),
-        #"schedule": crontab(minute='*/1'),
+        # "schedule": crontab(minute='*/1'),
         "args": (),
     },
 

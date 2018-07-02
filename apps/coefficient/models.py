@@ -175,11 +175,11 @@ class CoefficientDetail(models.Model):
                         if i[0] == cmanagerrank:
                             if i[1] == cmanagerlevel:
                                 coe = i[2]
-                                if coe >= self.rank13coefficent.coefficent:
+                                if coe > self.rank13coefficent.coefficent:
                                     self.coefficent = coe
                                 else:
                                     self.coefficent = self.rank13coefficent.coefficent
-                                print("客户经理",coe)
+                                #print("客户经理",coe)
                                 break
                             else:
                                 continue
@@ -190,11 +190,11 @@ class CoefficientDetail(models.Model):
                     for i in cl:
                         if i[0] == clerkrank:
                             coe = i[1]
-                            if coe >= self.rank13coefficent.coefficent:
+                            if coe > self.rank13coefficent.coefficent:
                                 self.coefficent = coe
                             else:
                                 self.coefficent = self.rank13coefficent.coefficent
-                            print("柜员",coe)
+                            #print("柜员",coe)
                             break
                         else:
                             continue
