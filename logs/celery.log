@@ -1,0 +1,574 @@
+[2018-07-03 11:11:48,072: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:14:52,942: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:17:57,818: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:21:02,681: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:24:07,552: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:26:00,879: INFO/MainProcess] beat: Shutting down...
+[2018-07-03 11:26:00,880: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:26:00,880: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:26:07,036: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2018-07-03 11:26:07,266: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2018-07-03 11:26:07,268: INFO/Beat] beat: Starting...
+[2018-07-03 11:26:07,270: INFO/Beat] Writing entries (0)...
+[2018-07-03 11:26:07,278: INFO/MainProcess] mingle: searching for neighbors
+[2018-07-03 11:26:07,333: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:26:07,337: INFO/Beat] Writing entries (1)...
+[2018-07-03 11:26:07,341: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:26:08,282: INFO/MainProcess] mingle: all alone
+[2018-07-03 11:26:08,291: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2018-07-03 11:26:08,291: WARNING/MainProcess] celery@localhost.localdomain ready.
+[2018-07-03 11:26:08,458: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[67bcd918-7b13-4697-ae4a-37fe806ecf8c]
+[2018-07-03 11:26:08,459: INFO/MainProcess] Received task: salary.task.updatesrecord[b460f70b-1ec5-4608-bcfd-469a28367cf5]
+[2018-07-03 11:26:17,963: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[67bcd918-7b13-4697-ae4a-37fe806ecf8c] succeeded in 9.503364109434187s: '{"totalcount": 672}'
+[2018-07-03 11:26:20,316: INFO/MainProcess] Task salary.task.updatesrecord[b460f70b-1ec5-4608-bcfd-469a28367cf5] succeeded in 11.855595543980598s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:27:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:27:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[d4919a76-fa54-4235-af08-d9d35a201765]
+[2018-07-03 11:27:11,778: INFO/MainProcess] Task salary.task.updatesrecord[d4919a76-fa54-4235-af08-d9d35a201765] succeeded in 11.77380292955786s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:28:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:28:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:28:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[a4ab80b1-0ad1-4808-b1de-751ae117805a]
+[2018-07-03 11:28:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[958dba79-7ca4-42c5-88c9-14668faf621a]
+[2018-07-03 11:28:09,512: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[a4ab80b1-0ad1-4808-b1de-751ae117805a] succeeded in 9.507389115169644s: '{"totalcount": 672}'
+[2018-07-03 11:28:11,886: INFO/MainProcess] Task salary.task.updatesrecord[958dba79-7ca4-42c5-88c9-14668faf621a] succeeded in 11.87997776363045s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:29:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:29:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[31216471-81c7-4d30-b759-5f5afa8f6afa]
+[2018-07-03 11:29:09,995: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:29:11,777: INFO/MainProcess] Task salary.task.updatesrecord[31216471-81c7-4d30-b759-5f5afa8f6afa] succeeded in 11.77237059082836s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:30:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:30:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:30:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[e3ca7dd2-0f4e-4021-8055-6e8dfe62fd87]
+[2018-07-03 11:30:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[685c4497-a92e-4c54-b0fa-2a29ab9144bf]
+[2018-07-03 11:30:09,538: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[e3ca7dd2-0f4e-4021-8055-6e8dfe62fd87] succeeded in 9.533664765767753s: '{"totalcount": 672}'
+[2018-07-03 11:30:11,906: INFO/MainProcess] Task salary.task.updatesrecord[685c4497-a92e-4c54-b0fa-2a29ab9144bf] succeeded in 11.899776593782008s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:31:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:31:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[cdffb672-1704-40f9-aab8-dd263c975d98]
+[2018-07-03 11:31:11,932: INFO/MainProcess] Task salary.task.updatesrecord[cdffb672-1704-40f9-aab8-dd263c975d98] succeeded in 11.927782759070396s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:32:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:32:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:32:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[7fc0127b-66b2-4ec0-b257-5aada179d289]
+[2018-07-03 11:32:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[d241c2b4-fd27-4f5d-b21f-cecc8131ef0b]
+[2018-07-03 11:32:09,557: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[7fc0127b-66b2-4ec0-b257-5aada179d289] succeeded in 9.551929536275566s: '{"totalcount": 672}'
+[2018-07-03 11:32:11,913: INFO/MainProcess] Task salary.task.updatesrecord[d241c2b4-fd27-4f5d-b21f-cecc8131ef0b] succeeded in 11.905799848027527s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:32:14,990: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:33:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:33:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[f4fa9e62-1e3f-4f6e-aff5-d3f88c63a841]
+[2018-07-03 11:33:11,859: INFO/MainProcess] Task salary.task.updatesrecord[f4fa9e62-1e3f-4f6e-aff5-d3f88c63a841] succeeded in 11.854497616179287s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:34:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:34:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:34:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[c52181ba-b843-47a8-929b-d3ba43111822]
+[2018-07-03 11:34:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[a0866959-30d0-4707-8d88-9905b17a305c]
+[2018-07-03 11:34:09,513: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[c52181ba-b843-47a8-929b-d3ba43111822] succeeded in 9.508447303436697s: '{"totalcount": 672}'
+[2018-07-03 11:34:11,886: INFO/MainProcess] Task salary.task.updatesrecord[a0866959-30d0-4707-8d88-9905b17a305c] succeeded in 11.879592544399202s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:35:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:35:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[8bca1cf0-1e96-41bb-8253-45f1ea19d633]
+[2018-07-03 11:35:11,772: INFO/MainProcess] Task salary.task.updatesrecord[8bca1cf0-1e96-41bb-8253-45f1ea19d633] succeeded in 11.767807738855481s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:35:19,989: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:36:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:36:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:36:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[20b4dddc-a661-4c61-b637-62c3160dd349]
+[2018-07-03 11:36:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[78afc32a-4da4-469d-bc0f-21001909361b]
+[2018-07-03 11:36:09,501: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[20b4dddc-a661-4c61-b637-62c3160dd349] succeeded in 9.496706273406744s: '{"totalcount": 672}'
+[2018-07-03 11:36:11,898: INFO/MainProcess] Task salary.task.updatesrecord[78afc32a-4da4-469d-bc0f-21001909361b] succeeded in 11.891179513186216s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:37:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:37:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[410ae4a6-625c-4b84-9245-ebb0197d3ed4]
+[2018-07-03 11:37:11,793: INFO/MainProcess] Task salary.task.updatesrecord[410ae4a6-625c-4b84-9245-ebb0197d3ed4] succeeded in 11.78898320440203s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:38:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:38:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:38:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[8ccc4c40-0fac-4589-bfae-bd9045450160]
+[2018-07-03 11:38:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[64e0108d-2a0d-4960-bf0d-606c4e98caeb]
+[2018-07-03 11:38:09,543: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[8ccc4c40-0fac-4589-bfae-bd9045450160] succeeded in 9.539189707487822s: '{"totalcount": 672}'
+[2018-07-03 11:38:11,901: INFO/MainProcess] Task salary.task.updatesrecord[64e0108d-2a0d-4960-bf0d-606c4e98caeb] succeeded in 11.89461708907038s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:38:24,987: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:39:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:39:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[dea755ef-9075-41f1-9333-728ec1116448]
+[2018-07-03 11:39:11,848: INFO/MainProcess] Task salary.task.updatesrecord[dea755ef-9075-41f1-9333-728ec1116448] succeeded in 11.842973145656288s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:40:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:40:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:40:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[a8397d90-6731-4f0a-ba2e-2a8fc526b1fe]
+[2018-07-03 11:40:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[68fd5011-0c54-48c7-8fc0-1705697db574]
+[2018-07-03 11:40:09,530: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[a8397d90-6731-4f0a-ba2e-2a8fc526b1fe] succeeded in 9.525732938200235s: '{"totalcount": 672}'
+[2018-07-03 11:40:11,857: INFO/MainProcess] Task salary.task.updatesrecord[68fd5011-0c54-48c7-8fc0-1705697db574] succeeded in 11.850817765109241s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:41:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:41:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[60b5f96c-6c8e-4739-a698-8206e332200b]
+[2018-07-03 11:41:11,803: INFO/MainProcess] Task salary.task.updatesrecord[60b5f96c-6c8e-4739-a698-8206e332200b] succeeded in 11.797848891466856s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:41:29,977: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:42:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:42:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:42:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[1ba1b7e3-4c5b-461c-b433-78f032132291]
+[2018-07-03 11:42:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[1be9089a-133b-4f56-9d05-91ec4c8a5efd]
+[2018-07-03 11:42:09,484: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[1ba1b7e3-4c5b-461c-b433-78f032132291] succeeded in 9.479260482825339s: '{"totalcount": 672}'
+[2018-07-03 11:42:11,844: INFO/MainProcess] Task salary.task.updatesrecord[1be9089a-133b-4f56-9d05-91ec4c8a5efd] succeeded in 11.837851339019835s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:43:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:43:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[f01cbd9a-689d-494e-ac21-8db1db969a89]
+[2018-07-03 11:43:11,810: INFO/MainProcess] Task salary.task.updatesrecord[f01cbd9a-689d-494e-ac21-8db1db969a89] succeeded in 11.806204277090728s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:44:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:44:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:44:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[00ea4167-4604-44de-bad3-8325391e851d]
+[2018-07-03 11:44:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[cfd6f5d9-0bb3-4f29-a7c9-00711982eb89]
+[2018-07-03 11:44:09,766: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[00ea4167-4604-44de-bad3-8325391e851d] succeeded in 9.761410443112254s: '{"totalcount": 672}'
+[2018-07-03 11:44:12,053: INFO/MainProcess] Task salary.task.updatesrecord[cfd6f5d9-0bb3-4f29-a7c9-00711982eb89] succeeded in 12.04687093384564s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:44:34,980: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:45:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:45:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[eaafa466-fcae-4b47-b003-bd2b1cdaaeac]
+[2018-07-03 11:45:11,825: INFO/MainProcess] Task salary.task.updatesrecord[eaafa466-fcae-4b47-b003-bd2b1cdaaeac] succeeded in 11.820529787801206s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:46:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:46:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:46:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[ddf3efa4-062e-4ff5-a06f-fc29ff73a467]
+[2018-07-03 11:46:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[1a6e932f-ce1e-4526-a72c-c3ca83534b21]
+[2018-07-03 11:46:09,583: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[ddf3efa4-062e-4ff5-a06f-fc29ff73a467] succeeded in 9.579157772473991s: '{"totalcount": 672}'
+[2018-07-03 11:46:11,883: INFO/MainProcess] Task salary.task.updatesrecord[1a6e932f-ce1e-4526-a72c-c3ca83534b21] succeeded in 11.87638356629759s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:47:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:47:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[8a8a1b3d-0334-40a1-afe5-a36ee746e5bd]
+[2018-07-03 11:47:11,871: INFO/MainProcess] Task salary.task.updatesrecord[8a8a1b3d-0334-40a1-afe5-a36ee746e5bd] succeeded in 11.866724267601967s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:47:39,970: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:48:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:48:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:48:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[c6cf6b95-57ef-4ba7-9a9e-55a5db37d3d0]
+[2018-07-03 11:48:00,005: INFO/MainProcess] Received task: salary.task.updatesrecord[31f38fa3-292c-417c-9e6e-27e4be749b56]
+[2018-07-03 11:48:09,565: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[c6cf6b95-57ef-4ba7-9a9e-55a5db37d3d0] succeeded in 9.560889579355717s: '{"totalcount": 672}'
+[2018-07-03 11:48:11,892: INFO/MainProcess] Task salary.task.updatesrecord[31f38fa3-292c-417c-9e6e-27e4be749b56] succeeded in 11.885267998091877s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:49:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:49:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[2d7538dd-5b62-4fd0-9522-0793adcbc124]
+[2018-07-03 11:49:11,886: INFO/MainProcess] Task salary.task.updatesrecord[2d7538dd-5b62-4fd0-9522-0793adcbc124] succeeded in 11.881555979140103s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:50:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:50:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:50:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[e74f2946-ab7a-4547-a3a6-e404f4b17623]
+[2018-07-03 11:50:00,007: INFO/MainProcess] Received task: salary.task.updatesrecord[4a2a3ec3-410b-409e-8f86-defeeac84f29]
+[2018-07-03 11:50:09,526: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[e74f2946-ab7a-4547-a3a6-e404f4b17623] succeeded in 9.520999787375331s: '{"totalcount": 672}'
+[2018-07-03 11:50:11,883: INFO/MainProcess] Task salary.task.updatesrecord[4a2a3ec3-410b-409e-8f86-defeeac84f29] succeeded in 11.875231470912695s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:50:44,972: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:51:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:51:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[ed3b7d9a-2707-407f-a057-74fc1c6294ec]
+[2018-07-03 11:51:11,778: INFO/MainProcess] Task salary.task.updatesrecord[ed3b7d9a-2707-407f-a057-74fc1c6294ec] succeeded in 11.7734554130584s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:52:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:52:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:52:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[e5e8667a-b89b-4d1a-bdbe-938a20093245]
+[2018-07-03 11:52:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[6e847f5e-420b-4427-8f91-931385c75aca]
+[2018-07-03 11:52:09,487: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[e5e8667a-b89b-4d1a-bdbe-938a20093245] succeeded in 9.483452266082168s: '{"totalcount": 672}'
+[2018-07-03 11:52:11,905: INFO/MainProcess] Task salary.task.updatesrecord[6e847f5e-420b-4427-8f91-931385c75aca] succeeded in 11.899237341247499s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:53:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:53:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[6d588625-1cb9-4a35-8899-f62e602e6d47]
+[2018-07-03 11:53:11,825: INFO/MainProcess] Task salary.task.updatesrecord[6d588625-1cb9-4a35-8899-f62e602e6d47] succeeded in 11.820547367446125s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:53:49,967: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:54:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:54:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:54:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[3eae74e5-4cc8-402d-ab1b-1c3b3a57915f]
+[2018-07-03 11:54:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[b9a32d8d-f3f1-44d8-9c52-fcc4cb4b6087]
+[2018-07-03 11:54:09,581: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[3eae74e5-4cc8-402d-ab1b-1c3b3a57915f] succeeded in 9.57724580168724s: '{"totalcount": 672}'
+[2018-07-03 11:54:11,874: INFO/MainProcess] Task salary.task.updatesrecord[b9a32d8d-f3f1-44d8-9c52-fcc4cb4b6087] succeeded in 11.86740902531892s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:55:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:55:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[1fe2b3cf-47e4-4767-8502-98485586096c]
+[2018-07-03 11:55:11,878: INFO/MainProcess] Task salary.task.updatesrecord[1fe2b3cf-47e4-4767-8502-98485586096c] succeeded in 11.87354420311749s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:56:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:56:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:56:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[a6cb09f2-fbc5-45f9-a55a-d5aa9b50c20d]
+[2018-07-03 11:56:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[a79dda01-2650-45ca-8af0-6a00b58ad658]
+[2018-07-03 11:56:09,570: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[a6cb09f2-fbc5-45f9-a55a-d5aa9b50c20d] succeeded in 9.565222323872149s: '{"totalcount": 672}'
+[2018-07-03 11:56:11,894: INFO/MainProcess] Task salary.task.updatesrecord[a79dda01-2650-45ca-8af0-6a00b58ad658] succeeded in 11.887479480355978s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:56:54,963: INFO/Beat] Writing entries (2)...
+[2018-07-03 11:57:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:57:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[be6f2083-84df-41cd-9250-ee4794f93309]
+[2018-07-03 11:57:11,854: INFO/MainProcess] Task salary.task.updatesrecord[be6f2083-84df-41cd-9250-ee4794f93309] succeeded in 11.848911676555872s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:58:00,000: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 11:58:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:58:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[d1e5130c-2b9d-490a-91b8-208dfaebd830]
+[2018-07-03 11:58:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[04edc1d2-3213-4dd2-ba56-8da3451ea50d]
+[2018-07-03 11:58:09,523: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[d1e5130c-2b9d-490a-91b8-208dfaebd830] succeeded in 9.519164960831404s: '{"totalcount": 672}'
+[2018-07-03 11:58:11,866: INFO/MainProcess] Task salary.task.updatesrecord[04edc1d2-3213-4dd2-ba56-8da3451ea50d] succeeded in 11.859087714925408s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:59:00,001: INFO/Beat] Scheduler: Sending due task 更新用户投票结果 (evaluate.task.refreshevaluateresult)
+[2018-07-03 11:59:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 11:59:00,003: INFO/MainProcess] Received task: evaluate.task.refreshevaluateresult[e0cac297-dc8a-4963-b72b-b2e35c4a3da7]
+[2018-07-03 11:59:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[74ef171f-962d-4383-9dc7-a5362d889eb0]
+[2018-07-03 11:59:02,960: INFO/MainProcess] Task evaluate.task.refreshevaluateresult[e0cac297-dc8a-4963-b72b-b2e35c4a3da7] succeeded in 2.955461165867746s: '{"errcount": 0, "totalcount": 239}'
+[2018-07-03 11:59:11,900: INFO/MainProcess] Task salary.task.updatesrecord[74ef171f-962d-4383-9dc7-a5362d889eb0] succeeded in 11.893675499595702s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 11:59:59,963: INFO/Beat] Writing entries (3)...
+[2018-07-03 12:00:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:00:00,003: INFO/Beat] Scheduler: Sending due task 更新用户投票结果 (evaluate.task.refreshevaluateresult)
+[2018-07-03 12:00:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[08b1edc0-31a3-4f61-b1fe-92d43e6e0e00]
+[2018-07-03 12:00:00,005: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:00:00,005: INFO/MainProcess] Received task: evaluate.task.refreshevaluateresult[9193ca60-a67c-4664-b1e7-0dcadc83b685]
+[2018-07-03 12:00:00,008: INFO/MainProcess] Received task: salary.task.updatesrecord[7186afdf-1c27-472c-bc15-268166b6940a]
+[2018-07-03 12:00:02,952: INFO/MainProcess] Task evaluate.task.refreshevaluateresult[9193ca60-a67c-4664-b1e7-0dcadc83b685] succeeded in 2.9459957517683506s: '{"errcount": 0, "totalcount": 239}'
+[2018-07-03 12:00:09,510: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[08b1edc0-31a3-4f61-b1fe-92d43e6e0e00] succeeded in 9.506082067266107s: '{"totalcount": 672}'
+[2018-07-03 12:00:11,892: INFO/MainProcess] Task salary.task.updatesrecord[7186afdf-1c27-472c-bc15-268166b6940a] succeeded in 11.883331335149705s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:01:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:01:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[e2c3463b-e5e1-4dc8-b95b-537a4d4726ed]
+[2018-07-03 12:01:11,788: INFO/MainProcess] Task salary.task.updatesrecord[e2c3463b-e5e1-4dc8-b95b-537a4d4726ed] succeeded in 11.783681058324873s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:02:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:02:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:02:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[80db0c25-13cb-4bbd-8712-880aaf3a2d1a]
+[2018-07-03 12:02:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[97330c35-2436-498c-9201-023389385965]
+[2018-07-03 12:02:09,494: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[80db0c25-13cb-4bbd-8712-880aaf3a2d1a] succeeded in 9.490037728101015s: '{"totalcount": 672}'
+[2018-07-03 12:02:11,875: INFO/MainProcess] Task salary.task.updatesrecord[97330c35-2436-498c-9201-023389385965] succeeded in 11.868445013649762s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:02:59,990: INFO/Beat] Writing entries (3)...
+[2018-07-03 12:03:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:03:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[2e2787ff-0869-478b-8d8b-294213b9a77d]
+[2018-07-03 12:03:11,814: INFO/MainProcess] Task salary.task.updatesrecord[2e2787ff-0869-478b-8d8b-294213b9a77d] succeeded in 11.809375155717134s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:04:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:04:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:04:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[249c7442-3521-4920-a27f-0a8d0724b499]
+[2018-07-03 12:04:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[fe0c367f-4d66-478d-8d47-771209d354be]
+[2018-07-03 12:04:09,563: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[249c7442-3521-4920-a27f-0a8d0724b499] succeeded in 9.558025443926454s: '{"totalcount": 672}'
+[2018-07-03 12:04:11,851: INFO/MainProcess] Task salary.task.updatesrecord[fe0c367f-4d66-478d-8d47-771209d354be] succeeded in 11.844149990938604s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:05:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:05:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[fb3dda28-53c8-46ca-836e-de83990a5f95]
+[2018-07-03 12:05:11,805: INFO/MainProcess] Task salary.task.updatesrecord[fb3dda28-53c8-46ca-836e-de83990a5f95] succeeded in 11.800324904732406s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:06:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:06:00,003: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:06:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[6001487a-e9fe-4643-9651-79881f9abb98]
+[2018-07-03 12:06:00,010: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:06:00,013: INFO/MainProcess] Received task: salary.task.updatesrecord[83507549-e3b0-4a12-8d91-dcdffdbeed78]
+[2018-07-03 12:06:09,547: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[6001487a-e9fe-4643-9651-79881f9abb98] succeeded in 9.543380405753851s: '{"totalcount": 672}'
+[2018-07-03 12:06:11,871: INFO/MainProcess] Task salary.task.updatesrecord[83507549-e3b0-4a12-8d91-dcdffdbeed78] succeeded in 11.856881543062627s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:07:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:07:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[4dbdcf14-78ae-41c7-9a6c-e32d3053602a]
+[2018-07-03 12:07:11,795: INFO/MainProcess] Task salary.task.updatesrecord[4dbdcf14-78ae-41c7-9a6c-e32d3053602a] succeeded in 11.790635594166815s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:08:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:08:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:08:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[36bad7b2-bdb3-4196-b99e-cbf736ae589e]
+[2018-07-03 12:08:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[25a30c97-eeea-42d1-b58a-b7537189a2d8]
+[2018-07-03 12:08:09,587: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[36bad7b2-bdb3-4196-b99e-cbf736ae589e] succeeded in 9.582862809300423s: '{"totalcount": 672}'
+[2018-07-03 12:08:11,909: INFO/MainProcess] Task salary.task.updatesrecord[25a30c97-eeea-42d1-b58a-b7537189a2d8] succeeded in 11.902794684283435s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:09:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:09:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[9febc93a-4a99-43f9-aebe-0eef4e31b8b9]
+[2018-07-03 12:09:04,995: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:09:11,826: INFO/MainProcess] Task salary.task.updatesrecord[9febc93a-4a99-43f9-aebe-0eef4e31b8b9] succeeded in 11.821360380388796s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:10:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:10:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:10:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[3af262ec-2aff-43d0-9ef3-9db61811171f]
+[2018-07-03 12:10:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[10483d77-1f61-4b17-b9fc-990acef0ab8e]
+[2018-07-03 12:10:09,606: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[3af262ec-2aff-43d0-9ef3-9db61811171f] succeeded in 9.602449219673872s: '{"totalcount": 672}'
+[2018-07-03 12:10:11,932: INFO/MainProcess] Task salary.task.updatesrecord[10483d77-1f61-4b17-b9fc-990acef0ab8e] succeeded in 11.925927358679473s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:11:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:11:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[7ef4c938-5a2e-448d-88a0-5a76203ae94e]
+[2018-07-03 12:11:11,879: INFO/MainProcess] Task salary.task.updatesrecord[7ef4c938-5a2e-448d-88a0-5a76203ae94e] succeeded in 11.87394493445754s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:12:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:12:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:12:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[495d43e6-7b5f-4886-a8a3-8eb0f29ef691]
+[2018-07-03 12:12:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[b7bda3f3-9820-4262-af85-217e4526b920]
+[2018-07-03 12:12:09,617: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[495d43e6-7b5f-4886-a8a3-8eb0f29ef691] succeeded in 9.612242352217436s: '{"totalcount": 672}'
+[2018-07-03 12:12:09,993: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:12:11,919: INFO/MainProcess] Task salary.task.updatesrecord[b7bda3f3-9820-4262-af85-217e4526b920] succeeded in 11.911937188357115s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:13:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:13:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[536f2ed7-426a-476e-94a3-79fe22e8725a]
+[2018-07-03 12:13:11,816: INFO/MainProcess] Task salary.task.updatesrecord[536f2ed7-426a-476e-94a3-79fe22e8725a] succeeded in 11.81108489818871s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:14:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:14:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:14:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[b47e503a-a6f0-4c56-849b-f57f7d12ac61]
+[2018-07-03 12:14:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[2cb9d3e5-5c6c-475a-8f6d-e02a5ccd29a7]
+[2018-07-03 12:14:09,483: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[b47e503a-a6f0-4c56-849b-f57f7d12ac61] succeeded in 9.478640670888126s: '{"totalcount": 672}'
+[2018-07-03 12:14:11,847: INFO/MainProcess] Task salary.task.updatesrecord[2cb9d3e5-5c6c-475a-8f6d-e02a5ccd29a7] succeeded in 11.840810971334577s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:15:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:15:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[72220db7-81ea-4258-bba2-abaaa913d35f]
+[2018-07-03 12:15:11,827: INFO/MainProcess] Task salary.task.updatesrecord[72220db7-81ea-4258-bba2-abaaa913d35f] succeeded in 11.822304042056203s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:15:14,983: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:16:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:16:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:16:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[801ba5bb-a903-4931-993d-a6e3880d1fd0]
+[2018-07-03 12:16:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[e55661fd-b323-4875-8017-b982f33cb1bf]
+[2018-07-03 12:16:09,577: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[801ba5bb-a903-4931-993d-a6e3880d1fd0] succeeded in 9.573310323990881s: '{"totalcount": 672}'
+[2018-07-03 12:16:11,909: INFO/MainProcess] Task salary.task.updatesrecord[e55661fd-b323-4875-8017-b982f33cb1bf] succeeded in 11.90270770713687s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:17:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:17:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[aab7b26a-b23b-4699-88b1-ab0ca8f686cc]
+[2018-07-03 12:17:11,802: INFO/MainProcess] Task salary.task.updatesrecord[aab7b26a-b23b-4699-88b1-ab0ca8f686cc] succeeded in 11.797484265640378s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:18:00,000: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:18:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[5a36b66d-b9bd-4510-98ef-d88af92719bb]
+[2018-07-03 12:18:00,004: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:18:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[7c5de2d3-48eb-4746-ac4e-346adddda1e3]
+[2018-07-03 12:18:09,524: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[5a36b66d-b9bd-4510-98ef-d88af92719bb] succeeded in 9.520082672126591s: '{"totalcount": 672}'
+[2018-07-03 12:18:11,847: INFO/MainProcess] Task salary.task.updatesrecord[7c5de2d3-48eb-4746-ac4e-346adddda1e3] succeeded in 11.839537609368563s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:18:14,991: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:19:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:19:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[955cd0ee-b20a-431b-b48c-1b249ac84fb6]
+[2018-07-03 12:19:11,839: INFO/MainProcess] Task salary.task.updatesrecord[955cd0ee-b20a-431b-b48c-1b249ac84fb6] succeeded in 11.834456681273878s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:20:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:20:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:20:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[9dd3104c-8cb2-46cf-81c7-3935d1648d0e]
+[2018-07-03 12:20:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[a6845023-b3b5-4142-b965-b8b185fd9961]
+[2018-07-03 12:20:09,509: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[9dd3104c-8cb2-46cf-81c7-3935d1648d0e] succeeded in 9.504521673545241s: '{"totalcount": 672}'
+[2018-07-03 12:20:11,874: INFO/MainProcess] Task salary.task.updatesrecord[a6845023-b3b5-4142-b965-b8b185fd9961] succeeded in 11.867255916818976s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:21:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:21:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[6445d65d-2b10-4b54-9063-5d28b66fd571]
+[2018-07-03 12:21:11,820: INFO/MainProcess] Task salary.task.updatesrecord[6445d65d-2b10-4b54-9063-5d28b66fd571] succeeded in 11.815848278813064s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:21:19,984: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:22:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:22:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:22:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[1b1186b5-0fe6-4d5f-962b-be692a403474]
+[2018-07-03 12:22:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[30c8d8c0-d2b7-4f63-ba07-4f60f0d60732]
+[2018-07-03 12:22:09,512: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[1b1186b5-0fe6-4d5f-962b-be692a403474] succeeded in 9.507717289030552s: '{"totalcount": 672}'
+[2018-07-03 12:22:11,900: INFO/MainProcess] Task salary.task.updatesrecord[30c8d8c0-d2b7-4f63-ba07-4f60f0d60732] succeeded in 11.894049312919378s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:23:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:23:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[e1ae4757-fee6-435c-ac26-1e2b0f656085]
+[2018-07-03 12:23:11,820: INFO/MainProcess] Task salary.task.updatesrecord[e1ae4757-fee6-435c-ac26-1e2b0f656085] succeeded in 11.815345972776413s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:24:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:24:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:24:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[d9a0756d-87fd-4c4b-b5f3-46bab7915177]
+[2018-07-03 12:24:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[4302ed0e-5f37-453a-9ba3-623d435ad79c]
+[2018-07-03 12:24:09,541: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[d9a0756d-87fd-4c4b-b5f3-46bab7915177] succeeded in 9.537158916704357s: '{"totalcount": 672}'
+[2018-07-03 12:24:11,891: INFO/MainProcess] Task salary.task.updatesrecord[4302ed0e-5f37-453a-9ba3-623d435ad79c] succeeded in 11.88435972854495s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:24:24,980: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:25:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:25:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[345dfb08-716f-4e10-af23-677f68a9cea6]
+[2018-07-03 12:25:11,823: INFO/MainProcess] Task salary.task.updatesrecord[345dfb08-716f-4e10-af23-677f68a9cea6] succeeded in 11.818603841587901s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:26:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:26:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:26:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[4933e4fc-ff56-4a34-a46d-69516dd88012]
+[2018-07-03 12:26:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[a25f6017-09f1-4fc5-bd8a-3d3932079738]
+[2018-07-03 12:26:09,575: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[4933e4fc-ff56-4a34-a46d-69516dd88012] succeeded in 9.570700641721487s: '{"totalcount": 672}'
+[2018-07-03 12:26:11,940: INFO/MainProcess] Task salary.task.updatesrecord[a25f6017-09f1-4fc5-bd8a-3d3932079738] succeeded in 11.933110108599067s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:27:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:27:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[b773e1e3-bae5-4ddc-abef-1ffa57201c27]
+[2018-07-03 12:27:11,947: INFO/MainProcess] Task salary.task.updatesrecord[b773e1e3-bae5-4ddc-abef-1ffa57201c27] succeeded in 11.942353948019445s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:27:29,981: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:28:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:28:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:28:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[28c9a0bf-3e78-41a7-8dee-d999c13470c8]
+[2018-07-03 12:28:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[ce560c90-9327-4ee4-aaee-f3d5ea8ba87b]
+[2018-07-03 12:28:09,608: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[28c9a0bf-3e78-41a7-8dee-d999c13470c8] succeeded in 9.603468767367303s: '{"totalcount": 672}'
+[2018-07-03 12:28:11,851: INFO/MainProcess] Task salary.task.updatesrecord[ce560c90-9327-4ee4-aaee-f3d5ea8ba87b] succeeded in 11.844894781708717s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:29:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:29:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[429d355c-8c64-4426-b675-a117052d774e]
+[2018-07-03 12:29:11,790: INFO/MainProcess] Task salary.task.updatesrecord[429d355c-8c64-4426-b675-a117052d774e] succeeded in 11.785796958953142s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:30:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:30:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:30:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[ce483c01-26fb-427e-97c9-105783ad165b]
+[2018-07-03 12:30:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[390ed0f1-c1ab-4ee9-894a-ba9ea4d221ef]
+[2018-07-03 12:30:09,503: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[ce483c01-26fb-427e-97c9-105783ad165b] succeeded in 9.498433771543205s: '{"totalcount": 672}'
+[2018-07-03 12:30:11,878: INFO/MainProcess] Task salary.task.updatesrecord[390ed0f1-c1ab-4ee9-894a-ba9ea4d221ef] succeeded in 11.871891901828349s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:30:34,978: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:31:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:31:00,003: INFO/MainProcess] Received task: salary.task.updatesrecord[ec600304-f723-44f5-ba3c-e25b7f6c0b6f]
+[2018-07-03 12:31:11,803: INFO/MainProcess] Task salary.task.updatesrecord[ec600304-f723-44f5-ba3c-e25b7f6c0b6f] succeeded in 11.798729124478996s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:32:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:32:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:32:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[df4c8f41-f82f-40b5-89f5-a9967f11addc]
+[2018-07-03 12:32:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[cf4c5d7a-8850-4523-9f3b-a53ac5bd6e69]
+[2018-07-03 12:32:09,582: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[df4c8f41-f82f-40b5-89f5-a9967f11addc] succeeded in 9.578096359968185s: '{"totalcount": 672}'
+[2018-07-03 12:32:11,944: INFO/MainProcess] Task salary.task.updatesrecord[cf4c5d7a-8850-4523-9f3b-a53ac5bd6e69] succeeded in 11.93771368637681s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:33:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:33:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[2cdf141c-1152-4e0b-9ed1-81663cc2e626]
+[2018-07-03 12:33:11,803: INFO/MainProcess] Task salary.task.updatesrecord[2cdf141c-1152-4e0b-9ed1-81663cc2e626] succeeded in 11.798452499322593s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:33:39,974: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:34:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:34:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[31493a0d-e45b-45da-95b8-438334f3dbd1]
+[2018-07-03 12:34:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:34:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[56ad1808-71af-4aff-837f-29949808ab0a]
+[2018-07-03 12:34:09,582: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[31493a0d-e45b-45da-95b8-438334f3dbd1] succeeded in 9.578114736825228s: '{"totalcount": 672}'
+[2018-07-03 12:34:11,899: INFO/MainProcess] Task salary.task.updatesrecord[56ad1808-71af-4aff-837f-29949808ab0a] succeeded in 11.892573813907802s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:35:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:35:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[19045419-7af6-4b09-93c3-1fceee926fce]
+[2018-07-03 12:35:11,871: INFO/MainProcess] Task salary.task.updatesrecord[19045419-7af6-4b09-93c3-1fceee926fce] succeeded in 11.866072620265186s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:36:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:36:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:36:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[565af7ff-3a9c-47df-b5d1-0cb7dc56eaed]
+[2018-07-03 12:36:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[5678fd4f-687c-4ebd-aea2-324ee1ad77b4]
+[2018-07-03 12:36:09,548: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[565af7ff-3a9c-47df-b5d1-0cb7dc56eaed] succeeded in 9.543577254749835s: '{"totalcount": 672}'
+[2018-07-03 12:36:11,842: INFO/MainProcess] Task salary.task.updatesrecord[5678fd4f-687c-4ebd-aea2-324ee1ad77b4] succeeded in 11.834999891929328s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:36:44,973: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:37:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:37:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[f7a835b5-b31e-4576-89b5-7ebe9cc201e9]
+[2018-07-03 12:37:11,797: INFO/MainProcess] Task salary.task.updatesrecord[f7a835b5-b31e-4576-89b5-7ebe9cc201e9] succeeded in 11.792395049706101s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:38:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:38:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[f41156c7-f968-4a28-9fda-0c1f837ee7b2]
+[2018-07-03 12:38:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:38:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[a6a8d09c-9d6e-499b-9573-5f45831550d0]
+[2018-07-03 12:38:09,547: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[f41156c7-f968-4a28-9fda-0c1f837ee7b2] succeeded in 9.543091351166368s: '{"totalcount": 672}'
+[2018-07-03 12:38:11,938: INFO/MainProcess] Task salary.task.updatesrecord[a6a8d09c-9d6e-499b-9573-5f45831550d0] succeeded in 11.931196893565357s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:39:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:39:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[75a9b7e5-f00e-49cd-9aee-0a40ddd43673]
+[2018-07-03 12:39:11,805: INFO/MainProcess] Task salary.task.updatesrecord[75a9b7e5-f00e-49cd-9aee-0a40ddd43673] succeeded in 11.800207214429975s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:39:49,967: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:40:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:40:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:40:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[61c73d3b-ca73-4e67-bc65-d67972dd98fc]
+[2018-07-03 12:40:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[897dd5db-3a2a-440c-a194-71bbcdc20fa3]
+[2018-07-03 12:40:09,839: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[61c73d3b-ca73-4e67-bc65-d67972dd98fc] succeeded in 9.835236203856766s: '{"totalcount": 672}'
+[2018-07-03 12:40:12,025: INFO/MainProcess] Task salary.task.updatesrecord[897dd5db-3a2a-440c-a194-71bbcdc20fa3] succeeded in 12.01913356501609s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:40:12,142: INFO/MainProcess] beat: Shutting down...
+[2018-07-03 12:40:12,143: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:40:12,150: INFO/Beat] Writing entries (0)...
+[2018-07-03 12:40:22,928: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2018-07-03 12:40:22,954: INFO/Beat] beat: Starting...
+[2018-07-03 12:40:22,957: INFO/Beat] Writing entries (0)...
+[2018-07-03 12:40:23,178: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2018-07-03 12:40:23,190: INFO/MainProcess] mingle: searching for neighbors
+[2018-07-03 12:40:24,194: INFO/MainProcess] mingle: all alone
+[2018-07-03 12:40:24,203: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2018-07-03 12:40:24,203: WARNING/MainProcess] celery@localhost.localdomain ready.
+[2018-07-03 12:40:28,010: INFO/Beat] Writing entries (0)...
+[2018-07-03 12:41:45,142: INFO/MainProcess] Received task: salary.task.destroysalaryrecord[672ddd24-e76a-496a-a19b-847542425cbd]
+[2018-07-03 12:41:45,165: INFO/MainProcess] Task salary.task.destroysalaryrecord[672ddd24-e76a-496a-a19b-847542425cbd] succeeded in 0.02078373823314905s: '{"successinfo": [693, {"salary.FSalary": 693}]}'
+[2018-07-03 12:42:00,000: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:42:00,005: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:42:00,005: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[704cd6a2-9fff-4009-87eb-70b46de65c55]
+[2018-07-03 12:42:00,007: INFO/MainProcess] Received task: salary.task.updatesrecord[33e394e9-6982-4935-80f7-5fd2270c61f5]
+[2018-07-03 12:42:00,685: INFO/MainProcess] Task salary.task.updatesrecord[33e394e9-6982-4935-80f7-5fd2270c61f5] succeeded in 0.6764975758269429s: '{"status": "\\u5168\\u90e8\\u5c01\\u8d26", "successcount": 0, "errcount": 0}'
+[2018-07-03 12:42:09,503: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[704cd6a2-9fff-4009-87eb-70b46de65c55] succeeded in 9.497039937414229s: '{"totalcount": 672}'
+[2018-07-03 12:42:34,171: INFO/MainProcess] Received task: salary.task.createsalaryrecord[aa35773b-ead1-4168-8eb2-01b7b2130b46]
+[2018-07-03 12:42:48,011: INFO/MainProcess] Task salary.task.createsalaryrecord[aa35773b-ead1-4168-8eb2-01b7b2130b46] succeeded in 13.838159091770649s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:43:29,939: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:44:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:44:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[17ec195d-dc57-426b-ba49-b96ae4e292d4]
+[2018-07-03 12:44:09,463: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[17ec195d-dc57-426b-ba49-b96ae4e292d4] succeeded in 9.458267131820321s: '{"totalcount": 672}'
+[2018-07-03 12:45:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:45:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[a5a28000-9d82-466d-aaf1-4433dd7c4e97]
+[2018-07-03 12:45:09,489: INFO/MainProcess] Task salary.task.updatesrecord[a5a28000-9d82-466d-aaf1-4433dd7c4e97] succeeded in 9.484345944598317s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:46:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:46:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[c4e358bd-b76f-4a3d-89be-fc2916c6d620]
+[2018-07-03 12:46:09,465: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[c4e358bd-b76f-4a3d-89be-fc2916c6d620] succeeded in 9.460819122381508s: '{"totalcount": 672}'
+[2018-07-03 12:46:29,977: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:48:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:48:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:48:00,003: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[006491c7-b5a4-4939-8ee6-07338ff93580]
+[2018-07-03 12:48:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[b7745b3d-3611-4db3-b9b4-3a4d6d609b84]
+[2018-07-03 12:48:09,522: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[006491c7-b5a4-4939-8ee6-07338ff93580] succeeded in 9.517635744996369s: '{"totalcount": 672}'
+[2018-07-03 12:48:09,537: INFO/MainProcess] Task salary.task.updatesrecord[b7745b3d-3611-4db3-b9b4-3a4d6d609b84] succeeded in 9.530456781387329s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:49:34,934: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:50:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:50:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[78543fbf-1814-4f53-890b-e9e4efd43056]
+[2018-07-03 12:50:09,509: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[78543fbf-1814-4f53-890b-e9e4efd43056] succeeded in 9.50352823548019s: '{"totalcount": 672}'
+[2018-07-03 12:51:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:51:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[aa0be564-393b-44b1-9385-c303a1887ea0]
+[2018-07-03 12:51:09,489: INFO/MainProcess] Task salary.task.updatesrecord[aa0be564-393b-44b1-9385-c303a1887ea0] succeeded in 9.484020025469363s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:52:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:52:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[d46e00ab-ee8b-437b-a2bc-b586d32a32c3]
+[2018-07-03 12:52:09,504: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[d46e00ab-ee8b-437b-a2bc-b586d32a32c3] succeeded in 9.499472755007446s: '{"totalcount": 672}'
+[2018-07-03 12:52:34,974: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:54:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:54:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:54:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[a5abd0c4-7491-430c-992d-8dea8bd23476]
+[2018-07-03 12:54:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[ef42194e-63f2-43a4-9ce6-7055308f37a2]
+[2018-07-03 12:54:09,491: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[a5abd0c4-7491-430c-992d-8dea8bd23476] succeeded in 9.485645378939807s: '{"totalcount": 672}'
+[2018-07-03 12:54:09,549: INFO/MainProcess] Task salary.task.updatesrecord[ef42194e-63f2-43a4-9ce6-7055308f37a2] succeeded in 9.542464194819331s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:55:39,934: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:56:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:56:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[465191f0-3811-40bb-841c-0e20e7665d6f]
+[2018-07-03 12:56:09,484: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[465191f0-3811-40bb-841c-0e20e7665d6f] succeeded in 9.479108325205743s: '{"totalcount": 672}'
+[2018-07-03 12:57:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 12:57:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[434a948c-ee3e-42de-8218-ac29269dd2ae]
+[2018-07-03 12:57:09,486: INFO/MainProcess] Task salary.task.updatesrecord[434a948c-ee3e-42de-8218-ac29269dd2ae] succeeded in 9.481914370320737s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 12:58:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 12:58:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[e5c17f38-f854-4260-84fe-d684f0189e18]
+[2018-07-03 12:58:09,487: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[e5c17f38-f854-4260-84fe-d684f0189e18] succeeded in 9.482824433594942s: '{"totalcount": 672}'
+[2018-07-03 12:58:39,975: INFO/Beat] Writing entries (2)...
+[2018-07-03 12:59:00,001: INFO/Beat] Scheduler: Sending due task 更新用户投票结果 (evaluate.task.refreshevaluateresult)
+[2018-07-03 12:59:00,003: INFO/MainProcess] Received task: evaluate.task.refreshevaluateresult[b021fc94-0d24-495b-b19e-6ad2204ceb86]
+[2018-07-03 12:59:02,898: INFO/MainProcess] Task evaluate.task.refreshevaluateresult[b021fc94-0d24-495b-b19e-6ad2204ceb86] succeeded in 2.893623045645654s: '{"errcount": 0, "totalcount": 239}'
+[2018-07-03 13:00:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 13:00:00,002: INFO/MainProcess] Received task: salary.task.updatesrecord[ba918161-d1a6-4c83-a81a-8e6e169a2255]
+[2018-07-03 13:00:00,003: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 13:00:00,006: INFO/Beat] Scheduler: Sending due task 更新用户投票结果 (evaluate.task.refreshevaluateresult)
+[2018-07-03 13:00:00,006: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[3a8452ec-1a0d-414a-9616-5990bd4142d6]
+[2018-07-03 13:00:00,009: INFO/MainProcess] Received task: evaluate.task.refreshevaluateresult[e9a4dba6-8e17-4000-91c1-05c6e75dc818]
+[2018-07-03 13:00:02,940: INFO/MainProcess] Task evaluate.task.refreshevaluateresult[e9a4dba6-8e17-4000-91c1-05c6e75dc818] succeeded in 2.9310283083468676s: '{"errcount": 0, "totalcount": 239}'
+[2018-07-03 13:00:09,576: INFO/MainProcess] Task salary.task.updatesrecord[ba918161-d1a6-4c83-a81a-8e6e169a2255] succeeded in 9.572956155054271s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 13:00:09,670: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[3a8452ec-1a0d-414a-9616-5990bd4142d6] succeeded in 9.66348618362099s: '{"totalcount": 672}'
+[2018-07-03 13:01:44,926: INFO/Beat] Writing entries (3)...
+[2018-07-03 13:02:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 13:02:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[12cea071-c2f9-49c1-92d0-ee0c3c5fd699]
+[2018-07-03 13:02:09,562: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[12cea071-c2f9-49c1-92d0-ee0c3c5fd699] succeeded in 9.55737297795713s: '{"totalcount": 672}'
+[2018-07-03 13:03:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 13:03:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[1990c6c3-4f46-47e5-bae9-fd882cbfa648]
+[2018-07-03 13:03:09,472: INFO/MainProcess] Task salary.task.updatesrecord[1990c6c3-4f46-47e5-bae9-fd882cbfa648] succeeded in 9.466844969429076s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 13:04:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 13:04:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[dbe6ae33-30ce-4ffa-9707-ee0f178ad76f]
+[2018-07-03 13:04:09,526: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[dbe6ae33-30ce-4ffa-9707-ee0f178ad76f] succeeded in 9.520809520967305s: '{"totalcount": 672}'
+[2018-07-03 13:04:44,963: INFO/Beat] Writing entries (2)...
+[2018-07-03 13:05:59,469: INFO/MainProcess] Received task: salary.task.sendmsg[8b06b097-2ca5-4a96-afba-3ecf79e15e27]
+[2018-07-03 13:05:59,792: INFO/MainProcess] Task salary.task.sendmsg[8b06b097-2ca5-4a96-afba-3ecf79e15e27] succeeded in 0.32124271150678396s: '{"successcount": 1, "errcount": 0}'
+[2018-07-03 13:06:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 13:06:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 13:06:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[63a67d05-7d6c-4259-926f-f9ae35825961]
+[2018-07-03 13:06:00,006: INFO/MainProcess] Received task: salary.task.updatesrecord[9111caf7-dd5e-4d7a-8aae-287974426b30]
+[2018-07-03 13:06:09,499: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[63a67d05-7d6c-4259-926f-f9ae35825961] succeeded in 9.49413775280118s: '{"totalcount": 672}'
+[2018-07-03 13:06:09,536: INFO/MainProcess] Task salary.task.updatesrecord[9111caf7-dd5e-4d7a-8aae-287974426b30] succeeded in 9.529340511187911s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 13:07:49,924: INFO/Beat] Writing entries (2)...
+[2018-07-03 13:08:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 13:08:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[f756477b-517d-4f54-88ed-58d9764ae9c9]
+[2018-07-03 13:08:09,455: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[f756477b-517d-4f54-88ed-58d9764ae9c9] succeeded in 9.450728858821094s: '{"totalcount": 672}'
+[2018-07-03 13:09:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 13:09:00,004: INFO/MainProcess] Received task: salary.task.updatesrecord[3309f348-0d2a-410b-8ea7-60c444efc38b]
+[2018-07-03 13:09:09,457: INFO/MainProcess] Task salary.task.updatesrecord[3309f348-0d2a-410b-8ea7-60c444efc38b] succeeded in 9.451964195817709s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 13:09:24,116: INFO/MainProcess] Received task: salary.task.sendmsg[691a597d-ce4a-4db1-a81e-7503627e5325]
+[2018-07-03 13:09:24,556: INFO/MainProcess] Task salary.task.sendmsg[691a597d-ce4a-4db1-a81e-7503627e5325] succeeded in 0.43982028495520353s: '{"successcount": 1, "errcount": 0}'
+[2018-07-03 13:10:00,001: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 13:10:00,004: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[64df3f88-b841-4096-a9ba-1fdc3e493955]
+[2018-07-03 13:10:09,560: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[64df3f88-b841-4096-a9ba-1fdc3e493955] succeeded in 9.55582604277879s: '{"totalcount": 672}'
+[2018-07-03 13:10:49,960: INFO/Beat] Writing entries (2)...
+[2018-07-03 13:12:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-07-03 13:12:00,002: INFO/MainProcess] Received task: salary.task.updatesrecord[32639e04-4d11-41b3-a08c-834543306312]
+[2018-07-03 13:12:00,003: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-07-03 13:12:00,006: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[38b4485a-ee4c-4431-8b07-e7d954cf08e5]
+[2018-07-03 13:12:09,592: INFO/MainProcess] Task salary.task.updatesrecord[32639e04-4d11-41b3-a08c-834543306312] succeeded in 9.588830609805882s: '{"successcount": 693, "errcount": 0}'
+[2018-07-03 13:12:09,592: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[38b4485a-ee4c-4431-8b07-e7d954cf08e5] succeeded in 9.585954204201698s: '{"totalcount": 672}'
+[2018-07-03 13:12:10,565: INFO/MainProcess] beat: Shutting down...
+[2018-07-03 13:12:10,565: INFO/Beat] Writing entries (2)...
+[2018-07-03 13:12:10,572: INFO/Beat] Writing entries (0)...
+[2018-07-03 13:12:16,424: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2018-07-03 13:12:16,455: INFO/Beat] beat: Starting...
+[2018-07-03 13:12:16,457: INFO/Beat] Writing entries (0)...
+[2018-07-03 13:12:16,683: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2018-07-03 13:12:16,699: INFO/MainProcess] mingle: searching for neighbors
+[2018-07-03 13:12:17,703: INFO/MainProcess] mingle: all alone
+[2018-07-03 13:12:17,711: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2018-07-03 13:12:17,712: WARNING/MainProcess] celery@localhost.localdomain ready.
+[2018-07-03 13:12:21,512: INFO/Beat] Writing entries (0)...
+[2018-07-03 13:12:29,214: INFO/MainProcess] Received task: salary.task.sendmsg[9bf44f57-1724-40a8-b134-084ce6100034]
+[2018-07-03 13:12:29,583: INFO/MainProcess] Task salary.task.sendmsg[9bf44f57-1724-40a8-b134-084ce6100034] succeeded in 0.3680684557184577s: '{"successcount": 1, "errcount": 0}'

@@ -25,13 +25,13 @@ def updatesrecord():
                 srecord = srecord[0]
                 fs = FSalary.objects.get(user_id = user_id,srecord=srecord)
                 fs.basesalaryresult = fs.calcbasesalaryreslut()
-                fs.addbasesalary = fs.getaddbasesalary()
-                fs.addbasesalarythismonth = fs.getaddbasesalarythismonth()
-                fs.ywslary = fs.calcywslary()
-                fs.edslary = fs.calcedslary()
-                fs.tislary = fs.calctislary()
-                fs.itslary = fs.calcittrainersalary()
-                fs.cmslary = fs.calccmanagersalary()
+                # fs.addbasesalary = fs.getaddbasesalary()
+                # fs.addbasesalarythismonth = fs.getaddbasesalarythismonth()
+                # fs.ywslary = fs.calcywslary()
+                # fs.edslary = fs.calcedslary()
+                # fs.tislary = fs.calctislary()
+                # fs.itslary = fs.calcittrainersalary()
+                # fs.cmslary = fs.calccmanagersalary()
                 fs.fltotal = fs.gettotal()
                 fs.welfareresult = fs.calcwelfareresult()
                 fs.totalsalaryresult = fs.calctotalsalaryresult()
@@ -75,6 +75,7 @@ def sendmsg(id):
             fsitem["mobile"] = user_mobile
             fsitem["name"] = user_name
             fsitem["basesalaryresult"] = fs.basesalaryresult
+            fsitem["addbasesalarythismonth"] = fs.addbasesalarythismonth
             fsitem["welfareresult"] = fs.welfareresult
             fsitem["totalsalaryresult"] = fs.totalsalaryresult
             fsitem["endowmentinsurance"] = fs.endowmentinsurance

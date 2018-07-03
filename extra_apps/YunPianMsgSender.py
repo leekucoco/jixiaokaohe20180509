@@ -35,6 +35,8 @@ class YunPianMsg():
                 name = value
             elif arg == "basesalaryresult":
                 basesalaryresult = value
+            elif arg == "addbasesalarythismonth":
+                addbasesalarythismonth = value
             elif arg == "welfareresult":
                 welfareresult = value
             elif arg == "totalsalaryresult":
@@ -60,7 +62,8 @@ class YunPianMsg():
             else:
                 pass
 
-        smsvalue = {"#name#":name,"#basesalaryresult#":basesalaryresult,"#welfareresult#":welfareresult,
+        smsvalue = {"#name#":name,"#basesalaryresult#":basesalaryresult,
+                    "#addbasesalarythismonth#":addbasesalarythismonth,"#welfareresult#":welfareresult,
                     "#totalsalaryresult#":totalsalaryresult,"#endowmentinsurance#":endowmentinsurance,
                     "#medicalinsurance#":medicalinsurance,"#unemploymentinsurance#":unemploymentinsurance,
                     "#housingprovidentfund#": housingprovidentfund,"#companyfund#":companyfund,
