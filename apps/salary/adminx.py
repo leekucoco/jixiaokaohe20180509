@@ -22,6 +22,7 @@ class FSalaryAdmin(object):
     list_display = ["user", "name", "srecord", "fltotal",
                     "ywslary","edslary","tislary","itslary",
                     "cmslary","basesalary", "basesalarythismonth",
+                    "addbasesalary","addbasesalarythismonth",
                     "privateaffairleavedays","sickleavedays",
                     "basesalarythismonthwithleaves","basesalaryresult",
                     "welfareresult","basesalaryadd","welfareresultadd",

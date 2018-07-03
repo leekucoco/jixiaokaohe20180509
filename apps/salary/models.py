@@ -68,6 +68,11 @@ class FSalary(models.Model):
                                      verbose_name="基本薪酬基数", help_text="基本薪酬基数")
     basesalarythismonth = models.DecimalField(max_digits=10,decimal_places=2,default=0,
                                      verbose_name="基本薪酬", help_text="基本薪酬")
+    addbasesalary = models.DecimalField(max_digits=10,decimal_places=2,default=0,
+                                     verbose_name="调增基本薪酬基数", help_text="调增基本薪酬基数")
+    addbasesalarythismonth = models.DecimalField(max_digits=10, decimal_places=2, default=0,
+                                              verbose_name="调增基本薪酬", help_text="调增基本薪酬")
+
     privateaffairleavedays = models.IntegerField(default=0, verbose_name="事假天数",help_text="事假天数")
     sickleavedays = models.IntegerField(default=0, verbose_name="病假天数", help_text="病假天数")
     basesalarythismonthwithleaves = models.DecimalField(max_digits=10, decimal_places=2, default=0,
@@ -139,7 +144,7 @@ class FSalary(models.Model):
 
     def getyearsofworking(self):#获取工作年限
         if self.user.joinedyears:
-            return date.today().year-self.user.joinedyears.year
+            return date.today().year-self.user.joinedyears.year+1
         elif self.user.joinedyears is None:
             return 0
         else:
@@ -251,6 +256,12 @@ class FSalary(models.Model):
             return rc[0].coefficent
         else:
             return 0
+    def getaddbasesalary(self):
+        rc = CoefficientDetail.objects.filter(user=self.user)
+        if rc:
+            return rc[0].addbasesalary
+        else:
+            return 0
     def getbasesalary(self):
         dept = IndexUserDepart.objects.filter(user=self.user)
         if dept:
@@ -263,6 +274,10 @@ class FSalary(models.Model):
         bs = self.getbasesalary()
         return co*bs
 
+    def getaddbasesalarythismonth(self):
+        co = self.getcoefficent()
+        bs = self.getaddbasesalary()
+        return co*bs
 
 
     def calcbasesalaryreslut(self):
@@ -274,11 +289,12 @@ class FSalary(models.Model):
 
     def calctotalsalaryresult(self):
         bsr = self.calcbasesalaryreslut()
+        absr = self.getaddbasesalarythismonth()
         wsr = self.calcwelfareresult()
         bsadd = self.basesalaryadd
         wsadd = self.welfareresultadd
         # peformp = self.performancepay
-        return bsr+wsr+bsadd+wsadd
+        return bsr+absr+wsr+bsadd+wsadd
     def calctotalpayamount(self):
         tr = self.calctotalsalaryresult()
         tif = self.totlainsuranceandfund

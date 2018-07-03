@@ -25,7 +25,9 @@ def ensurerankleveltask():
     # json_str = json.dumps(data)
     count = 0
     for c in co:
+        #更新等级系数及调增基数
         i, res = c.ensureranklevel()
+        ai,ares = c.update_addbasesalary()
         #data[i] = res
         c.finalcoefficent()
         count = count + 1

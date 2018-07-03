@@ -205,6 +205,46 @@ def updateuserbaseinfo():
     print("成功更新用户学历%d"%count)
 
 
+def updateaddbasesalary():
+    wb = load_workbook("junesalary.xlsx")
+    sheet = wb.get_sheet_by_name("工资表底稿")
+    # sheet = wb.active
+    sheetdimensions = sheet.dimensions
+    count = 0
+    for row in sheet[sheetdimensions]:
+        l2 = []
+        dic = {}
+
+        for cell in row:
+            t = cell.value
+            l2.append(t)
+        else:
+            t = ""
+            l2.append(t)
+        dic["idcardnumber"] = l2[1]
+        if l2[16] != "":
+            dic["addbasesalary"] = l2[16]
+        else:
+            dic["addbasesalary"] = 0
+        # dic["name"] = l2[3]
+        try:
+            u = User.objects.get(idcardnumber=dic["idcardnumber"])
+            #print(u)
+            if u.addbasesalary != dic["addbasesalary"]:
+                u.addbasesalary = dic["addbasesalary"]
+                #print(u.education)
+                count = count + 1
+                # print(count)
+                u.save()
+            else:
+                pass
+            #print(dic)
+            pass
+        except Exception:
+            pass
+
+        #print(dic)
+    print("成功更新增调基本薪酬%d"%count)
 
 
 
@@ -426,7 +466,6 @@ def initrank13coe():
                     except Exception:
                         pass
 
-
         except Exception:
             pass
 
@@ -505,8 +544,6 @@ def inituserdepart():
 
 
 
-
-
 if __name__=="__main__":
     print("执行函数名",sys.argv[1])
     if sys.argv[1] == "initdeparts":
@@ -525,6 +562,8 @@ if __name__=="__main__":
         inituserdepart()
     elif sys.argv[1] == "updateuserbaseinfo":
         updateuserbaseinfo()
+    elif sys.argv[1] == "updateaddbasesalary":
+        updateaddbasesalary()
     else:
         print(" 无效指令")
 

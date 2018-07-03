@@ -25,6 +25,8 @@ def updatesrecord():
                 srecord = srecord[0]
                 fs = FSalary.objects.get(user_id = user_id,srecord=srecord)
                 fs.basesalaryresult = fs.calcbasesalaryreslut()
+                fs.addbasesalary = fs.getaddbasesalary()
+                fs.addbasesalarythismonth = fs.getaddbasesalarythismonth()
                 fs.ywslary = fs.calcywslary()
                 fs.edslary = fs.calcedslary()
                 fs.tislary = fs.calctislary()
@@ -162,6 +164,9 @@ def createsalaryrecord(salaryrecord):
             fs.basesalary = fs.getbasesalary()
             fs.coefficent = fs.getcoefficent()
             fs.basesalarythismonth = fs.getbasesalarythismonth()
+            fs.addbasesalary = fs.getaddbasesalary()
+            fs.addbasesalarythismonth = fs.getaddbasesalarythismonth()
+
             fs.save()
             successcount = successcount + 1
         except Exception as e:

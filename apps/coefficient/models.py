@@ -4,7 +4,7 @@ from __future__ import absolute_import, unicode_literals
 
 from django.db import models
 from datetime import datetime,date
-
+from  decimal import Decimal
 # Create your models here.
 
 from django.contrib.auth import get_user_model
@@ -22,9 +22,12 @@ class CoefficientDetail(models.Model):
 
     coefficent = models.DecimalField(max_digits=4,decimal_places=2,default=0,
                                      verbose_name="系数",help_text="系数")
+    addbasesalary = models.DecimalField(max_digits=10,decimal_places=2,default=0,
+                                     verbose_name="调增基本薪酬基数", help_text="调增基本薪酬基数")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
     update_time = models.DateTimeField(default=datetime.now, verbose_name="修改时间")
     is_special = models.BooleanField(default=False,verbose_name="是否为特殊指定系数")
+    is_specialaddbasesalary = models.BooleanField(default=False, verbose_name="是否特殊调增基数")
 
     class Meta:
         verbose_name = "员工系数"
@@ -33,6 +36,38 @@ class CoefficientDetail(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+    def update_addbasesalary(self):
+        rank = self.rank13demands.rank
+        if self.is_specialaddbasesalary == False:
+            if rank <= 6:
+                self.addbasesalary = Decimal(1000)
+            elif 7 <= rank <= 8:
+                self.addbasesalary = Decimal(1500)
+            elif rank == 9:
+                self.addbasesalary = Decimal(2000)
+            elif rank == 10:
+                self.addbasesalary = Decimal(3000)
+            elif rank == 11:
+                self.addbasesalary = Decimal(5000)
+            elif rank == 12:
+                self.addbasesalary = Decimal(6000)
+            elif rank == 13:
+                self.addbasesalary = Decimal(7000)
+            else:
+                self.addbasesalary = 0
+            self.save()
+            return  self.user.username, "成功更新用户等级系数"
+        elif self.is_special == True:
+            return self.user.username, "特殊调增基数，无法更改"
+        else:
+            pass
+
+
+
+
+
     def get_yearsofwork(self):#获取工作年限
         if self.user.joinedyears:
             return date.today().year-self.user.joinedyears.year
