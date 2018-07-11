@@ -58,7 +58,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ("id","user", "idcardnumber", "username",  "name","depart_user",
-                  "mobile","joinedyears", "education", "title", "internel_trainer",
+                  "mobile","joinedyears", "workingyears", "education", "title", "internel_trainer",
                   "certificates",
                   "cmanagerlevel","cmanagerrank","clerkrank",
                   "primccbp","intermediateccbp","is_staff")

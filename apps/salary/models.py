@@ -140,12 +140,12 @@ class FSalary(models.Model):
         else:
             return "无"
     def getjoinedyears(self):
-        return self.user.joinedyears
+        return self.user.workingyears
 
     def getyearsofworking(self):#获取工作年限
-        if self.user.joinedyears:
-            return date.today().year-self.user.joinedyears.year+1
-        elif self.user.joinedyears is None:
+        if self.user.workingyears:
+            return date.today().year-self.user.workingyears.year+1
+        elif self.user.workingyears is None:
             return 0
         else:
             return 0
@@ -203,16 +203,17 @@ class FSalary(models.Model):
     def calcittrainersalary(self):
         itid = self.user.internel_trainer
         itsalary = 0
-        if itid == 1:
-            itsalary = 0
-        elif itid == 2:
-            itsalary = 300
-        elif itid == 3:
-            itsalary = 600
-        elif itid == 4:
-            itsalary = 1000
-        else:
-            itsalary = 0
+        # 内训师津贴2018未加入
+        # if itid == 1:
+        #     itsalary = 0
+        # elif itid == 2:
+        #     itsalary = 300
+        # elif itid == 3:
+        #     itsalary = 600
+        # elif itid == 4:
+        #     itsalary = 1000
+        # else:
+        #     itsalary = 0
         return itsalary
     def getcmanagerrank(self):
         cmrankid = self.user.cmanagerrank

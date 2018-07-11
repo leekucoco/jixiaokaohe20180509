@@ -60,7 +60,8 @@ class UserProfile(AbstractUser):
                               default="female", verbose_name="性别")
     mobile = models.CharField(null=True, blank=True, max_length=11, verbose_name="电话")
     email = models.EmailField(max_length=100, null=True, blank=True, verbose_name="邮箱")
-    joinedyears = models.DateField(null=True, blank=True, verbose_name="参加工作年月")
+    joinedyears = models.DateField(null=True, blank=True, verbose_name="金融从业年限")
+    workingyears = models.DateField(null=True, blank=True, verbose_name="参加工作年限")
     education = models.IntegerField(default=1, choices=EDUCATION_CHOICES, verbose_name="学历",
                                       help_text=u"学历: 1高中（中专）及以下,2(大学专科),3(大学本科),4(硕士研究生),5(博士研究生及以上)")
     title = models.IntegerField(default=1, choices=TITLE_CHOICES, verbose_name="职称",
@@ -85,7 +86,10 @@ class UserProfile(AbstractUser):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.name
+        if self.name:
+            return self.name
+        else:
+            return self.username
 
     # def getscoreofyears(self):
     #     D = {}
