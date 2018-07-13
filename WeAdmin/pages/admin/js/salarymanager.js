@@ -288,4 +288,91 @@ function PWeAdminEdit() {
   })
 }
 
+function Delsrecord() {
+    var table = layui.table;
+    table.on('tool(salarymanagedemo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+        var data = obj.data; //获得当前行数据
+        console.log(obj)
+        //datajsonstr = JSON.stringify(data);
+         layui.jquery.ajax(
+            {
+                url: 'https://dqrcbankservice.com:8001/api/salaryrecord/'+data.id,
+                type: 'DELETE',
+                contentType: 'application/json;charset=utf-8',
+                // data: JSON.stringify(datatosend),
+                error: function (rest) {
+                    if (res.status != 403){
+                        layer.alert('未知错误！检查数据格式、字段名称')
+                         }else{
+                        layer.alert('无权限操作此数据')
+                     }
+                },
+                success: function (rest) {
+                    //obj.del();
+                    // var resjson = JSON.parse(rest);
+                    // successcount = resjson.successcount
+                    // alertstr = "上传成功"+successcount+"条数据"
+                    // layer.alert("成功删除", {icon: 6},function () {
+                    //     var index = parent.layer.getFrameIndex(window.name);
+                    //      //关闭当前frame
+                    //     parent.layer.close(index);
+                    //   });
+                    obj.del();
+                    layer.alert("成功删除！");
 
+                },
+               beforeSend: function(xhr) {
+                    token = window.localStorage.getItem('token');
+                    xhr.setRequestHeader("authorization", "JWT " + token);
+                }
+            }
+        );
+  })
+}
+
+function addnewsrecord() {
+        // var data = obj.data; //获得当前行数据
+        // console.log(obj);
+        var srecdbackupinfo = layui.jquery("#srecdbackupinfo").val();
+        // console.log(srecdbackupinfo);
+        //datajsonstr = JSON.stringify(data);
+         layui.jquery.ajax(
+            {
+                url: 'https://dqrcbankservice.com:8001/api/salaryrecord/',
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8',
+                data: JSON.stringify({
+                        extrainfo:srecdbackupinfo,
+
+                    }),
+                error: function (rest) {
+                    if (res.status != 403){
+                        layer.alert('未知错误！检查数据格式、字段名称')
+                         }else{
+                        layer.alert('无权限操作此数据')
+                     }
+                },
+                success: function (rest) {
+
+                    layer.alert("成功增加本月工资记录！");
+                        var table = layui.table;
+                        table.reload('testReload',{
+                        url:'https://dqrcbankservice.com:8001/api/salaryrecord/'
+                      // where: { //设定异步数据接口的额外参数，任意设
+                      //       search: 'data'
+                      //
+                      //       //…
+                      //     }
+                          ,page: {
+                            curr: 1 //重新从第 1 页开始
+                          }
+                    })
+
+                },
+               beforeSend: function(xhr) {
+                    token = window.localStorage.getItem('token');
+                    xhr.setRequestHeader("authorization", "JWT " + token);
+                }
+            }
+        );
+}

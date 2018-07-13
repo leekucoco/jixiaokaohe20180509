@@ -244,8 +244,8 @@ CELERYBEAT_SCHEDULE = {
     },
     u'更新未封账工资明细': {
         "task": "salary.task.updatesrecord",
-        "schedule": crontab(minute=0, hour='*/1'),
-        # "schedule": crontab(minute='*/15'),
+        # "schedule": crontab(minute=0, hour='*/1'),
+        "schedule": crontab(minute='*/15'),
         "args": (),
     },
 
