@@ -238,14 +238,14 @@ CELERYBEAT_SCHEDULE = {
     #定时任务二:　每天的凌晨12:30分，执行任务(back_up1)
     u'更新用户投票结果': {
         'task': 'evaluate.task.refreshevaluateresult',
-        "schedule": crontab(minute='*/59'),
-        #'schedule': crontab(minute=1, hour=0),
+        # "schedule": crontab(minute='*/4'),
+        'schedule': crontab(minute=0, hour='*/20'),
         "args": ()
     },
     u'更新未封账工资明细': {
         "task": "salary.task.updatesrecord",
-        # "schedule": crontab(minute=0, hour='*/1'),
-        "schedule": crontab(minute='*/15'),
+        "schedule": crontab(minute=0, hour='*/1'),
+        # "schedule": crontab(minute='*/2'),
         "args": (),
     },
 

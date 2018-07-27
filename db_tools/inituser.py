@@ -20,6 +20,7 @@ from certificates.models import *
 from depart.models import *
 from rank13.models import *
 from coefficient.models import *
+
 def initsuperuser():
     u = User.objects.get(id = 1)
     u.set_password("123456")
@@ -36,71 +37,92 @@ def parselevel(choices,info):
     return res
 
 
-def initusers():
-    wb = load_workbook("table.xlsx")
-
-    sheet = wb.get_sheet_by_name("coe")
-    l1 = []
-    # f = open("log4.txt","a+")
-    for row in sheet.iter_rows('A1:AM707'):
+def parseexcelline(filename):
+    wb = load_workbook(filename)
+    sheet = wb.active
+    sheetdimensions = sheet.dimensions
+    for row in sheet[sheetdimensions]:
         l2 = []
-        dic = {}
-        count = 0
-        for cell in row[0:18]:
-            if cell.value != None:
-                t = cell.value
-                l2.append(t)
-            else:
-                t = ""
-                l2.append(t)
-
-        datinfo = str(l2[12])
-        dat = datinfo.split(".")
-        if dat != "":
-            if len(dat) == 2:
-                stdate = date(int(dat[0]), int(dat[1]), 1)
-            elif len(dat) == 1:
-                stdate = date(int(dat[0]), 1, 1)
-            else:
-                stdate = date.today()
+        for cell in row:
+            t = cell.value
+            l2.append(t)
         else:
-            stdate = ""
+            t = ""
+            l2.append(t)
+        yield l2
 
-        dic["joinedyears"] = stdate
-        dic["idcardnumber"] = l2[1]
-        dic["username"] = l2[2]
-        dic["name"] = l2[3]
-        dic["mobile"] = l2[4]
-        dic["clerkrank"] = parselevel(UserProfile.CLERKRANK_CHONCES,l2[5])
-        dic["cmanagerrank"] = parselevel(UserProfile.CMANAGERRANK_CHOICES,l2[6])
-        dic["cmanagerlevel"] = parselevel(UserProfile.CMANAGERLEVEL_CHOICES,l2[7])
-        dic["education"] = parselevel(UserProfile.EDUCATION_CHOICES,l2[13])
-        if l2[14] != "":
-            dic["title"] = parselevel(UserProfile.TITLE_CHOICES,l2[14])
-        else:
-            dic["title"] = 0
-        if l2[15] != "":
-            dic["primccbp"] = int(l2[15])
-        else:
-            dic["primccbp"] = 0
-        if l2[16] != "":
 
-            dic["intermediateccbp"] = int(l2[16])
-        else:
-            dic["intermediateccbp"] = 0
-        if l2[17] != "":
+def writelinetoexcel(ls, filename):
+    wb = Workbook()
+    sheet = wb.active
+    for line in ls:
+        sheet.append([line])
+    wb.save(filename)
 
-            dic["internel_trainer"] = parselevel(UserProfile.INTERNEL_TRAINER_CHOICES,l2[17])
-        else:
-            dic["internel_trainer"] = 1
-        try:
-            User.objects.create(**dic)
-            # u = User.objects.get(idcardnumber=dic["idcardnumber"])
 
-            #print(dic)
+def quchonglist(index, line):
+    temp = []
+    for elem in line:
+        info = elem[index]
+        if info not in temp:
+            temp.append(info)
+        else:
             pass
-        except Exception:
+    return temp
+
+
+def initusers():
+    line = parseexcelline("table20180725.xlsx")
+    count = 0
+    dic={}
+    for elem in line:
+
+        if elem[22] != None and elem[11] != None:
+            dic["username"] = elem[22]
+            datinfo = elem[24]
+            dat = datinfo.split(".")
+            if dat != "":
+                if len(dat) == 2:
+                    stdate = date(int(dat[0]), int(dat[1]), 1)
+                elif len(dat) == 1:
+                    stdate = date(int(dat[0]), 1, 1)
+                else:
+                    stdate = date.today()
+            else:
+                stdate = ""
+
+            dic["joinedyears"] = stdate
+            dic["idcardnumber"] = elem[0]
+
+            dic["name"] = elem[1]
+            dic["mobile"] = ""
+            dic["clerkrank"] = parselevel(UserProfile.CLERKRANK_CHONCES,elem[6])
+            dic["cmanagerrank"] = parselevel(UserProfile.CMANAGERRANK_CHOICES,elem[7])
+            dic["cmanagerlevel"] = parselevel(UserProfile.CMANAGERLEVEL_CHOICES,elem[8])
+            dic["education"] = parselevel(UserProfile.EDUCATION_CHOICES,elem[11])
+
+            dic["title"] = parselevel(UserProfile.TITLE_CHOICES,elem[12])
+            if elem[13] != "nan":
+                dic["primccbp"] = int(elem[13])
+            else:
+                dic["primccbp"] = 0
+            if elem[14] != "nan":
+                dic["intermediateccbp"] = int(elem[14])
+            else:
+                dic["intermediateccbp"] = 0
+
+            dic["internel_trainer"] = parselevel(UserProfile.INTERNEL_TRAINER_CHOICES,elem[15])
+            # print(dic)
+            try:
+                User.objects.create(**dic)
+
+                count = count +1
+
+            except Exception as e:
+                print(dic,e)
+        else:
             pass
+
 
         #print(dic)
     print("成功生成用户%d"%count)
@@ -108,147 +130,88 @@ def initusers():
 
 
 def updateuserbaseinfo():
-    wb = load_workbook("table.xlsx")
-
-    sheet = wb.get_sheet_by_name("coe")
-    l1 = []
-    # f = open("log4.txt","a+")
+    line = parseexcelline("table20180725.xlsx")
     count = 0
-    for row in sheet.iter_rows('A1:AM707'):
-        l2 = []
-        dic = {}
-
-        for cell in row[0:18]:
-            if cell.value != None:
-                t = cell.value
-                l2.append(t)
+    dic={}
+    for elem in line:
+        if elem[22] != None and elem[11] != None:
+            datinfo = elem[10]
+            dat = datinfo.split(".")
+            if dat != "":
+                if len(dat) == 2:
+                    stdate = date(int(dat[0]), int(dat[1]), 1)
+                elif len(dat) == 1:
+                    stdate = date(int(dat[0]), 1, 1)
+                else:
+                    stdate = date.today()
             else:
-                t = ""
-                l2.append(t)
+                stdate = ""
 
-        datinfo = str(l2[12])
-        dat = datinfo.split(".")
-        if dat != "":
-            if len(dat) == 2:
-                stdate = date(int(dat[0]), int(dat[1]), 1)
-            elif len(dat) == 1:
-                stdate = date(int(dat[0]), 1, 1)
+            datworkingyears = elem[24]
+            datw = datworkingyears.split(".")
+            if datw != "":
+                if len(datw) == 2:
+                    stdatew = date(int(datw[0]), int(datw[1]), 1)
+                elif len(datw) == 1:
+                    stdatew = date(int(datw[0]), 1, 1)
+                else:
+                    stdatew = date.today()
             else:
-                stdate = date.today()
-        else:
-            stdate = ""
+                stdatew = ""
 
-        dic["joinedyears"] = stdate
-        dic["idcardnumber"] = l2[1]
-        dic["username"] = l2[2]
-        dic["name"] = l2[3]
-        dic["mobile"] = l2[4]
-        if l2[5] != "":
-            dic["clerkrank"] = parselevel(UserProfile.CLERKRANK_CHONCES,l2[5])
-        else:
-            dic["clerkrank"] = 1
-        if l2[6] != "":
-            dic["cmanagerrank"] = parselevel(UserProfile.CMANAGERRANK_CHOICES,l2[6])
-        else:
-            dic["cmanagerrank"] = 1
-        if l2[7] != "":
-            dic["cmanagerlevel"] = parselevel(UserProfile.CMANAGERLEVEL_CHOICES,l2[7])
-        else:
-            dic["cmanagerlevel"] = 1
-        dic["education"] = parselevel(UserProfile.EDUCATION_CHOICES,l2[13])
-
-        if l2[14] != "":
-            dic["title"] = parselevel(UserProfile.TITLE_CHOICES,l2[14])
-        else:
-            dic["title"] = 0
-        if l2[15] != "":
-            dic["primccbp"] = int(l2[15])
-        else:
-            dic["primccbp"] = 0
-        if l2[16] != "":
-
-            dic["intermediateccbp"] = int(l2[16])
-        else:
-            dic["intermediateccbp"] = 0
-        if l2[17] != "":
-
-            dic["internel_trainer"] = parselevel(UserProfile.INTERNEL_TRAINER_CHOICES,l2[17])
-        else:
-            dic["internel_trainer"] = 1
-        try:
-
-            u = User.objects.get(idcardnumber=dic["idcardnumber"])
-            #print(u)
-            if u.education != dic["education"] or u.title != dic["title"]\
-                    or u.internel_trainer != dic["internel_trainer"] or u.clerkrank != dic["clerkrank"]\
-                    or u.cmanagerrank != dic["cmanagerrank"] or u.cmanagerlevel != dic["cmanagerlevel"] :
-                u.education = dic["education"]
-                #print(u.education)
-                u.title = dic["title"]
-                u.internel_trainer = dic["internel_trainer"]
-                u.clerkrank = dic["clerkrank"]
-                u.cmanagerrank = dic["cmanagerrank"]
-                u.cmanagerlevel = dic["cmanagerlevel"]
-                count = count + 1
-                # print(count)
-                u.save()
-
+            dic["workingyears"] = stdatew
+            dic["joinedyears"] = stdate
+            dic["idcardnumber"] = elem[0]
+            if int(elem[0][16]) %2 == 1:
+                dic["gender"] = "male"
             else:
+                dic["gender"] = "female"
+            dic["mobile"] = ""
+            dic["clerkrank"] = parselevel(UserProfile.CLERKRANK_CHONCES,elem[6])
+            dic["cmanagerrank"] = parselevel(UserProfile.CMANAGERRANK_CHOICES,elem[7])
+            dic["cmanagerlevel"] = parselevel(UserProfile.CMANAGERLEVEL_CHOICES,elem[8])
+            dic["education"] = parselevel(UserProfile.EDUCATION_CHOICES,elem[11])
+
+            dic["title"] = parselevel(UserProfile.TITLE_CHOICES,elem[12])
+            if elem[13] != "nan":
+                dic["primccbp"] = int(elem[13])
+            else:
+                dic["primccbp"] = 0
+            if elem[14] != "nan":
+                dic["intermediateccbp"] = int(elem[14])
+            else:
+                dic["intermediateccbp"] = 0
+
+            dic["internel_trainer"] = parselevel(UserProfile.INTERNEL_TRAINER_CHOICES,elem[15])
+            dic["addbasesalary"] = elem[9]
+            try:
+                u = User.objects.get(idcardnumber=dic["idcardnumber"])
+                #print(u)
+                if u.education != dic["education"] or u.title != dic["title"]\
+                        or u.internel_trainer != dic["internel_trainer"] or u.clerkrank != dic["clerkrank"]\
+                        or u.cmanagerrank != dic["cmanagerrank"] or u.cmanagerlevel != dic["cmanagerlevel"] \
+                        or u.workingyears != dic["workingyears"] or u.joinedyears != dic["joinedyears"]\
+                        or u.gender != dic["gender"] or u.addbasesalary != dic["addbasesalary"]:
+                    u.education = dic["education"]
+                    #print(u.education)
+                    u.title = dic["title"]
+                    u.internel_trainer = dic["internel_trainer"]
+                    u.clerkrank = dic["clerkrank"]
+                    u.cmanagerrank = dic["cmanagerrank"]
+                    u.cmanagerlevel = dic["cmanagerlevel"]
+                    u.workingyears = dic["workingyears"]
+                    u.joinedyears = dic["joinedyears"]
+                    u.gender = dic["gender"]
+                    u.addbasesalary = dic["addbasesalary"]
+                    count = count + 1
+                    # print(count)
+                    u.save()
+                else:
+                    pass
                 pass
-
-            #print(dic)
-            pass
-        except Exception:
-            pass
-
-        #print(dic)
-    print("成功更新用户学历%d"%count)
-
-
-def updateaddbasesalary():
-    wb = load_workbook("junesalary.xlsx")
-    sheet = wb.get_sheet_by_name("工资表底稿")
-    # sheet = wb.active
-    sheetdimensions = sheet.dimensions
-    count = 0
-    for row in sheet[sheetdimensions]:
-        l2 = []
-        dic = {}
-
-        for cell in row:
-            t = cell.value
-            l2.append(t)
-        else:
-            t = ""
-            l2.append(t)
-        dic["idcardnumber"] = l2[1]
-        if l2[16] != "":
-            dic["addbasesalary"] = l2[16]
-        else:
-            dic["addbasesalary"] = 0
-        # dic["name"] = l2[3]
-        try:
-            u = User.objects.get(idcardnumber=dic["idcardnumber"])
-            #print(u)
-            if u.addbasesalary != dic["addbasesalary"]:
-                u.addbasesalary = dic["addbasesalary"]
-                #print(u.education)
-                count = count + 1
-                # print(count)
-                u.save()
-            else:
+            except Exception:
                 pass
-            #print(dic)
-            pass
-        except Exception:
-            pass
-
-        #print(dic)
-    print("成功更新增调基本薪酬%d"%count)
-
-
-
-
+    print("成功更新用基础信息%d"%count)
 
 def inituserspassword():
     users = User.objects.all()
@@ -258,72 +221,48 @@ def inituserspassword():
     print("完成密码重置任务")
 
 
-def initcerticifates():
-    wb = load_workbook("certificates.xlsx")
-
-    sheet = wb.get_sheet_by_name("Sheet1")
-    l1 = []
-    # f = open("log4.txt","a+")
+def initcertificates():
+    l = parseexcelline("certificates.xlsx")
+    dic={}
     count = 0
-    for row in sheet.iter_rows('A1:B49'):
-        l2 = []
-        dic = {}
-
-        for cell in row:
-            t = cell.value
-            l2.append(t)
-        else:
-            t = ""
-            l2.append(t)
-        dic["name"] = l2[0]
-        dic["score"] = l2[1]
-        dic["desc"] = l2[0]
+    for it in l:
+        dic["name"] = it[0]
+        dic["score"] = it[1]
+        dic["desc"] = it[0]
+        # print(it)
         try:
             Cerficates.objects.create(**dic)
+            count = count + 1
         except Exception:
             pass
-        count =count+1
     print("成功生产证书%d"%count)
 
 
 
 def initusercertificates():
-    wb = load_workbook("table.xlsx")
-    sheet = wb.get_sheet_by_name("coe")
-    l1 = []
-    # f = open("log4.txt","a+")
-    for row in sheet.iter_rows('A1:AM707'):
-        l2 = []
-        dic = {}
-        count = 0
-        for cell in (row[2],row[18],row[19],row[20],row[21],row[22],row[23],):
-            if cell.value != None:
-                t = cell.value
-                l2.append(t)
-            else:
-                t = ""
-                l2.append(t)
-
-        username = l2[0]
-        u = User.objects.get(username=username)
-        for c in l2[1:]:
-
-            cer = Cerficates.objects.filter(name=c)
-            if cer:
-                dic = {}
-                dic["user"] = u
-                dic["certificate"] = cer[0]
-                try:
-                    IndexUserCertificate.objects.create(**dic)
-                    count = count + 1
-                except Exception:
+    line = parseexcelline("table20180725.xlsx")
+    count = 0
+    dic={}
+    for elem in line:
+        if elem[22] != None and elem[11] != None:
+            username = elem[22]
+            ce = [elem[16],elem[17],elem[18],elem[19],elem[20]]
+            count = 0
+            u = User.objects.get(username=username)
+            for c in ce:
+                cer = Cerficates.objects.filter(name=c)
+                if cer:
+                    dic["user"] = u
+                    dic["certificate"] = cer[0]
+                    try:
+                        IndexUserCertificate.objects.create(**dic)
+                        count = count + 1
+                    except Exception:
+                        pass
+                else:
                     pass
-            else:
-                pass
-
-            count = count +1
-           #print(dic)
-    print("成功生成用户%d"%count)
+               #print(dic)
+    print("成功生成用户-证书%d"%count)
 
 
 
@@ -334,7 +273,8 @@ def initdeparts():
     l1 = []
     # f = open("log4.txt","a+")
     agent = Agent.objects.get(id=1)
-    for row in sheet.iter_rows('A1:A76'):
+    sheetdimensions = sheet.dimensions
+    for row in sheet[sheetdimensions]:
         l2 =[]
         for cell in row:
             if cell.value != None:
@@ -354,12 +294,13 @@ def initdeparts():
 
 
 def initposts():
-    wb = load_workbook("rank13demandcoefficients.xlsx")
+    wb = load_workbook("departanposts.xlsx")
     sheet = wb.get_sheet_by_name("Sheet2")
     l1 = []
     # f = open("log4.txt","a+")
     #agent = Agent.objects.get(id=1)
-    for row in sheet.iter_rows('A1:A88'):
+    sheetdimensions = sheet.dimensions
+    for row in sheet[sheetdimensions]:
         l2 =[]
         for cell in row:
             if cell.value != None:
@@ -471,73 +412,48 @@ def initrank13coe():
 
 
 def initcoe():
-    wb = load_workbook("table.xlsx")
-    sheet = wb.get_sheet_by_name("coe")
-    l1 = []
+    line = parseexcelline("table20180725.xlsx")
     count = 0
-    for row in sheet.iter_rows('A1:AM707'):
-        l2 = []
-        dic = {}
-
-        for cell in (row[2],row[10],row[11]):
-            if cell.value != None:
-                t = cell.value
-                l2.append(t)
+    dic = {}
+    for elem in line:
+        if elem[22] != None and elem[11] != None:
+            username = elem[22]
+            postname = elem[4]
+            rank = elem[5]
+            rank13demands = Rank13Demands.objects.filter(post__name=postname,rank=rank)
+            if rank13demands:
+                user = User.objects.get(username=username)
+                dic["user"] = user
+                dic["rank13demands"] = rank13demands[0]
+                try:
+                    CoefficientDetail.objects.create(**dic)
+                    count = count + 1
+                except Exception:
+                    continue
             else:
-                t = ""
-                l2.append(t)
-        #print(l2)
-        username = l2[0]
-
-        rank13demands = Rank13Demands.objects.filter(post__name=l2[1],rank=l2[2])
-        #print(rank13demands)
-        if rank13demands:
-            user = User.objects.get(username=username)
-            dic["user"] = user
-            dic["rank13demands"] = rank13demands[0]
-            try:
-
-                CoefficientDetail.objects.create(**dic)
-            except Exception:
-                continue
-            count = count +1
-        else:
-            pass
-    print("成功生产系数%d"%count)
+                print(elem)
+    print("成功生产员工-系数%d"%count)
 
 
 def inituserdepart():
-    wb = load_workbook("table.xlsx")
-    sheet = wb.get_sheet_by_name("coe")
-    l1 = []
+    line = parseexcelline("table20180725.xlsx")
     count = 0
-    for row in sheet.iter_rows('A1:AM707'):
-        l2 = []
-        dic = {}
-
-        for cell in (row[2],row[8],row[9]):
-            if cell.value != None:
-                t = cell.value
-                l2.append(t)
+    dic={}
+    for elem in line:
+        if elem[22] != None and elem[11] != None:
+            username = elem[22]
+            departs = DepartDetail.objects.filter(name=elem[2])
+            if departs:
+                user = User.objects.get(username=username)
+                dic["user"] = user
+                dic["depart"] = departs[0]
+                try:
+                    IndexUserDepart.objects.create(**dic)
+                except Exception:
+                    pass
+                count = count +1
             else:
-                t = ""
-                l2.append(t)
-        #print(l2)
-        username = l2[0]
-
-        departs = DepartDetail.objects.filter(name=l2[1])
-        #print(rank13demands)
-        if departs:
-            user = User.objects.get(username=username)
-            dic["user"] = user
-            dic["depart"] = departs[0]
-            try:
-                IndexUserDepart.objects.create(**dic)
-            except Exception:
-                continue
-            count = count +1
-        else:
-            pass
+                pass
     print("成功生产用户部门%d"%count)
 
 
@@ -548,6 +464,8 @@ if __name__=="__main__":
     print("执行函数名",sys.argv[1])
     if sys.argv[1] == "initdeparts":
         initdeparts()
+    elif sys.argv[1] == "initsuperuser":
+        initsuperuser()
     elif sys.argv[1] == "initposts":
         initposts()
     elif sys.argv[1] == "initusers":
@@ -558,12 +476,16 @@ if __name__=="__main__":
         initrank13coe()
     elif sys.argv[1] == "initcoe":
         initcoe()
+    elif sys.argv[1] == "initcertificates":
+        initcertificates()
+    elif sys.argv[1] == "inituserspassword":
+        inituserspassword()
+    elif sys.argv[1] == "initusercertificates":
+        initusercertificates()
     elif sys.argv[1] == "inituserdepart":
         inituserdepart()
     elif sys.argv[1] == "updateuserbaseinfo":
         updateuserbaseinfo()
-    elif sys.argv[1] == "updateaddbasesalary":
-        updateaddbasesalary()
     else:
         print(" 无效指令")
 

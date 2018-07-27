@@ -7,6 +7,7 @@ from .models import AppraisalTicket,AppraisalProcedure,EvaluateResult
 from depart.models import DepartDetail,IndexUserDepart
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
+from django.db.models import Q
 User = get_user_model()
 
 
@@ -58,7 +59,11 @@ def createevaluateresult(record):
     successcount = 0
     errcount = 0
     users = User.objects.all()
-    for u in users:
+    superusergroup = Group.objects.get(name="超级管理员")
+    # ceouser = User.objects.get(groups=ceogroup)
+    # ceoevaluategroup = Group.objects.get(name="董事长评价用户组")
+    ceoevaluateusers = User.objects.filter(~Q(groups=superusergroup))
+    for u in ceoevaluateusers:
         try:
             er = EvaluateResult()
             er.evaluateoftheyear = record

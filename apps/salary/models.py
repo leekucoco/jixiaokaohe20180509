@@ -299,7 +299,7 @@ class FSalary(models.Model):
     def calctotalpayamount(self):
         tr = self.calctotalsalaryresult()
         tif = self.totlainsuranceandfund
-        return tr+tif
+        return tr-tif
 
     def calcfinalpayingamount(self):
         tpa = self.calctotalpayamount()

@@ -10,14 +10,17 @@ from openpyxl import load_workbook
 User = get_user_model()
 from extra_apps.YunPianMsgSender import YunPianMsg
 from Dqrcbankjxkh.settings import APIKEY,TPLID
-
+from django.contrib.auth.models import Group
 @shared_task
 def updatesrecord():
     data = {}
     successcount = 0
     errcount = 0
-    users = User.objects.all()
-    for u in users:
+    superusergroup = Group.objects.get(name="超级管理员")
+    # ceouser = User.objects.get(groups=ceogroup)
+    # ceoevaluategroup = Group.objects.get(name="董事长评价用户组")
+    ceoevaluateusers = User.objects.filter(~Q(groups=superusergroup))
+    for u in ceoevaluateusers:
         try:
             user_id = u.id
             srecord = SalaryRecord.objects.filter(~Q(status= 'LOCK'))
@@ -41,7 +44,7 @@ def updatesrecord():
                 fs.save()
                 successcount = successcount + 1
             else:
-                data["status"] = "全部封账"
+                data["status"] = "ALLRECORDLOCKED"
         except Exception as e:
             data[u.username] = str(e)
             errcount = errcount + 1
@@ -138,12 +141,14 @@ def createsalaryrecord(salaryrecord):
     data = {}
     successcount = 0
     errcount = 0
-    users = User.objects.all()
-    for u in users:
+    superusergroup = Group.objects.get(name="超级管理员")
+    # ceouser = User.objects.get(groups=ceogroup)
+    # ceoevaluategroup = Group.objects.get(name="董事长评价用户组")
+    ceoevaluateusers = User.objects.filter(~Q(groups=superusergroup))
+    for u in ceoevaluateusers:
         try:
             fs = FSalary()
             fs.user_id = u.id
-            #fs.srecord = SalaryRecord.objects.get(id=salaryrecordid)
             fs.srecord = salaryrecord
             fs.idcardnumber = fs.getidcardnumber()
             fs.name = fs.getname()
@@ -167,7 +172,6 @@ def createsalaryrecord(salaryrecord):
             fs.basesalarythismonth = fs.getbasesalarythismonth()
             fs.addbasesalary = fs.getaddbasesalary()
             fs.addbasesalarythismonth = fs.getaddbasesalarythismonth()
-
             fs.save()
             successcount = successcount + 1
         except Exception as e:

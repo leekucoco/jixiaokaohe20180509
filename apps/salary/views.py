@@ -154,6 +154,14 @@ class FSalaryRecordDataView(APIView):
     authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
     permission_classes = (IsSuperUser,)
 
+    def getcheckedvalue(self,key,klist,dobj):
+        checkdata = lambda temp: temp if temp != "" else 0
+        if key in klist:
+            valres = checkdata(dobj[key])
+        else:
+            valres = "0.00"
+        return valres
+
     def get(self, request):
         """
         处理工资表上传数据get
@@ -173,100 +181,143 @@ class FSalaryRecordDataView(APIView):
         jsboj = data.pop("jsonobj",None)
         status = data.pop("status",None)
         #print(id, jsboj,status)
+        faillist = []
         if status == "CHECKONWORKATTENDANCECOMPLETE":
             for r in jsboj:
                 try:
-                    fs = FSalary.objects.filter(srecord_id=id,user__username = r["username"] )
+                    fs = FSalary.objects.filter(srecord_id=id,user__idcardnumber = r["身份证号"])
                     if fs:
                         fsobj = fs[0]
-                        privateaffairleavedays = int(r["privateaffairleavedays"])
-                        sickleavedays = int(r["sickleavedays"])
-                        basesalarythismonth = fsobj.basesalarythismonth
-                        fsobj.privateaffairleavedays = privateaffairleavedays
-                        fsobj.sickleavedays = sickleavedays
-                        fsobj.basesalarythismonthwithleaves = basesalarythismonth/Decimal(21.75)*privateaffairleavedays+basesalarythismonth/Decimal(21.75)*sickleavedays/Decimal(2)
-                        fsobj.save()
-                        successcount = successcount + 1
+                        keyl = r.keys()
+                        pdays = self.getcheckedvalue("事假天数",keyl,r)
+                        sdays = self.getcheckedvalue("病假天数",keyl,r)
+                        if int(pdays) != 0 or int(sdays) != 0:
+                            privateaffairleavedays = Decimal(pdays)
+                            sickleavedays = Decimal(sdays)
+                            basesalarythismonth = fsobj.basesalarythismonth
+                            fsobj.privateaffairleavedays = privateaffairleavedays
+                            fsobj.sickleavedays = sickleavedays
+                            fsobj.basesalarythismonthwithleaves = basesalarythismonth/Decimal(21.75)*privateaffairleavedays+basesalarythismonth/Decimal(21.75)*sickleavedays/Decimal(2)
+                            fsobj.save()
+                            successcount = successcount + 1
+                            # print(successcount,fsobj.idcardnumber)
+                        else:
+                            pass
                     else:
-                        pass
+                        faillist.append(r["身份证号"])
                 except Exception as e:
-                    resdata[r["username"]] = str(e)
+                    resdata[r["身份证号"]] = str(e)
                     errcount = errcount + 1
             resdata["successcount"] = successcount
             resdata["errcount"] = errcount
+            resdata["faildata"] = faillist
+            resdata["failcount"] = len(faillist)
             json_str = json.dumps(resdata)
             return Response(json_str)
         elif status == "TOTALSALARYCOMPLETE":
             for r in jsboj:
                 try:
-                    fs = FSalary.objects.filter(srecord_id=id,user__username = r["username"] )
+                    fs = FSalary.objects.filter(srecord_id=id,user__idcardnumber = r["身份证号"])
                     if fs:
                         fsobj = fs[0]
-                        basesalaryadd = Decimal(r["basesalaryadd"])
-                        welfareresultadd = Decimal(r["welfareresultadd"])
-                        fsobj.basesalaryadd = basesalaryadd
-                        fsobj.welfareresultadd = welfareresultadd
-                        fsobj.save()
-                        successcount = successcount + 1
+                        keyl = r.keys()
+                        basesalaryaddtmp = self.getcheckedvalue("补发基本", keyl, r)
+                        basesalaryadd = Decimal("".join(basesalaryaddtmp.split(",")))
+                        welfareresultaddtmp = self.getcheckedvalue("补发福利", keyl, r)
+                        welfareresultadd = Decimal("".join(welfareresultaddtmp.split(",")))
+                        if basesalaryadd !=0 or welfareresultadd != 0:
+                            fsobj.basesalaryadd = basesalaryadd
+                            fsobj.welfareresultadd = welfareresultadd
+                            fsobj.save()
+                            successcount = successcount + 1
+                        else:
+                            pass
                     else:
-                        pass
+                        faillist.append(r["身份证号"])
                 except Exception as e:
-                    resdata[r["username"]] = str(e)
+                    resdata[r["身份证号"]] = str(e)
                     errcount = errcount + 1
             resdata["successcount"] = successcount
             resdata["errcount"] = errcount
+            resdata["faildata"] = faillist
+            resdata["failcount"] = len(faillist)
             json_str = json.dumps(resdata)
             return Response(json_str)
         elif status == "INSURANCEANDFUNDCOMPELTE":
             for r in jsboj:
                 try:
-                    fs = FSalary.objects.filter(srecord_id=id,user__username = r["username"] )
+                    fs = FSalary.objects.filter(srecord_id=id,user__idcardnumber = r["身份证号"])
                     if fs:
                         fsobj = fs[0]
-                        endowmentinsurance = Decimal(r["endowmentinsurance"])
-                        medicalinsurance = Decimal(r["medicalinsurance"])
-                        unemploymentinsurance = Decimal(r["unemploymentinsurance"])
-                        housingprovidentfund = Decimal(r["housingprovidentfund"])
-                        companyfund = Decimal(r["companyfund"])
-                        totlainsuranceandfund = Decimal(r["totlainsuranceandfund"])
-                        fsobj.endowmentinsurance = endowmentinsurance
-                        fsobj.medicalinsurance = medicalinsurance
-                        fsobj.unemploymentinsurance = unemploymentinsurance
-                        fsobj.housingprovidentfund = housingprovidentfund
-                        fsobj.companyfund = companyfund
-                        fsobj.totlainsuranceandfund = totlainsuranceandfund
-                        fsobj.save()
-                        successcount = successcount + 1
+                        keyl = r.keys()
+                        endowmentinsurancetmp = self.getcheckedvalue("养老保险", keyl, r)
+                        # print(endowmentinsurancetmp)
+                        endowmentinsurance = Decimal("".join(endowmentinsurancetmp.split(",")))
+                        # print(endowmentinsurance)
+                        medicalinsurancetmp = self.getcheckedvalue("医疗保险", keyl, r)
+                        medicalinsurance = Decimal("".join(medicalinsurancetmp.split(",")))
+                        unemploymentinsurancetmp = self.getcheckedvalue("失业保险", keyl, r)
+                        unemploymentinsurance = Decimal("".join(unemploymentinsurancetmp.split(",")))
+                        housingprovidentfundtmp = self.getcheckedvalue("住房公积金", keyl, r)
+                        housingprovidentfund = Decimal("".join(housingprovidentfundtmp.split(",")))
+                        companyfundtmp = self.getcheckedvalue("企业年金", keyl, r)
+                        companyfund = Decimal("".join(companyfundtmp.split(",")))
+                        totlainsuranceandfundtmp = self.getcheckedvalue("三险二金合计", keyl, r)
+                        totlainsuranceandfund = Decimal("".join(totlainsuranceandfundtmp.split(",")))
+                        if endowmentinsurance !=0 or medicalinsurance !=0 or unemploymentinsurance !=0\
+                            or housingprovidentfund !=0 or companyfund !=0 or totlainsuranceandfund !=0:
+                            fsobj.endowmentinsurance = endowmentinsurance
+                            fsobj.medicalinsurance = medicalinsurance
+                            fsobj.unemploymentinsurance = unemploymentinsurance
+                            fsobj.housingprovidentfund = housingprovidentfund
+                            fsobj.companyfund = companyfund
+                            fsobj.totlainsuranceandfund = totlainsuranceandfund
+                            fsobj.save()
+                            successcount = successcount + 1
+                        else:
+                            pass
                     else:
-                        pass
+                        faillist.append(r["身份证号"])
                 except Exception as e:
-                    resdata[r["username"]] = str(e)
+                    resdata[r["身份证号"]] = str(e)
                     errcount = errcount + 1
             resdata["successcount"] = successcount
             resdata["errcount"] = errcount
+            resdata["faildata"] = faillist
+            resdata["failcount"] = len(faillist)
             json_str = json.dumps(resdata)
             return Response(json_str)
         elif status == "TAXANDOTHERDEDUCTIONS":
             for r in jsboj:
                 try:
-                    fs = FSalary.objects.filter(srecord_id=id,user__username = r["username"] )
+                    fs = FSalary.objects.filter(srecord_id=id,user__idcardnumber = r["身份证号"])
                     if fs:
                         fsobj = fs[0]
-                        personaltax = Decimal(r["personaltax"])
-                        partymemberdues = Decimal(r["partymemberdues"])
-                        otherdeductions = Decimal(r["otherdeductions"])
-                        fsobj.personaltax = personaltax
-                        fsobj.partymemberdues = partymemberdues
-                        fsobj.otherdeductions = otherdeductions
-                        fsobj.save()
-                        successcount = successcount + 1
+                        keyl = r.keys()
+                        personaltaxtmp = self.getcheckedvalue("个人所得税", keyl, r)
+                        personaltax = Decimal("".join(personaltaxtmp.split(",")))
+                        partymemberduestmp = self.getcheckedvalue("代缴党费", keyl, r)
+                        partymemberdues = Decimal("".join(partymemberduestmp.split(",")))
+                        otherdeductionstmp = self.getcheckedvalue("代扣其他", keyl, r)
+                        otherdeductions = Decimal("".join(otherdeductionstmp.split(",")))
+                        if personaltax != 0 or partymemberdues !=0 or otherdeductions !=0:
+                            fsobj.personaltax = personaltax
+                            fsobj.partymemberdues = partymemberdues
+                            fsobj.otherdeductions = otherdeductions
+                            fsobj.save()
+                            successcount = successcount + 1
+                        else:
+                            pass
+                            # print(r["身份证号"],r["姓名"],personaltax)
                     else:
-                        pass
+                        faillist.append(r["身份证号"])
                 except Exception as e:
-                    resdata[r["username"]] = str(e)
+                    resdata[r["身份证号"]] = str(e)
                     errcount = errcount + 1
             resdata["successcount"] = successcount
             resdata["errcount"] = errcount
+            resdata["faildata"] = faillist
+            resdata["failcount"] = len(faillist)
             json_str = json.dumps(resdata)
             return Response(json_str)
         elif status == "LOCK":

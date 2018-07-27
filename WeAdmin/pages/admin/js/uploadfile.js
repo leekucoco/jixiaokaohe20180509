@@ -171,7 +171,7 @@ layui.use(['form','upload'], function () {
                 tds.eq(3).html('<button class="layui-btn layui-btn-mini demo-init" >生成数据</button>'); //清空操作
                 tds.eq(3).find('.demo-init').on('click', function () {
                    var toserjson =  XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])
-                    //console.log(toserjson)
+                    console.log(toserjson)
                     // for(var i=0;i<toserjson.length;i++) {
                     //     srecordid = res.id
                     //     //console.log(srecordid)
@@ -199,7 +199,13 @@ layui.use(['form','upload'], function () {
                                     //obj.del();
                                     var resjson = JSON.parse(rest)
                                     successcount = resjson.successcount
-                                    alertstr = "上传成功"+successcount+"条数据"
+                                    if (resjson.faildata != "") {
+                                        faildata = resjson.faildata
+                                        alertstr = "上传成功"+successcount+"条数据"+"\n"+"失败用户："+faildata
+                                    }else{
+                                         // faildata = resjson.faildata
+                                        alertstr = "上传成功"+successcount+"条数据"
+                                    }
                                     layer.alert(alertstr, {icon: 6},function () {
                                         var index = parent.layer.getFrameIndex(window.name);
                                          //关闭当前frame

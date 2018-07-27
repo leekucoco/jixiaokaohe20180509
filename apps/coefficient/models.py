@@ -83,7 +83,7 @@ class CoefficientDetail(models.Model):
         if yearsofwork == demands:
             return 0
         elif yearsofwork > demands:
-            return round((yearsofwork-demands)/2)*1
+            return int((yearsofwork-demands)/2)
         elif yearsofwork < demands:
             return (yearsofwork-demands)*2
     def get_education(self):#获取学历
@@ -201,9 +201,10 @@ class CoefficientDetail(models.Model):
         cl = [[3,1.5],[4,1.7],[5,1.9],[6,1.9]]
 
         if self.is_special == False:
-            if depttype == 1:
-                self.coefficent = self.rank13coefficent.coefficent
-            elif depttype ==2 :
+            #无论机关支行都用最高计算系数
+            # if depttype == 1:
+            #     self.coefficent = self.rank13coefficent.coefficent
+            if depttype ==1 or depttype==2 :
                 coe = 0
                 if clerkrank ==1 and cmanagerrank > 1:#客户经理系数判断
                     for i in cm:
