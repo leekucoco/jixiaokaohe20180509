@@ -29,6 +29,7 @@ def ensurerankleveltask():
         i, res = c.ensureranklevel()
         ai,ares = c.update_addbasesalary()
         #data[i] = res
+        # print(ai,ares)
         c.finalcoefficent()
         count = count + 1
     data["totalcount"] = count

@@ -19,7 +19,7 @@ class SalaryRecordAdmin(object):
     #     return context
 
 class FSalaryAdmin(object):
-    list_display = ["user", "name", "srecord", "fltotal",
+    list_display = ["user", "name","idcardnumber", "srecord", "fltotal",
                     "ywslary","edslary","tislary","itslary",
                     "cmslary","basesalary", "basesalarythismonth",
                     "addbasesalary","addbasesalarythismonth",

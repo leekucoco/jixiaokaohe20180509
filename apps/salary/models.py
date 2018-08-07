@@ -73,8 +73,8 @@ class FSalary(models.Model):
     addbasesalarythismonth = models.DecimalField(max_digits=10, decimal_places=2, default=0,
                                               verbose_name="调增基本薪酬", help_text="调增基本薪酬")
 
-    privateaffairleavedays = models.IntegerField(default=0, verbose_name="事假天数",help_text="事假天数")
-    sickleavedays = models.IntegerField(default=0, verbose_name="病假天数", help_text="病假天数")
+    privateaffairleavedays = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name="事假天数",help_text="事假天数")
+    sickleavedays = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name="病假天数", help_text="病假天数")
     basesalarythismonthwithleaves = models.DecimalField(max_digits=10, decimal_places=2, default=0,
                                               verbose_name="基本薪酬病事假扣除", help_text="基本薪酬病事假扣除")
     basesalaryresult = models.DecimalField(max_digits=10, decimal_places=2, default=0,
@@ -221,28 +221,48 @@ class FSalary(models.Model):
         return cm
 
     def calccmanagersalary(self):
+        depttypet = IndexUserDepart.objects.get(user= self.user)
+        depttype = depttypet.depart.dept_type
+        deptname = depttypet.depart.name
         cmrankid = self.user.cmanagerrank
-        cmanagersalary = 0
-        if cmrankid == 1:
-            cmanagersalary = 0
-        elif cmrankid == 2:
-            cmanagersalary = 500
-        elif cmrankid == 3:
-            cmanagersalary = 1000
-        elif cmrankid ==4 :
-            cmanagersalary = 1500
-        elif cmrankid ==5:
-            cmanagersalary = 2000
+        # cmanagersalary = 0
+        if depttype == 1:
+            if deptname not in ["零售金融部", "公司金融部", "三农研发部", "战略发展部", "小微中心","会计督导中心"]:
+                cmanagersalary = 0
+            else:
+                if cmrankid == 1:
+                    cmanagersalary = 0
+                elif cmrankid == 2:
+                    cmanagersalary = 500
+                elif cmrankid == 3:
+                    cmanagersalary = 1000
+                elif cmrankid == 4:
+                    cmanagersalary = 1500
+                elif cmrankid == 5:
+                    cmanagersalary = 2000
+                else:
+                    cmanagersalary = 0
         else:
-            cmanagersalary=0
+            if cmrankid == 1:
+                cmanagersalary = 0
+            elif cmrankid == 2:
+                cmanagersalary = 500
+            elif cmrankid == 3:
+                cmanagersalary = 1000
+            elif cmrankid ==4 :
+                cmanagersalary = 1500
+            elif cmrankid ==5:
+                cmanagersalary = 2000
+            else:
+                cmanagersalary=0
         return cmanagersalary
 
     def gettotal(self):
-        ysalary = self.calcywslary()
-        edsalary =self.calcedslary()
-        titlesalary = self.calctislary()
-        ittrainersalary =self.calcittrainersalary()
-        cmanagersalary =self.calccmanagersalary()
+        ysalary = self.ywslary
+        edsalary =self.edslary
+        titlesalary = self.tislary
+        ittrainersalary =self.itslary
+        cmanagersalary =self.cmslary
         return ysalary+edsalary+titlesalary+ittrainersalary+cmanagersalary
 
     def getrank(self):
@@ -271,13 +291,13 @@ class FSalary(models.Model):
             return 0
 
     def getbasesalarythismonth(self):
-        co = self.getcoefficent()
-        bs = self.getbasesalary()
+        co = self.coefficent
+        bs = self.basesalary
         return co*bs
 
     def getaddbasesalarythismonth(self):
-        co = self.getcoefficent()
-        bs = self.getaddbasesalary()
+        co = self.coefficent
+        bs = self.addbasesalary
         return co*bs
 
 
@@ -286,23 +306,23 @@ class FSalary(models.Model):
         return self.basesalarythismonth-self.basesalarythismonthwithleaves
 
     def calcwelfareresult(self):
-        return self.gettotal()
+        return self.welfareresult
 
     def calctotalsalaryresult(self):
-        bsr = self.calcbasesalaryreslut()
-        absr = self.getaddbasesalarythismonth()
-        wsr = self.calcwelfareresult()
+        bsr = self.basesalaryresult
+        absr = self.addbasesalarythismonth
+        wsr = self.welfareresult
         bsadd = self.basesalaryadd
         wsadd = self.welfareresultadd
         # peformp = self.performancepay
         return bsr+absr+wsr+bsadd+wsadd
     def calctotalpayamount(self):
-        tr = self.calctotalsalaryresult()
+        tr = self.totalsalaryresult
         tif = self.totlainsuranceandfund
         return tr-tif
 
     def calcfinalpayingamount(self):
-        tpa = self.calctotalpayamount()
+        tpa = self.totalpayamount
         pt = self.personaltax
         pmd = self.partymemberdues
         ot = self.otherdeductions

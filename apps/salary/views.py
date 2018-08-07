@@ -191,7 +191,7 @@ class FSalaryRecordDataView(APIView):
                         keyl = r.keys()
                         pdays = self.getcheckedvalue("事假天数",keyl,r)
                         sdays = self.getcheckedvalue("病假天数",keyl,r)
-                        if int(pdays) != 0 or int(sdays) != 0:
+                        if Decimal(pdays) != 0 or Decimal(sdays) != 0:
                             privateaffairleavedays = Decimal(pdays)
                             sickleavedays = Decimal(sdays)
                             basesalarythismonth = fsobj.basesalarythismonth

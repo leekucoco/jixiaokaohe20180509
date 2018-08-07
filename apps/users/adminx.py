@@ -23,7 +23,7 @@ class UserProfileAdmin(object):               # 自定义用户信息数据表�
     # 设置xadmin后台搜索字段，注意：搜索字段如果有时间类型会报错
     search_fields = ['username', 'idcardnumber', 'name', 'mobile']
     # 设置xadmin后台过滤器帅选字段，时间用过滤器来做
-    list_filter = ['username','joinedyears']
+    list_filter = ['username','joinedyears','groups']
     # model_icon = 'fa fa-user-plus'
 xadmin.site.unregister(UserProfile)
 xadmin.site.register(UserProfile, UserProfileAdmin)

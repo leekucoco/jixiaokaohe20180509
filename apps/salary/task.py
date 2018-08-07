@@ -4,6 +4,8 @@ from celery import shared_task,task
 import time,json
 from celery.schedules import crontab
 from .models import FSalary,SalaryRecord
+from depart.models import IndexUserDepart
+from coefficient.models import CoefficientDetail
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from openpyxl import load_workbook
@@ -17,26 +19,53 @@ def updatesrecord():
     successcount = 0
     errcount = 0
     superusergroup = Group.objects.get(name="超级管理员")
+    nosalarygroup = Group.objects.get(name="不参加工资计算")
     # ceouser = User.objects.get(groups=ceogroup)
     # ceoevaluategroup = Group.objects.get(name="董事长评价用户组")
-    ceoevaluateusers = User.objects.filter(~Q(groups=superusergroup))
-    for u in ceoevaluateusers:
+    users = User.objects.filter(~Q(groups=superusergroup)&~Q(groups=nosalarygroup))
+
+    for u in users:
         try:
             user_id = u.id
             srecord = SalaryRecord.objects.filter(~Q(status= 'LOCK'))
             if srecord:
                 srecord = srecord[0]
+                # depttypet = IndexUserDepart.objects.get(user_id = user_id)
+                # depttype = depttypet.depart.dept_type
+                # deptname = depttypet.depart.name
                 fs = FSalary.objects.get(user_id = user_id,srecord=srecord)
-                fs.basesalaryresult = fs.calcbasesalaryreslut()
-                # fs.addbasesalary = fs.getaddbasesalary()
-                # fs.addbasesalarythismonth = fs.getaddbasesalarythismonth()
-                # fs.ywslary = fs.calcywslary()
-                # fs.edslary = fs.calcedslary()
-                # fs.tislary = fs.calctislary()
-                # fs.itslary = fs.calcittrainersalary()
-                # fs.cmslary = fs.calccmanagersalary()
-                fs.fltotal = fs.gettotal()
-                fs.welfareresult = fs.calcwelfareresult()
+                uco = CoefficientDetail.objects.get(user_id=user_id)
+
+                is_sepcialbasesalary = uco.is_sepcialbasesalary
+                if is_sepcialbasesalary:
+                    fs.basesalary = 0
+                    fs.basesalarythismonth = uco.basesalary
+                    fs.basesalaryresult = uco.basesalary
+
+                else:
+                    fs.basesalary = fs.getbasesalary()
+                    fs.basesalarythismonth = fs.getbasesalarythismonth()
+                    fs.basesalaryresult = fs.calcbasesalaryreslut()
+
+                is_specialaddbasesalary = uco.is_specialaddbasesalary
+                if is_specialaddbasesalary:
+                    fs.addbasesalary = uco.addbasesalary
+                else:
+                    fs.addbasesalary = fs.getaddbasesalary()
+                fs.addbasesalarythismonth = fs.getaddbasesalarythismonth()
+
+                is_suspandwelfaresalary = uco.is_suspandwelfaresalary
+                if is_suspandwelfaresalary:
+                    fs.ywslary= 0
+                    fs.edslary= 0
+                    fs.tislary= 0
+                    fs.itslary= 0
+                    fs.cmslary = 0
+                    fs.fltotal = 0
+                    fs.welfareresult = 0
+                else:
+                    fs.fltotal = fs.gettotal()
+                    fs.welfareresult = fs.gettotal()
                 fs.totalsalaryresult = fs.calctotalsalaryresult()
                 fs.totalpayamount = fs.calctotalpayamount()
                 fs.finalpayingamount = fs.calcfinalpayingamount()
@@ -142,10 +171,12 @@ def createsalaryrecord(salaryrecord):
     successcount = 0
     errcount = 0
     superusergroup = Group.objects.get(name="超级管理员")
+    nosalarygroup = Group.objects.get(name="不参加工资计算")
+
     # ceouser = User.objects.get(groups=ceogroup)
     # ceoevaluategroup = Group.objects.get(name="董事长评价用户组")
-    ceoevaluateusers = User.objects.filter(~Q(groups=superusergroup))
-    for u in ceoevaluateusers:
+    users = User.objects.filter(~Q(groups=superusergroup)&~Q(groups=nosalarygroup))
+    for u in users:
         try:
             fs = FSalary()
             fs.user_id = u.id

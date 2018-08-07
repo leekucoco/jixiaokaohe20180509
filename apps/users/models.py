@@ -87,7 +87,7 @@ class UserProfile(AbstractUser):
 
     def __str__(self):
         if self.name:
-            return self.name
+            return self.name +" "+ self.username
         else:
             return self.username
 

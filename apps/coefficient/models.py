@@ -28,7 +28,10 @@ class CoefficientDetail(models.Model):
     update_time = models.DateTimeField(default=datetime.now, verbose_name="修改时间")
     is_special = models.BooleanField(default=False,verbose_name="是否为特殊指定系数")
     is_specialaddbasesalary = models.BooleanField(default=False, verbose_name="是否特殊调增基数")
-
+    is_suspandwelfaresalary = models.BooleanField(default=False, verbose_name="是否停发福利薪酬")
+    basesalary = models.DecimalField(max_digits=10,decimal_places=2,default=0,
+                                     verbose_name="特殊基本薪酬", help_text="特殊基本薪酬")
+    is_sepcialbasesalary = models.BooleanField(default=False, verbose_name="是否指定基础薪酬")
     class Meta:
         verbose_name = "员工系数"
         verbose_name_plural = verbose_name
@@ -59,7 +62,7 @@ class CoefficientDetail(models.Model):
                 self.addbasesalary = 0
             self.save()
             return  self.user.username, "成功更新用户等级系数"
-        elif self.is_special == True:
+        elif self.is_specialaddbasesalary == True:
             return self.user.username, "特殊调增基数，无法更改"
         else:
             pass
@@ -189,8 +192,9 @@ class CoefficientDetail(models.Model):
         try:
             depttypet = IndexUserDepart.objects.get(user=self.user)
             depttype =depttypet.depart.dept_type
-        except Exception:
-            pass
+            deptname = depttypet.depart.name
+        except Exception as e:
+            print(self.user.name,e)
         cm = [[2, 2, 1.6],[2, 3, 1.8], [2, 4, 2.0],
               [3, 2, 2.2],[3, 3, 2.4], [3, 4, 2.6],
               [4, 2, 2.8],[4, 3, 3.0], [4, 4, 3.2],
@@ -202,9 +206,44 @@ class CoefficientDetail(models.Model):
 
         if self.is_special == False:
             #无论机关支行都用最高计算系数
-            # if depttype == 1:
-            #     self.coefficent = self.rank13coefficent.coefficent
-            if depttype ==1 or depttype==2 :
+            # 机关零售，公司，三农，战发 有客户经理不住
+            if depttype == 1 :
+                if deptname not in ["零售金融部","公司金融部","三农研发部","战略发展部","小微中心"]:
+                    self.coefficent = self.rank13coefficent.coefficent
+                else:
+                    coe = 0
+                    if clerkrank == 1 and cmanagerrank > 1:  # 客户经理系数判断
+                        for i in cm:
+                            if i[0] == cmanagerrank:
+                                if i[1] == cmanagerlevel:
+                                    coe = i[2]
+                                    if coe > self.rank13coefficent.coefficent:
+                                        self.coefficent = coe
+                                    else:
+                                        self.coefficent = self.rank13coefficent.coefficent
+                                    # print("客户经理",coe)
+                                    break
+                                else:
+                                    continue
+                            else:
+                                continue
+                   #大于 见习柜员才有柜员等级
+                    elif cmanagerrank == 1 and clerkrank > 2:
+                        for i in cl:
+                            if i[0] == clerkrank:
+                                coe = i[1]
+                                if coe > self.rank13coefficent.coefficent:
+                                    self.coefficent = coe
+                                else:
+                                    self.coefficent = self.rank13coefficent.coefficent
+                                # print("柜员",coe)
+                                break
+                            else:
+                                continue
+                    else:
+                        self.coefficent = self.rank13coefficent.coefficent
+
+            elif depttype==2 :
                 coe = 0
                 if clerkrank ==1 and cmanagerrank > 1:#客户经理系数判断
                     for i in cm:
@@ -222,7 +261,8 @@ class CoefficientDetail(models.Model):
                         else:
                             continue
 
-                elif cmanagerrank ==1 and clerkrank > 1:
+                # 大于 见习柜员才有柜员等级
+                elif cmanagerrank ==1 and clerkrank > 2:
                     for i in cl:
                         if i[0] == clerkrank:
                             coe = i[1]
