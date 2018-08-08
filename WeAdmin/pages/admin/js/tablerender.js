@@ -40,11 +40,14 @@ layui.use('table', function(){
              ,{field:'yearsofworking',width:100,  title:"工作年限"}
 
              ,{field:'education',width:120,  title:"学历"
-                // ,templet: function (d) {
-                //     //console.log(d)
-                //     educations = ["高中（中专）及以下","大学专科","大学本科","硕士研究生","博士研究生及以上"]
-                //     return educations[d.education-1]
-                //  }
+                ,templet: function (d) {
+                    res = d.education.replace("(","");
+                    res = res.replace(")","");
+                    strs = res.split(",");
+                    // console.log(d)
+                    // educations = ["高中（中专）及以下","大学专科","大学本科","硕士研究生","博士研究生及以上"]
+                    return strs[1].replace("'","").replace("'","");
+                 }
              }
              ,{field:'rank',width:100,  title:"行员等级"}
              ,{field:'ywslary',width:120,  title:"工龄津贴"}

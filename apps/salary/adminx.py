@@ -34,7 +34,7 @@ class FSalaryAdmin(object):
     #list_editable = ["name", ]
     #list_export = ('xls', 'json',)
     search_fields = ['name','user__username','srecord__extrainfo',]
-    list_filter = ['name', 'add_time',]
+    list_filter = ['name', 'add_time','srecord','depart']
 
 
     def queryset(self):
