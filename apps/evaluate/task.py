@@ -16,15 +16,18 @@ def refreshevaluateresult():
     data={}
     count = 0
     errcount = 0
+    error = []
     departs = DepartDetail.objects.filter(dept_type=1)
     for depart in departs:
         users = User.objects.filter(user_depart__depart=depart)
+        # print(users,len(users))
         for u in users:
             ev = EvaluateResult.objects.filter(user=u, evaluateoftheyear__state="UNLOCK")
-            #print(ev,type(ev))
+            # print(ev,type(ev))
             if ev:
                 try:
                     ev = ev[0]
+                    # print(u.name)
                     departmanagersocre,bankleaderscore = ev.get_departleaderandmanagerscore()
                     ev.departleaderscore = departmanagersocre
                     ev.bankleadersocre = bankleaderscore
@@ -37,15 +40,19 @@ def refreshevaluateresult():
                     ev.leaderevaluate = ev.get_level(ev.leaderevaluatescore)
                     ev.democraticappraisal = ev.get_level(ev.democraticappraisalscore)
                     ev.qualifications = ev.get_level(ev.qualificationsscore)
+                    # print(ev.user.name + "  success")
                     ev.save()
                     count = count + 1
                 except Exception as e:
-                    data["error"] = ev.user.name
+                    # print(ev.user.name)
+                    # pass
+                    error.append(u.name)
             else:
                 errcount = errcount +1
                 #data["LOCKED"] = "已经锁定评价控制开关，不在更新系数"
     data["errcount"] = errcount
     data["totalcount"] = count
+    data["error"] = error
     json_str = json.dumps(data)
     return json_str
 

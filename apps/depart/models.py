@@ -11,16 +11,15 @@ class DepartDetail(models.Model):
     DEPT_TYPE = (
         (1, "机关"),
         (2, "支行"),
-
     )
-    agent = models.ForeignKey(Agent, null=True, verbose_name="法人单位", help_text="法人单位")
+    agent = models.ForeignKey(Agent, null=True, verbose_name="法人单位", help_text="法人单位",on_delete=models.CASCADE)
     name = models.CharField(default="", max_length=30, verbose_name="机构", help_text="机构")
     desc = models.TextField(default="", null= True, blank=True,verbose_name="机构描述", help_text="机构描述")
     dept_type = models.IntegerField(choices=DEPT_TYPE, verbose_name="组织", help_text="组织")
     parent_dept = models.ForeignKey("self", null=True, blank=True, verbose_name="上级部门", help_text="上级部门",
-                                        related_name="parentdept")
-    manager = models.ForeignKey(User, null= True, blank=True,verbose_name="部门经理", help_text="部门经理", related_name="dept_manager")
-    leader = models.ForeignKey(User,  null= True,blank=True,verbose_name="主管领导", help_text="主管领导", related_name="dept_leader")
+                                        related_name="parentdept",on_delete=models.CASCADE)
+    manager = models.ForeignKey(User, null= True, blank=True,verbose_name="部门经理", help_text="部门经理", related_name="dept_manager",on_delete=models.CASCADE)
+    leader = models.ForeignKey(User,  null= True,blank=True,verbose_name="主管领导", help_text="主管领导", related_name="dept_leader",on_delete=models.CASCADE)
     basesalary = models.DecimalField(max_digits=10,decimal_places=2,default=0,verbose_name="基本薪酬基数", help_text="基本薪酬基数")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
@@ -35,8 +34,8 @@ class IndexUserDepart(models.Model):
     """
     员工所在部门
     """
-    user = models.OneToOneField(User, unique=True, related_name='user_depart',verbose_name="用户")
-    depart =models.ForeignKey(DepartDetail, related_name='depart_user',verbose_name="部门")
+    user = models.OneToOneField(User, unique=True, related_name='user_depart',verbose_name="用户",on_delete=models.CASCADE)
+    depart =models.ForeignKey(DepartDetail, related_name='depart_user',verbose_name="部门",on_delete=models.CASCADE)
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
     class Meta:
         verbose_name = '员工所在部门'

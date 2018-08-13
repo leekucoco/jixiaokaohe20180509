@@ -17,8 +17,16 @@ from certificates.views import CerficatesViewset,IndexUserCertificateViewset
 from rank13.views import Rank13CoefficentViewset,AgentViewset,PostViewset,Rank13DemandsViewset
 from salary.views import SalaryRecordViewset,FSalaryViewset,FSalaryRecordDataView
 from evaluate.views import AppraisalProcedureViewset,AppraisalTicketViewset,EvaluateResultViewset,EvaluateViewset
-
+from performance.views import *
 router = DefaultRouter()
+router.register(r'splitlevel', SplitLevelViewset, base_name="splitlevel")
+router.register(r'indexpostlevel', IndexPostLevelViewset, base_name="indexpostlevel")
+router.register(r'splitmethod', SplitMethodViewset, base_name="splitmethod")
+router.register(r'performancerecord', PerformanceRecordViewset, base_name="performancerecord")
+router.register(r'quota', QuotaViewset, base_name="quota")
+router.register(r'bankquotacomplete', BankQuotaCompleteViewset, base_name="bankquotacomplete")
+router.register(r'bankuploadrecord', BankUploadRecordViewset, base_name="bankuploadrecord")
+router.register(r'bankuploadrecorddetail', BankUploadRecordDetailViewset, base_name="bankuploadrecorddetail")
 router.register(r'evaluate', EvaluateViewset, base_name="evaluate")
 router.register(r'appraisaprocedure', AppraisalProcedureViewset, base_name="appraisaprocedure")
 router.register(r'appraisaticket', AppraisalTicketViewset, base_name="appraisaticket")

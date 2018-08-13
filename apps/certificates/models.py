@@ -22,8 +22,8 @@ class Cerficates(models.Model):
         return "名称:"+self.name+" "+"分数:"+str(self.score)
 
 class IndexUserCertificate(models.Model):
-    user = models.ForeignKey(User, related_name='user_certificate',verbose_name="用户")
-    certificate =models.ForeignKey(Cerficates, related_name='certificate_user',verbose_name="证书")
+    user = models.ForeignKey(User, related_name='user_certificate',verbose_name="用户",on_delete=models.CASCADE)
+    certificate =models.ForeignKey(Cerficates, related_name='certificate_user',verbose_name="证书",on_delete=models.CASCADE)
     image = models.ImageField(upload_to="certificates/images/", null=True, blank=True, verbose_name="证书图片")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
     update_time = models.DateTimeField(default=datetime.now, verbose_name="修改时间")

@@ -20,7 +20,7 @@ class SalaryRecord(models.Model):
         ("LOCK", "封账"),
         ("SENDMSG","发送短信"),
     )
-    user = models.ForeignKey(User, verbose_name="用户")
+    user = models.ForeignKey(User, verbose_name="用户",on_delete=models.CASCADE)
     extrainfo = models.TextField(null=True,blank=True,verbose_name="备注",default=str(date.today().month)+"月工资记录")
     date = models.DateField(default=date.today, verbose_name="记录日期")
     checkonworkfile = models.FileField(null=True,blank=True,upload_to="salarybase", verbose_name="病假事假记录", help_text="病假事假记录")
@@ -41,8 +41,8 @@ class SalaryRecord(models.Model):
         return self.extrainfo
 
 class FSalary(models.Model):
-    srecord = models.ForeignKey(SalaryRecord, verbose_name="月工资记录")
-    user = models.ForeignKey(User, verbose_name=u"用户")
+    srecord = models.ForeignKey(SalaryRecord, verbose_name="月工资记录",on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name=u"用户",on_delete=models.CASCADE)
     idcardnumber = models.CharField(max_length=18, null=True, blank=True, verbose_name="身份证号")
     name = models.CharField(max_length=30, null=True, blank=True, verbose_name="姓名")
     depart = models.CharField(max_length=60, null=True, blank=True, verbose_name="机构")

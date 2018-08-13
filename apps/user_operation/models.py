@@ -55,7 +55,7 @@ class UserUploadBaseFiles(models.Model):
     """
     用户上传基础工资数据
     """
-    user = models.ForeignKey(User, verbose_name="用户")
+    user = models.ForeignKey(User, verbose_name="用户",on_delete=models.CASCADE)
     filename = models.CharField(max_length=100, default="", verbose_name="文件名")
     message = models.TextField(default="", verbose_name="留言内容", help_text="留言内容")
     file = models.FileField(upload_to="salarybase", verbose_name="上传的文件", help_text="上传的文件")

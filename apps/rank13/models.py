@@ -23,8 +23,8 @@ class Post(models.Model):
         return self.name
 
 class Rank13Coefficent(models.Model):
-    agent = models.ForeignKey(Agent, verbose_name="组织", help_text="组织", related_name="agent_rank13coefficent")
-    post = models.ForeignKey(Post, verbose_name="岗位", help_text="岗位", related_name="post_rank13coefficent")
+    agent = models.ForeignKey(Agent, verbose_name="组织", help_text="组织", related_name="agent_rank13coefficent",on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, verbose_name="岗位", help_text="岗位", related_name="post_rank13coefficent",on_delete=models.CASCADE)
     rank = models.IntegerField(default=1, verbose_name="等次",
                                 help_text="等次")
     level = models.IntegerField(default=1, verbose_name="级次",
@@ -79,8 +79,10 @@ class Rank13Demands(models.Model):
         (3, "中级"),
         (4, "高级"),
     )
-    agent = models.ForeignKey(Agent, verbose_name="组织", help_text="组织", related_name="agent_demand")
-    post = models.ForeignKey(Post, verbose_name="岗位", help_text="岗位", related_name="post_demand")
+
+    #2.0测试增假ondelete
+    agent = models.ForeignKey(Agent, verbose_name="组织", help_text="组织", related_name="agent_demand",on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, verbose_name="岗位", help_text="岗位", related_name="post_demand",on_delete=models.CASCADE)
     rank = models.IntegerField(default=1, verbose_name="等次",
                                 help_text="等次")
     level = models.IntegerField(blank=True,null=True, verbose_name="级次",

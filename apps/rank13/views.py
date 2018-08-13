@@ -1,7 +1,5 @@
-
-
+# -*- coding: utf-8 -*-
 from rest_framework import viewsets
-
 from rest_framework import permissions
 from rest_framework import authentication
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication

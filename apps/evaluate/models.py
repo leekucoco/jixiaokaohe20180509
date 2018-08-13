@@ -33,7 +33,7 @@ class AppraisalProcedure(models.Model):
         ("DEMOCRATICAPPRAISAL", "民主测评"),
         ("LEADERVALUATE", "有权人测评"),
     )
-    evaluateoftheyear = models.ForeignKey(Evaluate, null=True, blank=True,verbose_name="年度测评",related_name="procedure_evaluate")
+    evaluateoftheyear = models.ForeignKey(Evaluate, null=True, blank=True,verbose_name="年度测评",related_name="procedure_evaluate",on_delete=models.CASCADE)
     name = models.CharField(max_length=60, null=True, blank=True, verbose_name="测评程序",
                                       help_text="测评程序")
     appraisalchoices = models.CharField(null=True, blank=True, choices=EVALUATE_CHOICES,  max_length=60,
@@ -47,9 +47,9 @@ class AppraisalProcedure(models.Model):
         return self.name
 
 class AppraisalTicket(models.Model):
-    appraisalprocedure = models.ForeignKey(AppraisalProcedure, verbose_name="测评程序",related_name= "appraisalticket_appraisalprocedure")
-    evaluateperson = models.ForeignKey(User, verbose_name="评价人", related_name="eval_person")
-    appraisedperson = models.ForeignKey(User, verbose_name="被评价人", related_name="appraise_person")
+    appraisalprocedure = models.ForeignKey(AppraisalProcedure, verbose_name="测评程序",related_name= "appraisalticket_appraisalprocedure",on_delete=models.CASCADE)
+    evaluateperson = models.ForeignKey(User, verbose_name="评价人", related_name="eval_person",on_delete=models.CASCADE)
+    appraisedperson = models.ForeignKey(User, verbose_name="被评价人", related_name="appraise_person",on_delete=models.CASCADE)
     score = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name="测评得分", help_text="测评得分")
     qualifications = models.CharField(max_length=18, null=True, blank=True, verbose_name="测评结果",
                                       help_text="测评结果")
@@ -62,8 +62,8 @@ class AppraisalTicket(models.Model):
         return self.evaluateperson.name+"--"+self.appraisedperson.name
 
 class EvaluateResult(models.Model):
-    evaluateoftheyear = models.ForeignKey(Evaluate, null=True, blank=True,verbose_name="年度测评",related_name="result_evaluate")
-    user = models.ForeignKey(User, verbose_name="用户",help_text="用户")
+    evaluateoftheyear = models.ForeignKey(Evaluate, null=True, blank=True,verbose_name="年度测评",related_name="result_evaluate",on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name="用户",help_text="用户",on_delete=models.CASCADE)
     ceoscore = models.DecimalField(max_digits=6, decimal_places=2, default=0, null=True, blank=True, verbose_name="董事长给分", help_text="董事长给分")
     departleaderscore= models.DecimalField(max_digits=6, decimal_places=2, default=0, null=True, blank=True, verbose_name="部门领导给分", help_text="部门领导给分")
     bankleadersocre= models.DecimalField(max_digits=6, decimal_places=2, default=0, null=True, blank=True, verbose_name="主管行长给分", help_text="主管行长给分")

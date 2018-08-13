@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'salary.apps.SalaryConfig',
     'evaluate.apps.EvaluateConfig',
     'performance.apps.PerformanceConfig',
+    #测试新环境暂时去掉
     'djcelery',
     #'gunicorn',
 ]
@@ -238,7 +239,7 @@ CELERYBEAT_SCHEDULE = {
     #定时任务二:　每天的凌晨12:30分，执行任务(back_up1)
     u'更新用户投票结果': {
         'task': 'evaluate.task.refreshevaluateresult',
-        # "schedule": crontab(minute='*/4'),
+        # "schedule": crontab(minute='*/1'),
         'schedule': crontab(minute=0, hour='*/20'),
         "args": ()
     },

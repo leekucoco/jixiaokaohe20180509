@@ -16,9 +16,9 @@ class CoefficientDetail(models.Model):
     """
     系数明细
     """
-    user = models.OneToOneField(User, verbose_name=u"用户")
-    rank13demands = models.ForeignKey(Rank13Demands,  verbose_name=u"岗位等级及岗位要求", default=1)
-    rank13coefficent = models.ForeignKey(Rank13Coefficent, verbose_name=u"等级行员关联系数", default=1)
+    user = models.OneToOneField(User, verbose_name=u"用户",on_delete=models.CASCADE)
+    rank13demands = models.ForeignKey(Rank13Demands,  verbose_name=u"岗位等级及岗位要求", default=1,on_delete=models.CASCADE)
+    rank13coefficent = models.ForeignKey(Rank13Coefficent, verbose_name=u"等级行员关联系数", default=1,on_delete=models.CASCADE)
 
     coefficent = models.DecimalField(max_digits=4,decimal_places=2,default=0,
                                      verbose_name="系数",help_text="系数")
