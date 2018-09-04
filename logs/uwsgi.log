@@ -1,0 +1,201 @@
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 30754)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket uwsgi.sock removed.
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Aug 14 05:58:07 2018] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-16) on 20 April 2018 06:26:54
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 8
+current working directory: /root/project/jixiaokaohe
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/py3jkvenv/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to .
+your processes number limit is 126337
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1060 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uWSGI http bound on 0.0.0.0:8080 fd 3
+uwsgi socket 0 bound to UNIX address uwsgi.sock fd 6
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.4 (default, Mar 30 2018, 01:45:35)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+Python main interpreter initialized at 0x1df1da0
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 498800 bytes (487 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1df1da0 pid: 30837 (default app)
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+spawned uWSGI master process (pid: 30837)
+spawned uWSGI worker 1 (pid: 30841, cores: 2)
+spawned uWSGI worker 2 (pid: 30843, cores: 2)
+spawned uWSGI worker 3 (pid: 30845, cores: 2)
+spawned uWSGI worker 4 (pid: 30847, cores: 2)
+spawned uWSGI http 1 (pid: 30849)
+[pid: 30841|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 964 bytes} [Tue Aug 14 17:58:16 2018] GET /api/bankuploadrecord/ => generated 8544 bytes in 790 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+[pid: 30841|app: 0|req: 2/2] 127.0.0.1 () {44 vars in 964 bytes} [Tue Aug 14 17:58:41 2018] GET /api/bankuploadrecord/ => generated 8544 bytes in 29 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 30849)
+[deadlock-detector] a process holding a robust mutex died. recovering...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket uwsgi.sock removed.
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Aug 14 06:29:13 2018] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-16) on 20 April 2018 06:26:54
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 8
+current working directory: /root/project/jixiaokaohe
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/py3jkvenv/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to .
+your processes number limit is 126337
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1060 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uWSGI http bound on 0.0.0.0:8080 fd 3
+uwsgi socket 0 bound to UNIX address uwsgi.sock fd 6
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.4 (default, Mar 30 2018, 01:45:35)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+Python main interpreter initialized at 0x284ada0
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 498800 bytes (487 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x284ada0 pid: 31517 (default app)
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+spawned uWSGI master process (pid: 31517)
+spawned uWSGI worker 1 (pid: 31524, cores: 2)
+spawned uWSGI worker 2 (pid: 31526, cores: 2)
+spawned uWSGI worker 3 (pid: 31528, cores: 2)
+spawned uWSGI worker 4 (pid: 31530, cores: 2)
+spawned uWSGI http 1 (pid: 31532)
+[pid: 31524|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 1067 bytes} [Tue Aug 14 18:29:17 2018] GET /xadmin/depart/departdetail/123/update/ => generated 114037 bytes in 1523 msecs (HTTP/1.0 200) 7 headers in 383 bytes (1 switches on core 0)
+[pid: 31524|app: 0|req: 2/2] 127.0.0.1 () {42 vars in 850 bytes} [Tue Aug 14 18:29:18 2018] GET /xadmin/jsi18n/ => generated 4753 bytes in 7 msecs (HTTP/1.0 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 31526|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 953 bytes} [Tue Aug 14 18:29:20 2018] GET /xadmin/ => generated 25866 bytes in 959 msecs (HTTP/1.0 200) 6 headers in 228 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 2/4] 127.0.0.1 () {42 vars in 819 bytes} [Tue Aug 14 18:29:21 2018] GET /xadmin/jsi18n/ => generated 4753 bytes in 8 msecs (HTTP/1.0 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 31528|app: 0|req: 1/5] 127.0.0.1 () {44 vars in 964 bytes} [Tue Aug 14 18:29:23 2018] GET /api/bankuploadrecord/ => generated 23883 bytes in 855 msecs (HTTP/1.0 200) 6 headers in 320 bytes (1 switches on core 0)
+[pid: 31528|app: 0|req: 2/6] 127.0.0.1 () {44 vars in 1009 bytes} [Tue Aug 14 18:29:26 2018] GET /api-auth/logout/?next=/api/bankuploadrecord/ => generated 0 bytes in 7 msecs (HTTP/1.0 302) 7 headers in 332 bytes (1 switches on core 1)
+[pid: 31530|app: 0|req: 1/7] 127.0.0.1 () {44 vars in 920 bytes} [Tue Aug 14 18:29:26 2018] GET /api/bankuploadrecord/ => generated 5615 bytes in 762 msecs (HTTP/1.0 401) 6 headers in 210 bytes (1 switches on core 0)
+[pid: 31530|app: 0|req: 2/8] 127.0.0.1 () {44 vars in 963 bytes} [Tue Aug 14 18:29:28 2018] GET /api-auth/login/?next=/api/bankuploadrecord/ => generated 2723 bytes in 16 msecs (HTTP/1.0 200) 7 headers in 381 bytes (1 switches on core 1)
+[pid: 31524|app: 0|req: 3/9] 127.0.0.1 () {52 vars in 1079 bytes} [Tue Aug 14 18:29:31 2018] POST /api-auth/login/ => generated 0 bytes in 70 msecs (HTTP/1.0 302) 10 headers in 578 bytes (1 switches on core 0)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'performance.models.BankUploadRecord'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 31524|app: 0|req: 4/10] 127.0.0.1 () {46 vars in 1015 bytes} [Tue Aug 14 18:29:31 2018] GET /api/bankuploadrecord/ => generated 8784 bytes in 64 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 1)
+[pid: 31526|app: 0|req: 3/11] 127.0.0.1 () {44 vars in 669 bytes} [Tue Aug 14 18:29:41 2018] POST /login/ => generated 1684 bytes in 78 msecs (HTTP/1.0 200) 5 headers in 138 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 4/12] 127.0.0.1 () {46 vars in 1139 bytes} [Wed Aug 15 15:05:16 2018] GET /api/cofficient/?page=1&limit=10 => generated 9779 bytes in 170 msecs (HTTP/1.0 200) 5 headers in 149 bytes (1 switches on core 1)
+[pid: 31528|app: 0|req: 3/13] 127.0.0.1 () {46 vars in 1132 bytes} [Wed Aug 15 15:05:21 2018] GET /api/fsalary/?page=1&limit=10 => generated 11521 bytes in 23 msecs (HTTP/1.0 200) 5 headers in 150 bytes (1 switches on core 0)
+[pid: 31528|app: 0|req: 4/14] 127.0.0.1 () {46 vars in 1142 bytes} [Wed Aug 15 15:05:24 2018] GET /api/salaryrecord/?page=1&limit=10 => generated 1361 bytes in 11 msecs (HTTP/1.0 200) 5 headers in 149 bytes (1 switches on core 1)
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'evaluate.models.AppraisalTicket'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+[pid: 31530|app: 0|req: 3/15] 127.0.0.1 () {46 vars in 1148 bytes} [Wed Aug 15 15:05:33 2018] GET /api/appraisaticket/?page=1&limit=10 => generated 52 bytes in 17 msecs (HTTP/1.0 200) 5 headers in 147 bytes (1 switches on core 0)
+[pid: 31530|app: 0|req: 4/16] 127.0.0.1 () {42 vars in 839 bytes} [Wed Aug 15 15:06:14 2018] GET /api => generated 0 bytes in 0 msecs (HTTP/1.0 301) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 31524|app: 0|req: 5/17] 127.0.0.1 () {42 vars in 841 bytes} [Wed Aug 15 15:06:14 2018] GET /api/ => generated 9728 bytes in 35 msecs (HTTP/1.0 200) 5 headers in 159 bytes (1 switches on core 0)
+[pid: 31524|app: 0|req: 6/18] 127.0.0.1 () {44 vars in 930 bytes} [Wed Aug 15 15:06:31 2018] GET /api/performancerecord/ => generated 5744 bytes in 18 msecs (HTTP/1.0 403) 5 headers in 172 bytes (1 switches on core 1)
+[pid: 31526|app: 0|req: 5/19] 127.0.0.1 () {44 vars in 912 bytes} [Wed Aug 15 15:06:37 2018] GET /api/ => generated 9728 bytes in 54 msecs (HTTP/1.0 200) 5 headers in 159 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 6/20] 127.0.0.1 () {44 vars in 930 bytes} [Wed Aug 15 15:06:40 2018] GET /api/bankquotacomplete/ => generated 5751 bytes in 18 msecs (HTTP/1.0 403) 5 headers in 172 bytes (1 switches on core 1)
+[pid: 31528|app: 0|req: 5/21] 127.0.0.1 () {44 vars in 912 bytes} [Wed Aug 15 15:06:42 2018] GET /api/ => generated 9728 bytes in 54 msecs (HTTP/1.0 200) 5 headers in 159 bytes (1 switches on core 0)
+[pid: 31528|app: 0|req: 6/22] 127.0.0.1 () {44 vars in 940 bytes} [Wed Aug 15 15:06:45 2018] GET /api/bankuploadrecorddetail/ => generated 5828 bytes in 19 msecs (HTTP/1.0 403) 5 headers in 172 bytes (1 switches on core 1)
+[pid: 31530|app: 0|req: 5/23] 127.0.0.1 () {44 vars in 917 bytes} [Wed Aug 15 15:06:46 2018] GET /api/ => generated 9728 bytes in 54 msecs (HTTP/1.0 200) 5 headers in 159 bytes (1 switches on core 0)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'performance.models.BankUploadRecord'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 31530|app: 0|req: 6/24] 127.0.0.1 () {44 vars in 928 bytes} [Wed Aug 15 15:06:50 2018] GET /api/bankuploadrecord/ => generated 8784 bytes in 47 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 1)
+[pid: 31524|app: 0|req: 7/25] 127.0.0.1 () {44 vars in 911 bytes} [Wed Aug 15 15:06:58 2018] GET /api/ => generated 9728 bytes in 26 msecs (HTTP/1.0 200) 5 headers in 159 bytes (1 switches on core 0)
+[pid: 31524|app: 0|req: 8/26] 127.0.0.1 () {44 vars in 940 bytes} [Wed Aug 15 15:07:36 2018] GET /api/bankuploadrecorddetail/ => generated 5828 bytes in 18 msecs (HTTP/1.0 403) 5 headers in 172 bytes (1 switches on core 1)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'performance.models.BankUploadRecord'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 31526|app: 0|req: 7/27] 127.0.0.1 () {44 vars in 928 bytes} [Wed Aug 15 15:07:41 2018] GET /api/bankuploadrecord/ => generated 8784 bytes in 43 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 8/28] 127.0.0.1 () {48 vars in 1000 bytes} [Wed Aug 15 15:07:46 2018] OPTIONS /api/bankuploadrecord/ => generated 8371 bytes in 24 msecs (HTTP/1.0 200) 9 headers in 438 bytes (1 switches on core 1)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+/root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/rest_framework/pagination.py:208: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'performance.models.BankUploadRecord'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 31528|app: 0|req: 7/29] 127.0.0.1 () {44 vars in 928 bytes} [Wed Aug 15 15:07:56 2018] GET /api/bankuploadrecord/ => generated 8784 bytes in 42 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+[pid: 31528|app: 0|req: 8/30] 127.0.0.1 () {42 vars in 879 bytes} [Wed Aug 15 15:08:00 2018] GET /api/bankuploadrecord/10 => generated 0 bytes in 0 msecs (HTTP/1.0 301) 3 headers in 130 bytes (1 switches on core 1)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 31530|app: 0|req: 7/31] 127.0.0.1 () {42 vars in 881 bytes} [Wed Aug 15 15:08:00 2018] GET /api/bankuploadrecord/10/ => generated 17733 bytes in 70 msecs (HTTP/1.0 200) 5 headers in 180 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 31532)
+[deadlock-detector] a process holding a robust mutex died. recovering...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket uwsgi.sock removed.
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Aug 15 03:13:06 2018] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-16) on 20 April 2018 06:26:54
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 8
+current working directory: /root/project/jixiaokaohe
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/py3jkvenv/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to .
+your processes number limit is 126337
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+building mime-types dictionary from file /etc/mime.types...1060 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uWSGI http bound on 0.0.0.0:8080 fd 3
+uwsgi socket 0 bound to UNIX address uwsgi.sock fd 6
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.4 (default, Mar 30 2018, 01:45:35)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+Python main interpreter initialized at 0x196fda0
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 498800 bytes (487 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x196fda0 pid: 18751 (default app)
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+spawned uWSGI master process (pid: 18751)
+spawned uWSGI worker 1 (pid: 18755, cores: 2)
+spawned uWSGI worker 2 (pid: 18757, cores: 2)
+spawned uWSGI worker 3 (pid: 18759, cores: 2)
+spawned uWSGI worker 4 (pid: 18761, cores: 2)
+spawned uWSGI http 1 (pid: 18763)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 18755|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 954 bytes} [Wed Aug 15 15:13:12 2018] GET /api/bankuploadrecord/10/ => generated 17733 bytes in 834 msecs (HTTP/1.0 200) 5 headers in 180 bytes (1 switches on core 0)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 18755|app: 0|req: 2/2] 127.0.0.1 () {44 vars in 954 bytes} [Wed Aug 15 15:13:19 2018] GET /api/bankuploadrecord/10/ => generated 17733 bytes in 67 msecs (HTTP/1.0 200) 5 headers in 180 bytes (1 switches on core 1)
+<QuerySet [<IndexUserDepart: 张亚鑫>]>
+[pid: 18757|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 954 bytes} [Wed Aug 15 15:14:28 2018] GET /api/bankuploadrecord/10/ => generated 17733 bytes in 833 msecs (HTTP/1.0 200) 5 headers in 180 bytes (1 switches on core 0)

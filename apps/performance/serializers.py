@@ -32,10 +32,13 @@ class BankQuotaCompleteSerializer(serializers.ModelSerializer):
         model = BankQuotaComplete
         fields = "__all__"
 class BankUploadRecordSerializer(serializers.ModelSerializer):
+    performancerecord =serializers.PrimaryKeyRelatedField(read_only=True)
+    depart=serializers.PrimaryKeyRelatedField(read_only=True)
     class Meta:
         model = BankUploadRecord
         fields = "__all__"
 class BankUploadRecordDetailSerializer(serializers.ModelSerializer):
+    # burecord=serializers.SerializerMethodField()
     class Meta:
         model = BankUploadRecordDetail
         fields = "__all__"

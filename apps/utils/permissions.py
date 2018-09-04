@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 __author__ = 'bobby'
 from rest_framework import permissions
+from django.contrib.auth.models import Group
+from django.contrib.auth import get_user_model
 
-
+User = get_user_model()
 class IsOwnerOrReadOnly(permissions.BasePermission):
     """
     Object-level permission to only allow owners of an object to edit it.
@@ -27,3 +29,17 @@ class IsSuperUser(permissions.BasePermission):
 
     def has_permission(self, request, view):
         return request.user and request.user.is_superuser
+
+
+class IsPerformanceAdminUser(permissions.BasePermission):
+    """
+    Allows access only to super users.
+    """
+
+    def has_permission(self, request, view):
+        burusergroup = Group.objects.get(name="基层绩效考核员")
+        users = User.objects.filter(groups=burusergroup)
+        if request.user in users or request.user.is_superuser:
+            return True
+        else:
+            return False
