@@ -41,7 +41,7 @@ class CoefficientDetailViewset(CacheResponseMixin,viewsets.ModelViewSet):
     系数管理
     """
 
-    queryset = CoefficientDetail.objects.all().order_by("id")
+    queryset = CoefficientDetail.objects.all().order_by("-id")
     authentication_classes = (JSONWebTokenAuthentication, authentication.SessionAuthentication)
     pagination_class = CoefficientDetailPagination
 

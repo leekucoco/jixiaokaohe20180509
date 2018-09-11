@@ -17,10 +17,10 @@ class SplitMethodAdmin(object):
     list_filter = ['info', 'add_time']
 
 class PerformanceRecordAdmin(object):
-    list_display = ["info", "splitmethod","add_time"]
-    list_editable = ["info", "splitmethod"]
-    search_fields = ['info', 'splitmethod_info']
-    list_filter = ['info', 'add_time',"splitmethod"]
+    list_display = ["info", "splitmethod","state","add_time"]
+    list_editable = ["info","state", "splitmethod"]
+    search_fields = ['info',"state", 'splitmethod_info']
+    list_filter = ['info',"state", 'add_time',"splitmethod"]
 
 class QuotaAdmin(object):
     list_display = ["name", "desc","add_time"]

@@ -34,11 +34,25 @@ class BankQuotaCompleteSerializer(serializers.ModelSerializer):
 class BankUploadRecordSerializer(serializers.ModelSerializer):
     performancerecord =serializers.PrimaryKeyRelatedField(read_only=True)
     depart=serializers.PrimaryKeyRelatedField(read_only=True)
+    depart_info = serializers.SerializerMethodField()
+    performancerecord_info = serializers.SerializerMethodField()
+    def get_depart_info(self,obj):
+        return obj.depart.name
+    def get_performancerecord_info(self,obj):
+        return obj.performancerecord.info
     class Meta:
         model = BankUploadRecord
         fields = "__all__"
 class BankUploadRecordDetailSerializer(serializers.ModelSerializer):
-    # burecord=serializers.SerializerMethodField()
+    user_name=serializers.SerializerMethodField()
+    user_username=serializers.SerializerMethodField()
+    quota_name = serializers.SerializerMethodField()
+    def get_user_name(self,obj):
+        return obj.user.name
+    def get_user_username(self,obj):
+        return obj.user.username
+    def get_quota_name(self,obj):
+        return obj.quota.name
     class Meta:
         model = BankUploadRecordDetail
         fields = "__all__"
