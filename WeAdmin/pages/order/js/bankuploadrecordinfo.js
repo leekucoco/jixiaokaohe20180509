@@ -144,7 +144,7 @@ layui.use('table', function(){
 
     table.on('tool(bankuploaddetaildemo)', function(obj){
         var data = obj.data;
-        console.log(data,obj);
+        // console.log(data,obj);
         if(obj.event === 'detail'){
             layui.jquery.ajax({
                 url: 'https://dqrcbankservice.com:8001/api/bankuploadrecorddetail/' + data.id + "/",

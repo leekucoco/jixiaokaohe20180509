@@ -1,6 +1,8 @@
 import xadmin
 from .models import SplitLevel,IndexPostLevel,\
-    SplitMethod,PerformanceRecord,Quota,BankQuotaComplete,BankUploadRecord,BankUploadRecordDetail
+    SplitMethod,PerformanceRecord,Quota,\
+    BankQuotaComplete,BankUploadRecord,\
+    BankUploadRecordDetail,PerformanceResultDetail
 
 class SplitLevelAdmin(object):
     list_display = ["name", 'desc',"add_time"]
@@ -10,9 +12,9 @@ class IndexPostLevelAdmin(object):
 
 class SplitMethodAdmin(object):
     list_display = ["info", "totalmoney","linguimenberstotalmoney","custmorsertotalmoney","accountingsupervisor",
-                    "vpointernal","clerk","custmorsermanager","vpofield","creditgeneral","president","add_time"]
+                    "vpointernal","clerk","custmorsermanager","vpofield","creditgeneral","president","ywbsmoney","add_time"]
     list_editable = ["totalmoney","linguimenberstotalmoney","custmorsertotalmoney","accountingsupervisor",
-                    "vpointernal","clerk","custmorsermanager","vpofield","creditgeneral","president"]
+                    "vpointernal","clerk","custmorsermanager","vpofield","creditgeneral","president","ywbsmoney"]
     search_fields = ['info' ]
     list_filter = ['info', 'add_time']
 
@@ -47,6 +49,30 @@ class BankUploadRecordDetailAdmin(object):
     search_fields = ["burecord", "user","quota","plan","complete","score","add_time"]
     list_filter = ["burecord", "user__name","quota","add_time"]
 
+class PerformanceResultDetailAdmin(object):
+    list_display = ["perforrecord", "user","depart","indexpostlevel","dgckrjplan",
+                    "dgckrjcomplete","dgckrjscore","lsckrjplan","lsckrjcomplete",
+                    "lsckrjscore","dgdkctfplan","dgdkctfcomplete","dgdkctfscore",
+                    "lsdkctfplan","lsdkctfcomplete","lsdkctfscore","dqdkhslplan",
+                    "dqdkhslcomplete","dqdkhslscore","lxhsplan","lxhscomplete",
+                    "lxhsscore","wjblqsplan","wjblqscomplete","wjblqsscore",
+                    "qxdkyjplan","qxdkyjcomplete","qxdkyjscore","bnblzcczplan",
+                    "bnblzcczcomplete","bnblzcczscore","bwblzcczplan","bwblzcczcomplete",
+                    "bwblzcczscore","ywamount","totalscore","scoremoney","ywamountmoney",
+                    "totalmoney","add_time"]
+    list_editable = ["perforrecord", "user","depart","indexpostlevel","dgckrjplan",
+                    "dgckrjcomplete","dgckrjscore","lsckrjplan","lsckrjcomplete",
+                    "lsckrjscore","dgdkctfplan","dgdkctfcomplete","dgdkctfscore",
+                    "lsdkctfplan","lsdkctfcomplete","lsdkctfscore","dqdkhslplan",
+                    "dqdkhslcomplete","dqdkhslscore","lxhsplan","lxhscomplete",
+                    "lxhsscore","wjblqsplan","wjblqscomplete","wjblqsscore",
+                    "qxdkyjplan","qxdkyjcomplete","qxdkyjscore","bnblzcczplan",
+                    "bnblzcczcomplete","bnblzcczscore","bwblzcczplan","bwblzcczcomplete",
+                    "bwblzcczscore","ywamount","totalscore","scoremoney","ywamountmoney",
+                    "totalmoney","add_time"]
+    search_fields = ["perforrecord", "user","depart","indexpostlevel","add_time"]
+    list_filter = ["perforrecord", "user__name", "user__username","depart","indexpostlevel","add_time"]
+
 xadmin.site.register(SplitLevel, SplitLevelAdmin)
 xadmin.site.register(IndexPostLevel, IndexPostLevelAdmin)
 xadmin.site.register(SplitMethod, SplitMethodAdmin)
@@ -55,3 +81,4 @@ xadmin.site.register(Quota, QuotaAdmin)
 xadmin.site.register(BankQuotaComplete, BankQuotaCompleteAdmin)
 xadmin.site.register(BankUploadRecord, BankUploadRecordAdmin)
 xadmin.site.register(BankUploadRecordDetail, BankUploadRecordDetailAdmin)
+xadmin.site.register(PerformanceResultDetail, PerformanceResultDetailAdmin)

@@ -14,9 +14,11 @@ from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
 from utils.permissions import IsSuperUser
 from rest_framework_extensions.cache.mixins import CacheResponseMixin
-
+from django.contrib.auth.models import Group
 from .task import *
-
+from depart.models import *
+from django.contrib.auth import get_user_model
+# User = get_user_model()
 class CoefficientDetailPagination(PageNumberPagination):
     page_size = 10
     page_size_query_param = 'limit'
@@ -33,7 +35,7 @@ class CoefficientFilter(drffilters.FilterSet):
     update_time = drffilters.DateTimeFromToRangeFilter()
     class Meta:
         model = CoefficientDetail
-        fields = ['user__name','user__idcardnumber', 'update_time', 'min_coefficent', 'max_coefficent']
+        fields = ['user__name','user__idcardnumber','update_time', 'min_coefficent', 'max_coefficent']
 
 
 class CoefficientDetailViewset(CacheResponseMixin,viewsets.ModelViewSet):
@@ -41,7 +43,7 @@ class CoefficientDetailViewset(CacheResponseMixin,viewsets.ModelViewSet):
     系数管理
     """
 
-    queryset = CoefficientDetail.objects.all().order_by("-id")
+    # queryset = CoefficientDetail.objects.all().order_by("-id")
     authentication_classes = (JSONWebTokenAuthentication, authentication.SessionAuthentication)
     pagination_class = CoefficientDetailPagination
 
@@ -82,3 +84,22 @@ class CoefficientDetailViewset(CacheResponseMixin,viewsets.ModelViewSet):
         else:
             return [permissions.IsAuthenticatedOrReadOnly()]
 
+    def get_queryset(self):
+        #return FSalary.objects.filter(user=self.request.user)
+        burusergroup = Group.objects.get(name="基层绩效考核员")
+        users = User.objects.filter(groups=burusergroup)
+        if self.request.user.is_superuser:
+            return CoefficientDetail.objects.all().order_by("-id")
+        elif self.request.user in users:
+            # user = self.request.user
+            # departs = IndexUserDepart.objects.filter(user=user)
+            # print(departs)
+
+            userdepart = self.request.user.user_depart.depart
+            deusers = User.objects.filter(user_depart__depart=userdepart)
+            if deusers:
+                return CoefficientDetail.objects.filter(user__in=deusers).order_by("-id")
+            else:
+                return "用户没有部门，请查证"
+        else:
+            return "用户不在考核管理员组"
