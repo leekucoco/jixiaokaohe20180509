@@ -51,6 +51,17 @@ layui.use('table', function(){
              ,{field:'right', width:100 , title:"可选操作", toolbar: '#barDemo2'}
         ]]
         ,id: 'testReload'
+        ,done: function(res, curr, count){
+            //如果是异步请求数据方式，res即为你接口返回的信息。
+            //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+            // console.log(res);
+            bankuploadrecordid = res.results[0].id;
+            layui.jquery("#bankuploadrecordid").val(bankuploadrecordid);
+            //得到当前页码
+            // console.log(curr);
+            //得到数据总量
+            // console.log(count);
+        }
     });
 
     table.render({
@@ -268,13 +279,14 @@ function searchsalarydetailbytime() {
 
 function PWeAdminEdit() {
     var table = layui.table;
-    table.on('tool(performancemanagedemo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
-        var data = obj.data; //获得当前行数据
-        //console.log(typeof(data))
-        datajsonstr = JSON.stringify(data);
-        WeAdminEdit('编辑','./edit.html',datajsonstr)
-  })
-}
+    // table.on('tool(bankuploadrecorddemo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+        bankuploadrecordid = layui.jquery("#bankuploadrecordid").val();
+        // console.log(bankuploadrecordid);
+        // datajsonstr = JSON.stringify(data);
+        WeAdminEdit('编辑','./add.html',bankuploadrecordid)
+        // WeAdminEdit('编辑','./edit.html',datajsonstr)
+  // })
+};
 
 function Delsrecord() {
     var table = layui.table;

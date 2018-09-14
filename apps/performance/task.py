@@ -96,7 +96,95 @@ def createperformanceresults(record):
     json_str = json.dumps(data)
     return json_str
 
+@shared_task
+def updatebankuploadrecorddetails():
+    data={}
+    count = 0
+    errcount = 0
+    error = []
+    brds = BankUploadRecordDetail.objects.filter(burecord__state=4).exclude(burecord__performancerecord__state=2)
+    if brds:
+        try:
+            for bd in brds:
+                bd.score = bd.calcscore()
+                bd.save()
+                count = count + 1
+        except Exception as e:
+            errcount = errcount + 1
+    else:
+        error.append("no bankuploadrecorddetail !")
+    data["errcount"] = errcount
+    data["totalcount"] = count
+    data["error"] = error
+    json_str = json.dumps(data)
+    return json_str
+
+
 
 @shared_task
 def updateperformanceresults():
-    pass
+    data={}
+    count = 0
+    errcount = 0
+    error = []
+    prs = PerformanceResultDetail.objects.filter(perforrecord__state=1)
+    if prs:
+        for p in prs:
+            brds = BankUploadRecordDetail.objects.filter(user=p.user,burecord__performancerecord=p.perforrecord)
+            if brds:
+                for br in brds:
+                    quoname = br.quota.name
+                    if quoname == "对公存款日均额":
+                        p.dgckrjplan = br.plan
+                        p.dgckrjcomplete = br.complete
+                        p.dgckrjscore = br.score
+                    elif quoname == "零售存款日均额":
+                        p.lsckrjplan = br.plan
+                        p.lsckrjcomplete = br.complete
+                        p.lsckrjscore = br.score
+                    elif quoname == "对公贷款纯投放":
+                        p.dgdkctfplan = br.plan
+                        p.dgdkctfcomplete = br.complete
+                        p.dgdkctfscore = br.score
+                    elif quoname == "零售贷款纯投放":
+                        p.lsdkctfplan = br.plan
+                        p.lsdkctfcomplete = br.complete
+                        p.lsdkctfscore = br.score
+                    elif quoname == "到期贷款回收率":
+                        p.dqdkhslplan = br.plan
+                        p.dqdkhslcomplete = br.complete
+                        p.dqdkhslscore = br.score
+                    elif quoname == "利息回收":
+                        p.lxhsplan = br.plan
+                        p.lxhscomplete = br.complete
+                        p.lxhsscore = br.score
+                    elif quoname == "未进入不良的逾期贷款清收":
+                        p.wjblqsplan = br.plan
+                        p.wjblqscomplete = br.complete
+                        p.wjblqsscore = br.score
+                    elif quoname == "欠息贷款压降":
+                        p.qxdkyjplan = br.plan
+                        p.qxdkyjcomplete = br.complete
+                        p.qxdkyjscore = br.score
+                    elif quoname == "表内不良资产处置":
+                        p.bnblzcczplan = br.plan
+                        p.bnblzcczcomplete = br.complete
+                        p.bnblzcczscore = br.score
+                    elif quoname == "表外不良资产处置":
+                        p.bwblzcczplan = br.plan
+                        p.bwblzcczcomplete = br.complete
+                        p.bwblzcczscore = br.score
+                    elif quoname == "业务笔数":
+                        p.ywamount = br.complete
+                    else:
+                        errcount = errcount +1
+                    p.save()
+            else:
+                error.append("no burecords")
+    else:
+        error.append("no PerformanceResultDetail! all record locked")
+    data["errcount"] = errcount
+    data["totalcount"] = count
+    data["error"] = error
+    json_str = json.dumps(data)
+    return json_str

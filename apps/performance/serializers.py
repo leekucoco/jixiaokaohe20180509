@@ -56,3 +56,25 @@ class BankUploadRecordDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = BankUploadRecordDetail
         fields = "__all__"
+    # def create(self, validated_data):
+    #     user = self.context["request"].user
+    #     userdepart = user.user_depart.depart
+    #     quota = validated_data["quota"]
+    #     if userdepart:
+    #         # depart = departs[0].depart
+    #         bur = BankUploadRecord.objects.filter(depart=userdepart)
+    #         if bur:
+    #             burd=bur[0]
+    #             validated_data["burecord"] = burd
+    #             existed = BankUploadRecordDetail.objects.filter(user=user,burecord=burd,quota=quota)
+    #             if existed:
+    #
+    #                 existed[0].save()
+    #                 return existed[0]
+    #             else:
+    #                 existed = BankUploadRecordDetail.objects.create(**validated_data)
+    #                 return existed
+    #         else:
+    #             pass
+    #     else:
+    #         pass

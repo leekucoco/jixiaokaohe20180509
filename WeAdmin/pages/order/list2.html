@@ -48,6 +48,7 @@
             <blockquote class="layui-elem-quote font16">银行指标状态</blockquote>
             <table class="layui-table" id="bankuploadrecord" lay-filter="bankuploadrecorddemo"></table>
 
+            <input type="hidden" name="bankuploadrecordid" id="bankuploadrecordid" value="">
 
             <script type="text/html" id="barDemo">
                 <!--a class="layui-btn layui-btn-sm" lay-event="detail" onclick="toshenhe()">提交</a-->
@@ -69,7 +70,7 @@
             <blockquote class="layui-elem-quote font16">银行指标明细操作</blockquote>
 			<div class="weadmin-block" id = "bankuploaddetailbar">
 				<!--button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button-->
-				<button class="layui-btn" onclick="WeAdminShow('添加明细','./add.html')"><i class="layui-icon"></i>添加</button>
+				<button class="layui-btn" onclick="PWeAdminEdit()"><i class="layui-icon"></i>添加</button>
 				<!--span class="fr" style="line-height:40px">共有数据：88 条</span-->
 			</div>
 			<table class="layui-table" id="bankuploaddetail" lay-filter="bankuploaddetaildemo"></table>
@@ -143,6 +144,7 @@
 					});
 				}
 			});
+
 
 
 		</script>
