@@ -255,10 +255,16 @@ CELERYBEAT_SCHEDULE = {
         "schedule": crontab(minute='*/3'),
         "args": (),
     },
+    u'更新未封账考核分数': {
+        "task": "performance.task.updateperformancescore",
+        # "schedule": crontab(minute=0, hour='*/2'),
+        "schedule": crontab(minute='*/4'),
+        "args": (),
+    },
     u'更新未封账考核明细': {
         "task": "performance.task.updateperformanceresults",
         # "schedule": crontab(minute=0, hour='*/2'),
-        "schedule": crontab(minute='*/5'),
+        "schedule": crontab(minute='*/5 '),
         "args": (),
     },
     # #定时任务三:每个月的１号的6:00启动，执行任务(back_up2)
