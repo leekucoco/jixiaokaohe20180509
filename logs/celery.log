@@ -1,0 +1,1063 @@
+[2018-09-18 09:40:09,997: INFO/Beat] Writing entries (3)...
+[2018-09-18 09:40:18,428: INFO/MainProcess] beat: Shutting down...
+[2018-09-18 09:40:18,428: INFO/Beat] Writing entries (0)...
+[2018-09-18 09:40:18,429: INFO/Beat] Writing entries (0)...
+[2018-09-18 09:40:28,820: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2018-09-18 09:40:28,847: INFO/Beat] beat: Starting...
+[2018-09-18 09:40:28,849: INFO/Beat] Writing entries (0)...
+[2018-09-18 09:40:29,076: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2018-09-18 09:40:29,088: INFO/MainProcess] mingle: searching for neighbors
+[2018-09-18 09:40:30,092: INFO/MainProcess] mingle: all alone
+[2018-09-18 09:40:30,102: WARNING/MainProcess] /root/.virtualenvs/py3jkvenv/lib/python3.6/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2018-09-18 09:40:30,102: WARNING/MainProcess] celery@localhost.localdomain ready.
+[2018-09-18 09:40:33,930: INFO/Beat] Writing entries (0)...
+[2018-09-18 09:42:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 09:42:00,006: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[a700dab9-2d29-4094-8467-9518c405e61e]
+[2018-09-18 09:42:00,103: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[a700dab9-2d29-4094-8467-9518c405e61e] succeeded in 0.09530308598186821s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 09:43:34,937: INFO/Beat] Writing entries (1)...
+[2018-09-18 09:44:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 09:44:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[63d6f465-1ce7-4ad2-a4c1-9bd8109ec4a4]
+[2018-09-18 09:44:02,737: INFO/MainProcess] Task performance.task.updateperformancescore[63d6f465-1ce7-4ad2-a4c1-9bd8109ec4a4] succeeded in 2.733272593934089s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 09:45:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 09:45:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 09:45:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[81e5e029-58f2-44f1-9f11-1ccefc629926]
+[2018-09-18 09:45:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[d767dbc5-97f4-4baf-973b-fe4ce1b19c38]
+[2018-09-18 09:45:00,099: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[81e5e029-58f2-44f1-9f11-1ccefc629926] succeeded in 0.09530625899787992s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 09:45:01,989: INFO/MainProcess] Task performance.task.updateperformanceresults[d767dbc5-97f4-4baf-973b-fe4ce1b19c38] succeeded in 1.983228191966191s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 09:46:39,931: INFO/Beat] Writing entries (3)...
+[2018-09-18 09:48:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 09:48:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[fa9e6556-5512-420a-814e-9d4f3b709454]
+[2018-09-18 09:48:00,004: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 09:48:00,006: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[74d20b32-dd0a-435d-a1dc-9d6ad5f66db1]
+[2018-09-18 09:48:00,093: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[74d20b32-dd0a-435d-a1dc-9d6ad5f66db1] succeeded in 0.08568205998744816s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 09:48:02,682: INFO/MainProcess] Task performance.task.updateperformancescore[fa9e6556-5512-420a-814e-9d4f3b709454] succeeded in 2.678837279905565s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 09:49:44,937: INFO/Beat] Writing entries (2)...
+[2018-09-18 09:50:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 09:50:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[23c4e7fa-14bf-4448-ab1d-f02c14b4ab42]
+[2018-09-18 09:50:01,939: INFO/MainProcess] Task performance.task.updateperformanceresults[23c4e7fa-14bf-4448-ab1d-f02c14b4ab42] succeeded in 1.9359020399861038s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 09:51:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 09:51:00,004: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[1932302f-360f-4aa3-9762-7f0a7c6d8911]
+[2018-09-18 09:51:00,094: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[1932302f-360f-4aa3-9762-7f0a7c6d8911] succeeded in 0.08894743991550058s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 09:52:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 09:52:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[6abda2b4-81cc-4051-bd66-e79567c227ac]
+[2018-09-18 09:52:02,731: INFO/MainProcess] Task performance.task.updateperformancescore[6abda2b4-81cc-4051-bd66-e79567c227ac] succeeded in 2.727902592974715s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 09:52:44,972: INFO/Beat] Writing entries (3)...
+[2018-09-18 09:54:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 09:54:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[80f5a07f-22d2-466c-9ea6-99a9c6aa26db]
+[2018-09-18 09:54:00,099: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[80f5a07f-22d2-466c-9ea6-99a9c6aa26db] succeeded in 0.09528539807070047s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 09:55:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 09:55:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[72b77ba7-a8a7-4a38-85b9-aa68e9315734]
+[2018-09-18 09:55:01,961: INFO/MainProcess] Task performance.task.updateperformanceresults[72b77ba7-a8a7-4a38-85b9-aa68e9315734] succeeded in 1.9572158670052886s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 09:55:49,970: INFO/Beat] Writing entries (2)...
+[2018-09-18 09:56:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 09:56:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[9ddbdb62-142b-4ff6-9fa1-1343f8691485]
+[2018-09-18 09:56:02,686: INFO/MainProcess] Task performance.task.updateperformancescore[9ddbdb62-142b-4ff6-9fa1-1343f8691485] succeeded in 2.682354324031621s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 09:57:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 09:57:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[4d79e6b2-6feb-4361-b8d6-df7b0c39fc30]
+[2018-09-18 09:57:00,099: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[4d79e6b2-6feb-4361-b8d6-df7b0c39fc30] succeeded in 0.09447715803980827s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 09:58:54,928: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:00:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:00:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:00:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[ef44422b-7778-4a95-b7b1-c8af1bd52a62]
+[2018-09-18 10:00:00,005: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:00:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[70a3d6d0-fe23-44a8-8e6b-79443a9068d4]
+[2018-09-18 10:00:00,007: INFO/MainProcess] Received task: performance.task.updateperformancescore[62d09da8-2b0d-43aa-9a20-1e0ddf8d6914]
+[2018-09-18 10:00:00,008: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-09-18 10:00:00,011: INFO/MainProcess] Received task: salary.task.updatesrecord[adf82f98-2ca8-4df3-9705-a207bdec92d3]
+[2018-09-18 10:00:00,099: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[ef44422b-7778-4a95-b7b1-c8af1bd52a62] succeeded in 0.09595253097359091s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:00:00,786: INFO/MainProcess] Task salary.task.updatesrecord[adf82f98-2ca8-4df3-9705-a207bdec92d3] succeeded in 0.7742175640305504s: '{"status": "ALLRECORDLOCKED", "successcount": 0, "errcount": 0}'
+[2018-09-18 10:00:02,013: INFO/MainProcess] Task performance.task.updateperformanceresults[70a3d6d0-fe23-44a8-8e6b-79443a9068d4] succeeded in 2.0072441110387444s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:00:02,791: INFO/MainProcess] Task performance.task.updateperformancescore[62d09da8-2b0d-43aa-9a20-1e0ddf8d6914] succeeded in 2.783548885025084s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:01:59,928: INFO/Beat] Writing entries (4)...
+[2018-09-18 10:03:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:03:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[fb86e5c2-caba-452a-ba49-06073e3a5e93]
+[2018-09-18 10:03:00,089: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[fb86e5c2-caba-452a-ba49-06073e3a5e93] succeeded in 0.08549665205646306s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:04:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:04:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[73f06eed-1f5e-47d0-886e-ee0a80dd07df]
+[2018-09-18 10:04:02,684: INFO/MainProcess] Task performance.task.updateperformancescore[73f06eed-1f5e-47d0-886e-ee0a80dd07df] succeeded in 2.680626254994422s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:04:59,962: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:05:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:05:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[0bedfb6b-e083-46c7-8af6-d4bdeb6a8aa8]
+[2018-09-18 10:05:01,944: INFO/MainProcess] Task performance.task.updateperformanceresults[0bedfb6b-e083-46c7-8af6-d4bdeb6a8aa8] succeeded in 1.940418842015788s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:06:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:06:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[35e9219a-5f76-4ad5-9028-0d51004eb937]
+[2018-09-18 10:06:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[35e9219a-5f76-4ad5-9028-0d51004eb937] succeeded in 0.08699917991179973s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:07:59,990: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:08:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:08:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[fb818211-0996-4a4c-a14b-6c41e68580a5]
+[2018-09-18 10:08:02,745: INFO/MainProcess] Task performance.task.updateperformancescore[fb818211-0996-4a4c-a14b-6c41e68580a5] succeeded in 2.741367238922976s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:09:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:09:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[e57b3b9e-4660-44c4-b42b-eda581d6b717]
+[2018-09-18 10:09:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[e57b3b9e-4660-44c4-b42b-eda581d6b717] succeeded in 0.08737249090336263s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:10:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:10:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[f1f078ff-9615-4c14-b56e-91c3fad78d6f]
+[2018-09-18 10:10:01,956: INFO/MainProcess] Task performance.task.updateperformanceresults[f1f078ff-9615-4c14-b56e-91c3fad78d6f] succeeded in 1.9516351689817384s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:11:04,953: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:12:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:12:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:12:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[07c04d40-2c76-4949-b8cf-b02f45aab1fd]
+[2018-09-18 10:12:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[d0d83d39-a4a3-4d42-95ca-2950b2bd80a8]
+[2018-09-18 10:12:00,099: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[07c04d40-2c76-4949-b8cf-b02f45aab1fd] succeeded in 0.09529159893281758s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:12:02,703: INFO/MainProcess] Task performance.task.updateperformancescore[d0d83d39-a4a3-4d42-95ca-2950b2bd80a8] succeeded in 2.696842369972728s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:14:09,919: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:15:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:15:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:15:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[c8ad1a86-26c0-4d9a-aa43-f20b0cb4fc6e]
+[2018-09-18 10:15:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[829e3eaa-3692-4ffa-b016-e3aa1bd5840a]
+[2018-09-18 10:15:00,097: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[c8ad1a86-26c0-4d9a-aa43-f20b0cb4fc6e] succeeded in 0.09394912689458579s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:15:01,986: INFO/MainProcess] Task performance.task.updateperformanceresults[829e3eaa-3692-4ffa-b016-e3aa1bd5840a] succeeded in 1.9807109219254926s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:16:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:16:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[14657012-6e98-4317-8449-1c681d9fbc0b]
+[2018-09-18 10:16:02,764: INFO/MainProcess] Task performance.task.updateperformancescore[14657012-6e98-4317-8449-1c681d9fbc0b] succeeded in 2.7603761779610068s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:17:09,956: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:18:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:18:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[6f4a64c2-dbc1-4aa5-927f-94dcbfeb0aff]
+[2018-09-18 10:18:00,090: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[6f4a64c2-dbc1-4aa5-927f-94dcbfeb0aff] succeeded in 0.08607905497774482s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:20:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:20:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:20:00,002: INFO/MainProcess] Received task: performance.task.updateperformanceresults[ce9ebb05-8c62-4036-a4d2-f579b3c3ca10]
+[2018-09-18 10:20:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[6ae4f7bd-e42c-410e-afee-e6a476d9c0c7]
+[2018-09-18 10:20:01,994: INFO/MainProcess] Task performance.task.updateperformanceresults[ce9ebb05-8c62-4036-a4d2-f579b3c3ca10] succeeded in 1.9910196119453758s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:20:02,793: INFO/MainProcess] Task performance.task.updateperformancescore[6ae4f7bd-e42c-410e-afee-e6a476d9c0c7] succeeded in 2.7873815529746935s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:20:09,996: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:21:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:21:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[05df0b66-a653-4fcc-9c09-b3aa79988ac1]
+[2018-09-18 10:21:00,098: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[05df0b66-a653-4fcc-9c09-b3aa79988ac1] succeeded in 0.09497622097842395s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:23:14,913: INFO/Beat] Writing entries (1)...
+[2018-09-18 10:24:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:24:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:24:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[65c1da93-8629-4350-a664-04ae097bbb58]
+[2018-09-18 10:24:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[2068b1e9-2a62-4968-836d-edc1c514f184]
+[2018-09-18 10:24:00,101: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[65c1da93-8629-4350-a664-04ae097bbb58] succeeded in 0.09713320108130574s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:24:02,792: INFO/MainProcess] Task performance.task.updateperformancescore[2068b1e9-2a62-4968-836d-edc1c514f184] succeeded in 2.7867394579807296s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:25:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:25:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[6b3216d0-6f1b-4d9d-a359-7a6a6aa539dd]
+[2018-09-18 10:25:02,031: INFO/MainProcess] Task performance.task.updateperformanceresults[6b3216d0-6f1b-4d9d-a359-7a6a6aa539dd] succeeded in 2.0272453220095485s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:26:14,955: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:27:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:27:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[3cd2a475-134b-40aa-a699-037891531243]
+[2018-09-18 10:27:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[3cd2a475-134b-40aa-a699-037891531243] succeeded in 0.0961156600387767s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:28:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:28:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[013fa672-be3a-4b13-8dc2-7e372b31b666]
+[2018-09-18 10:28:02,752: INFO/MainProcess] Task performance.task.updateperformancescore[013fa672-be3a-4b13-8dc2-7e372b31b666] succeeded in 2.748078227043152s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:29:19,949: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:30:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:30:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:30:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[a71e482f-b964-4831-b3f2-64bfd2c4fc9e]
+[2018-09-18 10:30:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[0eb92ecc-4ab3-4f52-b652-42f6b1413e1f]
+[2018-09-18 10:30:00,099: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[a71e482f-b964-4831-b3f2-64bfd2c4fc9e] succeeded in 0.09595915803220123s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:30:01,971: INFO/MainProcess] Task performance.task.updateperformanceresults[0eb92ecc-4ab3-4f52-b652-42f6b1413e1f] succeeded in 1.9659930929774418s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:32:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:32:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[60384eac-4a96-464f-aec8-329a447e0422]
+[2018-09-18 10:32:02,716: INFO/MainProcess] Task performance.task.updateperformancescore[60384eac-4a96-464f-aec8-329a447e0422] succeeded in 2.712513861944899s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:32:19,988: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:33:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:33:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[6ac23e91-febc-4c3b-8a59-2265da9d0323]
+[2018-09-18 10:33:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[6ac23e91-febc-4c3b-8a59-2265da9d0323] succeeded in 0.08773386897519231s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:35:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:35:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[1e5ed842-297c-422e-9eff-df4f3c9221bc]
+[2018-09-18 10:35:01,992: INFO/MainProcess] Task performance.task.updateperformanceresults[1e5ed842-297c-422e-9eff-df4f3c9221bc] succeeded in 1.9886784929549322s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:35:24,983: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:36:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:36:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:36:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[78c1db78-69df-4b24-a2a5-8685ac0bb75f]
+[2018-09-18 10:36:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[7c5a4194-fe26-44a8-ae03-950466f65fb5]
+[2018-09-18 10:36:00,092: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[78c1db78-69df-4b24-a2a5-8685ac0bb75f] succeeded in 0.0885388080496341s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:36:02,753: INFO/MainProcess] Task performance.task.updateperformancescore[7c5a4194-fe26-44a8-ae03-950466f65fb5] succeeded in 2.747499227989465s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:38:29,904: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:39:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:39:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[19a8c4ac-03da-4e8d-ab4b-1231ccfb4f33]
+[2018-09-18 10:39:00,089: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[19a8c4ac-03da-4e8d-ab4b-1231ccfb4f33] succeeded in 0.08487355802208185s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:40:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:40:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:40:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[6418d2de-1c86-46c1-8eb8-2229354863f0]
+[2018-09-18 10:40:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[4eaed954-5f04-4fae-a219-8eaacfb00505]
+[2018-09-18 10:40:01,978: INFO/MainProcess] Task performance.task.updateperformanceresults[6418d2de-1c86-46c1-8eb8-2229354863f0] succeeded in 1.9745195519644767s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:40:02,782: INFO/MainProcess] Task performance.task.updateperformancescore[4eaed954-5f04-4fae-a219-8eaacfb00505] succeeded in 2.7765672879759222s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:41:29,946: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:42:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:42:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[bde7878a-c2f7-4e86-b53f-7b6123d12500]
+[2018-09-18 10:42:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[bde7878a-c2f7-4e86-b53f-7b6123d12500] succeeded in 0.09565334499347955s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:44:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:44:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[cfba3f44-c75f-4d2d-878e-694855ef2bfd]
+[2018-09-18 10:44:02,749: INFO/MainProcess] Task performance.task.updateperformancescore[cfba3f44-c75f-4d2d-878e-694855ef2bfd] succeeded in 2.7457911759847775s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:44:29,982: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:45:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:45:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:45:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[5c03a676-5967-47ec-a4a9-4b7f81e76c14]
+[2018-09-18 10:45:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[9f94fdd5-6ed8-462b-a71d-006e76803f6c]
+[2018-09-18 10:45:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[5c03a676-5967-47ec-a4a9-4b7f81e76c14] succeeded in 0.096829375019297s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:45:01,967: INFO/MainProcess] Task performance.task.updateperformanceresults[9f94fdd5-6ed8-462b-a71d-006e76803f6c] succeeded in 1.9610817279899493s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:47:34,890: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:48:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:48:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:48:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[b4980734-9ae8-46f2-a9b8-69590bbf434e]
+[2018-09-18 10:48:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[1eeb4440-46d6-48d5-a147-05900705ba73]
+[2018-09-18 10:48:00,103: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[b4980734-9ae8-46f2-a9b8-69590bbf434e] succeeded in 0.09990011295303702s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:48:02,699: INFO/MainProcess] Task performance.task.updateperformancescore[1eeb4440-46d6-48d5-a147-05900705ba73] succeeded in 2.693577216938138s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:50:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:50:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[c11f85f1-bc90-4fa8-97c2-2a20afec9161]
+[2018-09-18 10:50:01,999: INFO/MainProcess] Task performance.task.updateperformanceresults[c11f85f1-bc90-4fa8-97c2-2a20afec9161] succeeded in 1.9953071989584714s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:50:34,980: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:51:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:51:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[cbd9f510-c722-4c37-bb55-20332a2495c4]
+[2018-09-18 10:51:00,092: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[cbd9f510-c722-4c37-bb55-20332a2495c4] succeeded in 0.08846726908814162s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:52:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:52:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[6d7a34b7-5858-4731-a98d-c7e5ccead8aa]
+[2018-09-18 10:52:02,739: INFO/MainProcess] Task performance.task.updateperformancescore[6d7a34b7-5858-4731-a98d-c7e5ccead8aa] succeeded in 2.73617515002843s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:53:39,936: INFO/Beat] Writing entries (2)...
+[2018-09-18 10:54:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:54:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[cf3505b1-0ccc-4b22-ae8d-0c6de0b81d80]
+[2018-09-18 10:54:00,089: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[cf3505b1-0ccc-4b22-ae8d-0c6de0b81d80] succeeded in 0.08551158790942281s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:55:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 10:55:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[a99ceddf-7450-4134-a956-18c1ce908e5e]
+[2018-09-18 10:55:01,939: INFO/MainProcess] Task performance.task.updateperformanceresults[a99ceddf-7450-4134-a956-18c1ce908e5e] succeeded in 1.9350718059577048s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 10:56:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 10:56:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[2817ab04-a9cd-47bd-b005-45724bfa2e96]
+[2018-09-18 10:56:02,712: INFO/MainProcess] Task performance.task.updateperformancescore[2817ab04-a9cd-47bd-b005-45724bfa2e96] succeeded in 2.7082607690244913s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 10:56:39,974: INFO/Beat] Writing entries (3)...
+[2018-09-18 10:57:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 10:57:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[05c44538-ec37-43dc-97ab-d10c27e1c17d]
+[2018-09-18 10:57:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[05c44538-ec37-43dc-97ab-d10c27e1c17d] succeeded in 0.0956212340388447s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 10:59:44,892: INFO/Beat] Writing entries (1)...
+[2018-09-18 11:00:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:00:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:00:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[c88c93ee-769a-41ad-96cc-d3d19397bc47]
+[2018-09-18 11:00:00,005: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:00:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[742219cf-2203-42ac-848f-f80b1dcfb973]
+[2018-09-18 11:00:00,007: INFO/MainProcess] Received task: performance.task.updateperformancescore[240cf2b4-838f-4183-aa02-dec5237e7dd5]
+[2018-09-18 11:00:00,099: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[c88c93ee-769a-41ad-96cc-d3d19397bc47] succeeded in 0.09606495697516948s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:00:02,011: INFO/MainProcess] Task performance.task.updateperformanceresults[742219cf-2203-42ac-848f-f80b1dcfb973] succeeded in 2.005732406047173s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:00:02,783: INFO/MainProcess] Task performance.task.updateperformancescore[240cf2b4-838f-4183-aa02-dec5237e7dd5] succeeded in 2.775330386008136s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:02:49,887: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:03:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:03:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[b8f368cc-9bd9-4e28-985f-f8ca16816890]
+[2018-09-18 11:03:00,088: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[b8f368cc-9bd9-4e28-985f-f8ca16816890] succeeded in 0.08498137898277491s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:04:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:04:00,004: INFO/MainProcess] Received task: performance.task.updateperformancescore[42c21480-a7f4-4dd5-ad39-b40012b00c35]
+[2018-09-18 11:04:02,694: INFO/MainProcess] Task performance.task.updateperformancescore[42c21480-a7f4-4dd5-ad39-b40012b00c35] succeeded in 2.6895800210768357s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:05:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:05:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[1b7772d0-7189-4a5f-9ca6-dcc56df9e8ab]
+[2018-09-18 11:05:01,980: INFO/MainProcess] Task performance.task.updateperformanceresults[1b7772d0-7189-4a5f-9ca6-dcc56df9e8ab] succeeded in 1.9760173299582675s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:05:49,970: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:06:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:06:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[1f69d531-0c72-4d3b-8ae3-e44316daba90]
+[2018-09-18 11:06:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[1f69d531-0c72-4d3b-8ae3-e44316daba90] succeeded in 0.08746596903074533s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:08:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:08:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[77404613-1f34-4c2d-a437-f331b0a690ae]
+[2018-09-18 11:08:02,749: INFO/MainProcess] Task performance.task.updateperformancescore[77404613-1f34-4c2d-a437-f331b0a690ae] succeeded in 2.745600839960389s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:08:54,965: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:09:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:09:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[9dd88a32-9927-4b67-87db-72955e6b6f0f]
+[2018-09-18 11:09:00,089: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[9dd88a32-9927-4b67-87db-72955e6b6f0f] succeeded in 0.08495597692672163s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:10:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:10:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[33d4aa04-d74c-4192-9342-3eb5b0dd11fe]
+[2018-09-18 11:10:01,910: INFO/MainProcess] Task performance.task.updateperformanceresults[33d4aa04-d74c-4192-9342-3eb5b0dd11fe] succeeded in 1.905602185986936s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:11:59,925: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:12:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:12:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:12:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[8380df57-c55c-4a95-8460-a3d6b5e1ccd3]
+[2018-09-18 11:12:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[5dc1013b-c660-4e1c-a9bc-bbe483748269]
+[2018-09-18 11:12:00,088: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[8380df57-c55c-4a95-8460-a3d6b5e1ccd3] succeeded in 0.08482754498254508s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:12:02,724: INFO/MainProcess] Task performance.task.updateperformancescore[5dc1013b-c660-4e1c-a9bc-bbe483748269] succeeded in 2.7188857150031254s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:14:59,990: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:15:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:15:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:15:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[2db9a1ca-c6ed-4cdf-9983-ddd8e9ca9ced]
+[2018-09-18 11:15:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[515161c4-a18e-4c55-ab05-6fb5623adf92]
+[2018-09-18 11:15:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[2db9a1ca-c6ed-4cdf-9983-ddd8e9ca9ced] succeeded in 0.09602873609401286s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:15:01,995: INFO/MainProcess] Task performance.task.updateperformanceresults[515161c4-a18e-4c55-ab05-6fb5623adf92] succeeded in 1.9895722840446979s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:16:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:16:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[656acf2e-9abf-4af4-8a12-f677057677a3]
+[2018-09-18 11:16:02,764: INFO/MainProcess] Task performance.task.updateperformancescore[656acf2e-9abf-4af4-8a12-f677057677a3] succeeded in 2.760471894987859s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:18:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:18:00,002: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:18:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[18266ff7-d79d-49a4-88e4-9d8baaa90262]
+[2018-09-18 11:18:00,089: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[18266ff7-d79d-49a4-88e4-9d8baaa90262] succeeded in 0.0854550019139424s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:20:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:20:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:20:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[53f182e5-c9c7-4d97-ae1d-4449708d8740]
+[2018-09-18 11:20:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[618f4593-7a5b-4daa-969f-03652d8ced58]
+[2018-09-18 11:20:01,992: INFO/MainProcess] Task performance.task.updateperformanceresults[53f182e5-c9c7-4d97-ae1d-4449708d8740] succeeded in 1.9885568029712886s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:20:02,785: INFO/MainProcess] Task performance.task.updateperformancescore[618f4593-7a5b-4daa-969f-03652d8ced58] succeeded in 2.779924269998446s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:21:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:21:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[ae2d0be9-4764-4051-a2a6-8003f8c4fb38]
+[2018-09-18 11:21:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[ae2d0be9-4764-4051-a2a6-8003f8c4fb38] succeeded in 0.08785490004811436s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:21:04,998: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:24:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:24:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:24:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[b35f6982-2d6a-41df-a041-110c0147531d]
+[2018-09-18 11:24:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[4a63b725-392e-4220-b038-98dfaca0d5f1]
+[2018-09-18 11:24:00,090: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[b35f6982-2d6a-41df-a041-110c0147531d] succeeded in 0.08666416094638407s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:24:02,738: INFO/MainProcess] Task performance.task.updateperformancescore[4a63b725-392e-4220-b038-98dfaca0d5f1] succeeded in 2.732423090026714s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:24:09,997: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:25:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:25:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[aba62819-e55a-48ca-8d86-0b64527a5d66]
+[2018-09-18 11:25:01,958: INFO/MainProcess] Task performance.task.updateperformanceresults[aba62819-e55a-48ca-8d86-0b64527a5d66] succeeded in 1.9536909100133926s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:27:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:27:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[2c25bf26-00e9-4222-a341-2c637e684cc4]
+[2018-09-18 11:27:00,090: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[2c25bf26-00e9-4222-a341-2c637e684cc4] succeeded in 0.08559590298682451s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:27:14,991: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:28:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:28:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[9991d845-74be-4310-a1b6-0953e057d693]
+[2018-09-18 11:28:02,716: INFO/MainProcess] Task performance.task.updateperformancescore[9991d845-74be-4310-a1b6-0953e057d693] succeeded in 2.711748308967799s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:30:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:30:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:30:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[83d5c0e7-df52-47b1-b4c5-7f61a80973f0]
+[2018-09-18 11:30:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[035d8e5f-4dc7-4555-99ba-d3d028f3974e]
+[2018-09-18 11:30:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[83d5c0e7-df52-47b1-b4c5-7f61a80973f0] succeeded in 0.09624471399001777s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:30:01,982: INFO/MainProcess] Task performance.task.updateperformanceresults[035d8e5f-4dc7-4555-99ba-d3d028f3974e] succeeded in 1.9757800970692188s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:30:19,987: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:32:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:32:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[e569ab84-4d10-4902-92a1-efe9d3e23f54]
+[2018-09-18 11:32:02,742: INFO/MainProcess] Task performance.task.updateperformancescore[e569ab84-4d10-4902-92a1-efe9d3e23f54] succeeded in 2.7382491449825466s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:33:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:33:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[76e6fca3-2d3f-464f-ac0b-a6fcf3ef4cf9]
+[2018-09-18 11:33:00,090: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[76e6fca3-2d3f-464f-ac0b-a6fcf3ef4cf9] succeeded in 0.0863952049985528s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:33:24,981: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:35:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:35:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[471fa5db-e3fe-47f6-b12c-e7b4c2dc3bf7]
+[2018-09-18 11:35:01,933: INFO/MainProcess] Task performance.task.updateperformanceresults[471fa5db-e3fe-47f6-b12c-e7b4c2dc3bf7] succeeded in 1.9299958649789914s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:36:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:36:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:36:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[8aa3d544-3e5a-453a-aaad-9f30b4829f4e]
+[2018-09-18 11:36:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[0ba45788-0ceb-44fe-84e4-9de681fedfb8]
+[2018-09-18 11:36:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[8aa3d544-3e5a-453a-aaad-9f30b4829f4e] succeeded in 0.08747061807662249s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:36:02,739: INFO/MainProcess] Task performance.task.updateperformancescore[0ba45788-0ceb-44fe-84e4-9de681fedfb8] succeeded in 2.733762655989267s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:36:29,979: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:39:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:39:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[1b4d4631-7ec9-4bec-b1a7-9ac8fd9e59db]
+[2018-09-18 11:39:00,090: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[1b4d4631-7ec9-4bec-b1a7-9ac8fd9e59db] succeeded in 0.0865179670508951s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:39:34,979: INFO/Beat] Writing entries (1)...
+[2018-09-18 11:40:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:40:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:40:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[3d2eab30-5d77-4a80-9502-25534c6f9c9e]
+[2018-09-18 11:40:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[9024474b-3e33-4996-9f34-c42031c5e06f]
+[2018-09-18 11:40:02,006: INFO/MainProcess] Task performance.task.updateperformanceresults[3d2eab30-5d77-4a80-9502-25534c6f9c9e] succeeded in 2.002460138988681s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:40:02,782: INFO/MainProcess] Task performance.task.updateperformancescore[9024474b-3e33-4996-9f34-c42031c5e06f] succeeded in 2.7765923880506307s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:42:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:42:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[43ca3810-3e34-47a0-8e5e-9611e7057b03]
+[2018-09-18 11:42:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[43ca3810-3e34-47a0-8e5e-9611e7057b03] succeeded in 0.08759484498295933s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:42:39,975: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:44:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:44:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[aaa5c82f-2f1e-4b98-9217-05cac0fe7f2e]
+[2018-09-18 11:44:02,757: INFO/MainProcess] Task performance.task.updateperformancescore[aaa5c82f-2f1e-4b98-9217-05cac0fe7f2e] succeeded in 2.7525670509785414s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:45:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:45:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:45:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[c256d140-cc24-47e9-9575-f17c06c3699d]
+[2018-09-18 11:45:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[69aa02c3-23e0-4da0-8a30-be2d09b86723]
+[2018-09-18 11:45:00,098: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[c256d140-cc24-47e9-9575-f17c06c3699d] succeeded in 0.09455320297274739s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:45:01,932: INFO/MainProcess] Task performance.task.updateperformanceresults[69aa02c3-23e0-4da0-8a30-be2d09b86723] succeeded in 1.9266659810673445s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:45:44,971: INFO/Beat] Writing entries (3)...
+[2018-09-18 11:48:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:48:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:48:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[7c7c0c6e-d569-4e12-a5d4-86ee215d875b]
+[2018-09-18 11:48:00,005: INFO/MainProcess] Received task: performance.task.updateperformancescore[6cd8da08-8cd6-4b2f-9d98-8165a39df235]
+[2018-09-18 11:48:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[7c7c0c6e-d569-4e12-a5d4-86ee215d875b] succeeded in 0.09634296700824052s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:48:02,702: INFO/MainProcess] Task performance.task.updateperformancescore[6cd8da08-8cd6-4b2f-9d98-8165a39df235] succeeded in 2.6959880059584975s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:48:49,970: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:50:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:50:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[623f7e30-df6e-482f-88a5-f3a0bdf64de9]
+[2018-09-18 11:50:01,998: INFO/MainProcess] Task performance.task.updateperformanceresults[623f7e30-df6e-482f-88a5-f3a0bdf64de9] succeeded in 1.9942095240112394s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:51:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:51:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[122ae821-1e72-4e21-afcd-621460671c6f]
+[2018-09-18 11:51:00,092: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[122ae821-1e72-4e21-afcd-621460671c6f] succeeded in 0.08824271999765188s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:51:54,965: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:52:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:52:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[d4bf6e13-1840-4426-a9a5-ecdbf004d923]
+[2018-09-18 11:52:02,732: INFO/MainProcess] Task performance.task.updateperformancescore[d4bf6e13-1840-4426-a9a5-ecdbf004d923] succeeded in 2.72846632800065s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:54:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:54:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[d736f487-4e39-43cb-9a08-13b84790524f]
+[2018-09-18 11:54:00,089: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[d736f487-4e39-43cb-9a08-13b84790524f] succeeded in 0.08524434303399175s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:54:59,957: INFO/Beat] Writing entries (2)...
+[2018-09-18 11:55:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 11:55:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[5ab95db0-0bfc-434d-a747-394c3f04d1f5]
+[2018-09-18 11:55:01,927: INFO/MainProcess] Task performance.task.updateperformanceresults[5ab95db0-0bfc-434d-a747-394c3f04d1f5] succeeded in 1.9231526859803125s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 11:56:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 11:56:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[df5afc39-1eee-4e0d-97be-e33456e83e92]
+[2018-09-18 11:56:02,741: INFO/MainProcess] Task performance.task.updateperformancescore[df5afc39-1eee-4e0d-97be-e33456e83e92] succeeded in 2.7372379129519686s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 11:57:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 11:57:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[ffd6dc59-c70b-47c5-ae53-057bea0e76c1]
+[2018-09-18 11:57:00,091: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[ffd6dc59-c70b-47c5-ae53-057bea0e76c1] succeeded in 0.0867143269861117s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 11:58:04,958: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:00:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:00:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:00:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[0f6de8d4-40c1-4a4c-bd08-d2e3662de7f9]
+[2018-09-18 12:00:00,005: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:00:00,005: INFO/MainProcess] Received task: performance.task.updateperformanceresults[2a4f5194-547c-4821-97c5-cee868019d22]
+[2018-09-18 12:00:00,007: INFO/MainProcess] Received task: performance.task.updateperformancescore[e0847a1c-95a0-4c55-bdcb-1c10c438a4e6]
+[2018-09-18 12:00:00,008: INFO/Beat] Scheduler: Sending due task 更新用户等级系数 (coefficient.task.ensurerankleveltask)
+[2018-09-18 12:00:00,011: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-09-18 12:00:00,012: INFO/MainProcess] Received task: coefficient.task.ensurerankleveltask[3cad5cfa-cfd8-4d43-bdd1-39a3d13eae58]
+[2018-09-18 12:00:00,016: INFO/MainProcess] Received task: salary.task.updatesrecord[de23f577-4091-44a9-8a20-a23a53539b62]
+[2018-09-18 12:00:00,017: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:00:00,103: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[0f6de8d4-40c1-4a4c-bd08-d2e3662de7f9] succeeded in 0.09902754495851696s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:00:00,869: INFO/MainProcess] Task salary.task.updatesrecord[de23f577-4091-44a9-8a20-a23a53539b62] succeeded in 0.7655811019940302s: '{"status": "ALLRECORDLOCKED", "successcount": 0, "errcount": 0}'
+[2018-09-18 12:00:01,991: INFO/MainProcess] Task performance.task.updateperformanceresults[2a4f5194-547c-4821-97c5-cee868019d22] succeeded in 1.9853647500276566s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:00:02,767: INFO/MainProcess] Task performance.task.updateperformancescore[e0847a1c-95a0-4c55-bdcb-1c10c438a4e6] succeeded in 2.759272583993152s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:00:11,633: INFO/MainProcess] Task coefficient.task.ensurerankleveltask[3cad5cfa-cfd8-4d43-bdd1-39a3d13eae58] succeeded in 11.619936132919975s: '{"totalcount": 841}'
+[2018-09-18 12:00:30,442: INFO/MainProcess] Scaling down 1 processes.
+[2018-09-18 12:01:04,975: INFO/Beat] Writing entries (5)...
+[2018-09-18 12:03:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:03:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[07375457-adcb-45fc-8f7a-a966c6a8ac11]
+[2018-09-18 12:03:00,003: INFO/MainProcess] Scaling down -1 processes.
+[2018-09-18 12:03:00,100: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[07375457-adcb-45fc-8f7a-a966c6a8ac11] succeeded in 0.09582832304295152s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:03:30,449: INFO/MainProcess] Scaling down -1 processes.
+[2018-09-18 12:04:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:04:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[be82ea43-3bc7-4be3-ae4e-b440682a70de]
+[2018-09-18 12:04:00,451: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:04:02,706: INFO/MainProcess] Task performance.task.updateperformancescore[be82ea43-3bc7-4be3-ae4e-b440682a70de] succeeded in 2.7027176399715245s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:04:04,997: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:04:30,451: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:05:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:05:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[f78fd75e-08d4-40d2-a6c7-aa575d92f05f]
+[2018-09-18 12:05:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:05:02,008: INFO/MainProcess] Task performance.task.updateperformanceresults[f78fd75e-08d4-40d2-a6c7-aa575d92f05f] succeeded in 1.9521343730157241s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:05:30,453: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:06:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:06:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[072ca768-5b98-4842-81ac-3fda597db1b0]
+[2018-09-18 12:06:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:06:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[072ca768-5b98-4842-81ac-3fda597db1b0] succeeded in 0.09746931691188365s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:06:30,455: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:07:09,955: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:08:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:08:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[0436a63d-efb2-4d1f-bc7f-7365500cbc8f]
+[2018-09-18 12:08:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:08:02,812: INFO/MainProcess] Task performance.task.updateperformancescore[0436a63d-efb2-4d1f-bc7f-7365500cbc8f] succeeded in 2.756405080901459s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:08:30,460: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:09:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:09:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[13d57a92-f4d5-4371-9ee1-7dc6afaa4ce8]
+[2018-09-18 12:09:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:09:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[13d57a92-f4d5-4371-9ee1-7dc6afaa4ce8] succeeded in 0.09763936104718596s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:09:30,462: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:10:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:10:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[b43f5954-790d-4ae6-8ae5-87b9666c11e3]
+[2018-09-18 12:10:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:10:02,038: INFO/MainProcess] Task performance.task.updateperformanceresults[b43f5954-790d-4ae6-8ae5-87b9666c11e3] succeeded in 1.982202670071274s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:10:09,994: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:10:30,464: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:12:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:12:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[1c4a3504-9a4f-42cd-b51b-24e0bcd95e32]
+[2018-09-18 12:12:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:12:00,004: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:12:00,053: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[35778e0d-8921-45b1-b4d1-aa4a7b775e3b]
+[2018-09-18 12:12:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:12:02,806: INFO/MainProcess] Task performance.task.updateperformancescore[1c4a3504-9a4f-42cd-b51b-24e0bcd95e32] succeeded in 2.693650202942081s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:12:02,891: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[35778e0d-8921-45b1-b4d1-aa4a7b775e3b] succeeded in 0.08511435193940997s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:12:30,469: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:13:00,470: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:13:14,956: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:15:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:15:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:15:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[ec173e5c-eb3b-48fb-8654-46d6636cd993]
+[2018-09-18 12:15:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:15:00,054: INFO/MainProcess] Received task: performance.task.updateperformanceresults[547c7e1e-21f1-4d0c-995f-77d8780d3e32]
+[2018-09-18 12:15:00,055: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:15:00,209: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[ec173e5c-eb3b-48fb-8654-46d6636cd993] succeeded in 0.09426842001266778s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:15:02,180: INFO/MainProcess] Task performance.task.updateperformanceresults[547c7e1e-21f1-4d0c-995f-77d8780d3e32] succeeded in 1.9708050150657073s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:15:30,475: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:16:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:16:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[36851a2a-049b-4c67-b0b8-ba981a9ef9d7]
+[2018-09-18 12:16:02,753: INFO/MainProcess] Task performance.task.updateperformancescore[36851a2a-049b-4c67-b0b8-ba981a9ef9d7] succeeded in 2.7499442889820784s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:16:14,991: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:16:30,477: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:18:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:18:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[17ed446a-8af1-4b95-9a4b-6b5650452e19]
+[2018-09-18 12:18:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:18:00,154: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[17ed446a-8af1-4b95-9a4b-6b5650452e19] succeeded in 0.09767619101330638s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:18:30,481: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:19:19,950: INFO/Beat] Writing entries (1)...
+[2018-09-18 12:20:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:20:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:20:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[f1c0ab27-a246-4c81-8356-0a54ab4313f5]
+[2018-09-18 12:20:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:20:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[fedd4b90-2305-44e9-a125-43707a11aeef]
+[2018-09-18 12:20:00,053: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:20:02,063: INFO/MainProcess] Task performance.task.updateperformanceresults[f1c0ab27-a246-4c81-8356-0a54ab4313f5] succeeded in 1.9508343091001734s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:20:04,763: INFO/MainProcess] Task performance.task.updateperformancescore[fedd4b90-2305-44e9-a125-43707a11aeef] succeeded in 2.6993588279001415s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:20:30,483: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:21:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:21:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[33ee84a7-50b7-48eb-897b-87b7044543d0]
+[2018-09-18 12:21:00,107: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[33ee84a7-50b7-48eb-897b-87b7044543d0] succeeded in 0.10393755906261504s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:21:00,484: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:22:24,940: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:24:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:24:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:24:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[29568da1-c2fb-4025-83fa-de985c17b1bd]
+[2018-09-18 12:24:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:24:00,054: INFO/MainProcess] Received task: performance.task.updateperformancescore[81461196-1638-4271-af44-1ea74d1e17dc]
+[2018-09-18 12:24:00,055: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:24:00,220: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[29568da1-c2fb-4025-83fa-de985c17b1bd] succeeded in 0.10468255099840462s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:24:03,024: INFO/MainProcess] Task performance.task.updateperformancescore[81461196-1638-4271-af44-1ea74d1e17dc] succeeded in 2.804996130988002s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:24:30,490: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:25:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:25:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[d829f5e5-91c7-475c-a2c8-e1efc3242f43]
+[2018-09-18 12:25:02,071: INFO/MainProcess] Task performance.task.updateperformanceresults[d829f5e5-91c7-475c-a2c8-e1efc3242f43] succeeded in 2.0674899249570444s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:25:24,986: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:25:30,491: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:27:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:27:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[da55ac7f-2d12-4863-82b4-84c77c198c95]
+[2018-09-18 12:27:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:27:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[da55ac7f-2d12-4863-82b4-84c77c198c95] succeeded in 0.0961939109256491s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:27:30,494: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:28:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:28:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[307d6b46-3194-4dbb-bdaa-9285f8f9d002]
+[2018-09-18 12:28:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:28:02,747: INFO/MainProcess] Task performance.task.updateperformancescore[307d6b46-3194-4dbb-bdaa-9285f8f9d002] succeeded in 2.6902906741015613s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:28:29,981: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:28:30,496: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:30:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:30:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:30:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[781b2384-000c-4f3f-acbc-25735c53457c]
+[2018-09-18 12:30:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:30:00,054: INFO/MainProcess] Received task: performance.task.updateperformanceresults[aa05a618-ab49-4901-98a3-18e0b8551e8a]
+[2018-09-18 12:30:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:30:00,208: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[781b2384-000c-4f3f-acbc-25735c53457c] succeeded in 0.09458362800069153s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:30:02,173: INFO/MainProcess] Task performance.task.updateperformanceresults[aa05a618-ab49-4901-98a3-18e0b8551e8a] succeeded in 1.9650834330823272s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:30:30,500: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:31:00,501: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:31:34,941: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:32:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:32:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[00c08614-d1b1-4520-9376-fa59104873ff]
+[2018-09-18 12:32:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:32:02,803: INFO/MainProcess] Task performance.task.updateperformancescore[00c08614-d1b1-4520-9376-fa59104873ff] succeeded in 2.7466687329579145s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:32:30,504: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:33:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:33:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[4d47bc50-06fb-4222-91c4-f00ac2421cc6]
+[2018-09-18 12:33:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:33:00,154: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[4d47bc50-06fb-4222-91c4-f00ac2421cc6] succeeded in 0.09767354698851705s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:33:30,506: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:34:39,936: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:35:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:35:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[ffeb89d7-436c-45f4-b8bc-dba0a8053b9c]
+[2018-09-18 12:35:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:35:02,011: INFO/MainProcess] Task performance.task.updateperformanceresults[ffeb89d7-436c-45f4-b8bc-dba0a8053b9c] succeeded in 1.954929572995752s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:35:30,509: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:36:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:36:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[1eb45233-be29-45ef-8e0f-063b634f70c4]
+[2018-09-18 12:36:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:36:00,004: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:36:00,054: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[c0c862e4-f739-4952-abe2-9f9ea38914c3]
+[2018-09-18 12:36:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:36:02,805: INFO/MainProcess] Task performance.task.updateperformancescore[1eb45233-be29-45ef-8e0f-063b634f70c4] succeeded in 2.690647252020426s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:36:02,890: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[c0c862e4-f739-4952-abe2-9f9ea38914c3] succeeded in 0.08602813596371561s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:36:30,511: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:37:00,512: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:37:44,936: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:39:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:39:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[84ebcc8d-1cdd-4f5f-81a7-e02fa22f6b9d]
+[2018-09-18 12:39:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:39:00,154: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[84ebcc8d-1cdd-4f5f-81a7-e02fa22f6b9d] succeeded in 0.09755214699544013s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:39:30,516: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:40:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:40:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:40:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[bfa593ba-b21a-429b-81d6-2d71d6eea17b]
+[2018-09-18 12:40:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:40:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[c3678307-457d-4156-bcb7-00d75d271016]
+[2018-09-18 12:40:00,053: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:40:02,093: INFO/MainProcess] Task performance.task.updateperformanceresults[bfa593ba-b21a-429b-81d6-2d71d6eea17b] succeeded in 1.9806982519803569s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:40:04,832: INFO/MainProcess] Task performance.task.updateperformancescore[c3678307-457d-4156-bcb7-00d75d271016] succeeded in 2.739750243956223s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:40:30,517: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:40:44,975: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:41:00,518: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:42:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:42:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[357d5e7d-8d64-45ee-803d-5503f27c1c8b]
+[2018-09-18 12:42:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:42:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[357d5e7d-8d64-45ee-803d-5503f27c1c8b] succeeded in 0.09659278800245374s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:42:30,521: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:43:49,928: INFO/Beat] Writing entries (1)...
+[2018-09-18 12:44:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:44:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[6e90070a-56e8-4041-8516-85e477520f95]
+[2018-09-18 12:44:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:44:02,753: INFO/MainProcess] Task performance.task.updateperformancescore[6e90070a-56e8-4041-8516-85e477520f95] succeeded in 2.697213385021314s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:44:30,524: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:45:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:45:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:45:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[25ccaf68-be2f-43f3-a11d-6fca5ccda1dd]
+[2018-09-18 12:45:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:45:00,053: INFO/MainProcess] Received task: performance.task.updateperformanceresults[d974f760-43f8-44f3-bf27-930126f514e8]
+[2018-09-18 12:45:00,053: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:45:00,207: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[25ccaf68-be2f-43f3-a11d-6fca5ccda1dd] succeeded in 0.0944022819167003s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:45:02,153: INFO/MainProcess] Task performance.task.updateperformanceresults[d974f760-43f8-44f3-bf27-930126f514e8] succeeded in 1.9460795810446143s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:45:30,525: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:46:00,527: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:46:49,933: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:48:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:48:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:48:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[a8d79263-c48c-4a85-8178-221c209a27bb]
+[2018-09-18 12:48:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:48:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[de2bb4b3-8e9d-4444-983a-1478c973130d]
+[2018-09-18 12:48:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:48:00,209: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[a8d79263-c48c-4a85-8178-221c209a27bb] succeeded in 0.09613563702441752s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:48:02,941: INFO/MainProcess] Task performance.task.updateperformancescore[de2bb4b3-8e9d-4444-983a-1478c973130d] succeeded in 2.7314355169655755s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:48:30,530: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 12:49:00,531: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:49:54,929: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:50:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:50:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[14e0ec43-14c1-469f-af23-95e7e7ad373a]
+[2018-09-18 12:50:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:50:02,006: INFO/MainProcess] Task performance.task.updateperformanceresults[14e0ec43-14c1-469f-af23-95e7e7ad373a] succeeded in 1.9496894280891865s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:50:30,533: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:51:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:51:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[5a3f0e17-5864-44ce-8c8f-e877a2b6afe2]
+[2018-09-18 12:51:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:51:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[5a3f0e17-5864-44ce-8c8f-e877a2b6afe2] succeeded in 0.09643712802790105s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:51:30,536: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:52:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:52:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[d9db18ae-4dfb-4381-85b5-efe93b45fcc9]
+[2018-09-18 12:52:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:52:02,746: INFO/MainProcess] Task performance.task.updateperformancescore[d9db18ae-4dfb-4381-85b5-efe93b45fcc9] succeeded in 2.6901072160108015s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:52:30,538: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:52:54,965: INFO/Beat] Writing entries (3)...
+[2018-09-18 12:54:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:54:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[867f59d2-6775-42b7-9830-edc4db4fc068]
+[2018-09-18 12:54:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:54:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[867f59d2-6775-42b7-9830-edc4db4fc068] succeeded in 0.09630140801891685s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:54:30,541: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:55:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 12:55:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[9ee777e0-90c8-4f8d-bc55-6fa98a75aa7d]
+[2018-09-18 12:55:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:55:02,156: INFO/MainProcess] Task performance.task.updateperformanceresults[9ee777e0-90c8-4f8d-bc55-6fa98a75aa7d] succeeded in 2.1001863880082965s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 12:55:30,543: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:55:59,964: INFO/Beat] Writing entries (2)...
+[2018-09-18 12:56:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 12:56:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[8d2a5d34-4e87-4bfc-9700-0c7a1503f863]
+[2018-09-18 12:56:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:56:02,810: INFO/MainProcess] Task performance.task.updateperformancescore[8d2a5d34-4e87-4bfc-9700-0c7a1503f863] succeeded in 2.7542434270726517s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 12:56:30,545: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:57:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 12:57:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[da6f9d29-e982-45e3-8e8f-d2557c99a2d8]
+[2018-09-18 12:57:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 12:57:00,154: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[da6f9d29-e982-45e3-8e8f-d2557c99a2d8] succeeded in 0.09755708591546863s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 12:57:30,547: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 12:59:04,919: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:00:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:00:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:00:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[77b31a24-418c-4b43-b4d1-e6237623192d]
+[2018-09-18 13:00:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:00:00,005: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:00:00,053: INFO/MainProcess] Received task: performance.task.updateperformanceresults[c1bf3c7e-58c3-4f92-8bd5-9206563008f6]
+[2018-09-18 13:00:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:00:00,114: INFO/MainProcess] Received task: performance.task.updateperformancescore[8094118f-9dc0-4589-9683-f0f1c014a511]
+[2018-09-18 13:00:00,114: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:00:00,269: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[77b31a24-418c-4b43-b4d1-e6237623192d] succeeded in 0.09654247399885207s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:00:02,274: INFO/MainProcess] Task performance.task.updateperformanceresults[c1bf3c7e-58c3-4f92-8bd5-9206563008f6] succeeded in 2.005334233981557s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:00:02,943: INFO/MainProcess] Task performance.task.updateperformancescore[8094118f-9dc0-4589-9683-f0f1c014a511] succeeded in 2.7703771520173177s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:00:30,552: INFO/MainProcess] Scaling down -1 processes.
+[2018-09-18 13:01:00,553: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:01:30,555: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:02:09,921: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:03:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:03:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[16824026-1b94-44f4-9bea-7fc5408d9f94]
+[2018-09-18 13:03:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:03:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[16824026-1b94-44f4-9bea-7fc5408d9f94] succeeded in 0.09609035204630345s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:03:30,559: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:04:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:04:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[e0dba137-afb8-4c6a-880c-710758f4bee3]
+[2018-09-18 13:04:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:04:02,743: INFO/MainProcess] Task performance.task.updateperformancescore[e0dba137-afb8-4c6a-880c-710758f4bee3] succeeded in 2.6872804489685223s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:04:30,561: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:05:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:05:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[7c36c4b3-99e9-4e11-af33-124e5567cbde]
+[2018-09-18 13:05:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:05:02,004: INFO/MainProcess] Task performance.task.updateperformanceresults[7c36c4b3-99e9-4e11-af33-124e5567cbde] succeeded in 1.9482632209546864s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:05:09,995: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:05:30,562: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:06:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:06:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[5d5bb6f4-2fd9-4d47-b4bb-7cae4b28a216]
+[2018-09-18 13:06:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:06:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[5d5bb6f4-2fd9-4d47-b4bb-7cae4b28a216] succeeded in 0.09764212998561561s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:06:30,563: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:08:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:08:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[5b786613-2ade-4550-bdf8-b82ff9154004]
+[2018-09-18 13:08:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:08:02,796: INFO/MainProcess] Task performance.task.updateperformancescore[5b786613-2ade-4550-bdf8-b82ff9154004] succeeded in 2.7400404069339857s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:08:14,991: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:08:30,567: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:09:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:09:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[b4ebbad6-ef78-42cb-a483-7511b28bd914]
+[2018-09-18 13:09:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:09:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[b4ebbad6-ef78-42cb-a483-7511b28bd914] succeeded in 0.09746292501222342s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:09:30,569: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:10:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:10:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[edfeb8fe-4c2c-4ffa-8f75-4084f650179b]
+[2018-09-18 13:10:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:10:02,014: INFO/MainProcess] Task performance.task.updateperformanceresults[edfeb8fe-4c2c-4ffa-8f75-4084f650179b] succeeded in 1.9586638800101355s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:10:30,570: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:11:19,951: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:12:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:12:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:12:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[e731874a-6bec-4430-ba67-310c7ad6d859]
+[2018-09-18 13:12:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:12:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[1d033fe7-2983-4d76-ad97-62e65aa426d1]
+[2018-09-18 13:12:00,053: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:12:00,206: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[e731874a-6bec-4430-ba67-310c7ad6d859] succeeded in 0.09445447102189064s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:12:02,894: INFO/MainProcess] Task performance.task.updateperformancescore[1d033fe7-2983-4d76-ad97-62e65aa426d1] succeeded in 2.687261914019473s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:12:30,573: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:13:00,574: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:14:24,904: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:15:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:15:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:15:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[af7b25df-0af5-4ff7-a152-39743ebcaf2e]
+[2018-09-18 13:15:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:15:00,054: INFO/MainProcess] Received task: performance.task.updateperformanceresults[6dfbb5f4-dbbb-4a94-adc8-3ab2e3d8b63d]
+[2018-09-18 13:15:00,055: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:15:00,215: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[af7b25df-0af5-4ff7-a152-39743ebcaf2e] succeeded in 0.10036227700766176s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:15:02,288: INFO/MainProcess] Task performance.task.updateperformanceresults[6dfbb5f4-dbbb-4a94-adc8-3ab2e3d8b63d] succeeded in 2.0727566350251436s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:15:30,578: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:16:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:16:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[7e69c649-6105-4c00-91a9-13110a3fcbda]
+[2018-09-18 13:16:02,746: INFO/MainProcess] Task performance.task.updateperformancescore[7e69c649-6105-4c00-91a9-13110a3fcbda] succeeded in 2.742861444945447s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:16:30,580: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:17:24,946: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:18:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:18:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[ccf65bd7-ff8c-43ec-a1f1-98a7e93e016f]
+[2018-09-18 13:18:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:18:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[ccf65bd7-ff8c-43ec-a1f1-98a7e93e016f] succeeded in 0.09612664894666523s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:18:30,583: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:20:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:20:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:20:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[7e70cb5a-a488-4983-8948-1a62f697df7d]
+[2018-09-18 13:20:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:20:00,054: INFO/MainProcess] Received task: performance.task.updateperformancescore[1f060f11-92f3-4a25-8665-2ba3256ec151]
+[2018-09-18 13:20:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:20:02,031: INFO/MainProcess] Task performance.task.updateperformanceresults[7e70cb5a-a488-4983-8948-1a62f697df7d] succeeded in 1.9176482949405909s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:20:04,741: INFO/MainProcess] Task performance.task.updateperformancescore[1f060f11-92f3-4a25-8665-2ba3256ec151] succeeded in 2.7097207899205387s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:20:24,988: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:20:30,586: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:21:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:21:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[512d69ff-f4c9-4680-a1f3-a0c457bac952]
+[2018-09-18 13:21:00,102: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[512d69ff-f4c9-4680-a1f3-a0c457bac952] succeeded in 0.09788039803970605s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:21:00,587: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:23:29,904: INFO/Beat] Writing entries (1)...
+[2018-09-18 13:24:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:24:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:24:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[f22b2ac3-14fc-4f19-9f8d-3d09a3a23c49]
+[2018-09-18 13:24:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:24:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[fb2201ff-3869-4904-8551-50c54d86454f]
+[2018-09-18 13:24:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:24:00,209: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[f22b2ac3-14fc-4f19-9f8d-3d09a3a23c49] succeeded in 0.09601786092389375s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:24:02,952: INFO/MainProcess] Task performance.task.updateperformancescore[fb2201ff-3869-4904-8551-50c54d86454f] succeeded in 2.7432435450609773s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:24:30,593: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:25:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:25:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[81054146-02c9-4403-80ab-84b0be258ad8]
+[2018-09-18 13:25:01,960: INFO/MainProcess] Task performance.task.updateperformanceresults[81054146-02c9-4403-80ab-84b0be258ad8] succeeded in 1.9568079359596595s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:25:30,595: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:26:29,945: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:27:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:27:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[83eac59b-3fcf-49cd-a98f-737e8015e6bd]
+[2018-09-18 13:27:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:27:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[83eac59b-3fcf-49cd-a98f-737e8015e6bd] succeeded in 0.0962611180730164s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:27:30,598: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:28:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:28:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[24eae45c-9dd4-46f1-882a-4ec8c476661e]
+[2018-09-18 13:28:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:28:02,762: INFO/MainProcess] Task performance.task.updateperformancescore[24eae45c-9dd4-46f1-882a-4ec8c476661e] succeeded in 2.705297684064135s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:28:30,601: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:29:34,938: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:30:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:30:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:30:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[edfe572d-5edf-4229-9fb8-5496b2cd3c62]
+[2018-09-18 13:30:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:30:00,054: INFO/MainProcess] Received task: performance.task.updateperformanceresults[3155e823-392f-4915-b6ad-b0c95f12037b]
+[2018-09-18 13:30:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:30:00,209: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[edfe572d-5edf-4229-9fb8-5496b2cd3c62] succeeded in 0.0944293380016461s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:30:02,187: INFO/MainProcess] Task performance.task.updateperformanceresults[3155e823-392f-4915-b6ad-b0c95f12037b] succeeded in 1.9780382480239496s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:30:30,606: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:31:00,607: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:32:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:32:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[d929f020-1a9e-4c1d-8edc-9508afcc5da7]
+[2018-09-18 13:32:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:32:02,805: INFO/MainProcess] Task performance.task.updateperformancescore[d929f020-1a9e-4c1d-8edc-9508afcc5da7] succeeded in 2.74902376299724s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:32:30,612: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:32:34,978: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:33:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:33:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[cc46f771-8ff4-4bc0-ab48-b764d71904c7]
+[2018-09-18 13:33:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:33:00,151: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[cc46f771-8ff4-4bc0-ab48-b764d71904c7] succeeded in 0.09559950395487249s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:33:30,614: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:35:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:35:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[fde08469-45da-4b2a-a206-49f676269589]
+[2018-09-18 13:35:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:35:01,991: INFO/MainProcess] Task performance.task.updateperformanceresults[fde08469-45da-4b2a-a206-49f676269589] succeeded in 1.9351634579943493s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:35:30,618: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:35:39,976: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:36:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:36:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:36:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[39c66031-1b0e-4c94-b4fa-7867c3f0172f]
+[2018-09-18 13:36:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:36:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[3dad2fe0-c541-46fb-8f83-5d2428042976]
+[2018-09-18 13:36:00,053: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:36:00,206: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[39c66031-1b0e-4c94-b4fa-7867c3f0172f] succeeded in 0.09399547299835831s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:36:02,906: INFO/MainProcess] Task performance.task.updateperformancescore[3dad2fe0-c541-46fb-8f83-5d2428042976] succeeded in 2.6999894561013207s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:36:30,621: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:37:00,622: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:38:44,896: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:39:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:39:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[4b4f3b70-2c25-49e3-b88d-417df1caf552]
+[2018-09-18 13:39:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:39:00,154: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[4b4f3b70-2c25-49e3-b88d-417df1caf552] succeeded in 0.09704348992090672s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:39:30,628: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:40:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:40:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:40:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[035d2fd7-14bd-41d1-859c-811dd2fef612]
+[2018-09-18 13:40:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:40:00,054: INFO/MainProcess] Received task: performance.task.updateperformancescore[afd5730b-7a43-4e25-bbfc-15505e7d4024]
+[2018-09-18 13:40:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:40:02,100: INFO/MainProcess] Task performance.task.updateperformanceresults[035d2fd7-14bd-41d1-859c-811dd2fef612] succeeded in 1.986996546969749s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:40:04,824: INFO/MainProcess] Task performance.task.updateperformancescore[afd5730b-7a43-4e25-bbfc-15505e7d4024] succeeded in 2.723805103916675s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:40:30,630: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:41:00,631: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:41:44,935: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:42:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:42:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[f18a1970-7ec4-44de-8106-dec720d73d93]
+[2018-09-18 13:42:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:42:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[f18a1970-7ec4-44de-8106-dec720d73d93] succeeded in 0.09595033898949623s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:42:30,634: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:44:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:44:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[9cfe50cb-7b80-4d60-bd7a-ebcd06437ce8]
+[2018-09-18 13:44:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:44:02,742: INFO/MainProcess] Task performance.task.updateperformancescore[9cfe50cb-7b80-4d60-bd7a-ebcd06437ce8] succeeded in 2.686101641971618s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:44:30,639: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:44:44,972: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:45:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:45:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:45:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[06de2336-c388-4e46-a6cc-d1c237e6ba70]
+[2018-09-18 13:45:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:45:00,053: INFO/MainProcess] Received task: performance.task.updateperformanceresults[11db2948-9b43-4e08-aef1-cdabb00f072c]
+[2018-09-18 13:45:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:45:00,207: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[06de2336-c388-4e46-a6cc-d1c237e6ba70] succeeded in 0.09413167298771441s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:45:02,163: INFO/MainProcess] Task performance.task.updateperformanceresults[11db2948-9b43-4e08-aef1-cdabb00f072c] succeeded in 1.9560050750151277s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:45:30,642: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:46:00,642: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:47:49,897: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:48:00,001: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:48:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:48:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[02b4e3e6-0297-4da4-a82e-0194da719d86]
+[2018-09-18 13:48:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:48:00,054: INFO/MainProcess] Received task: performance.task.updateperformancescore[58118c7a-99ae-4364-8e44-0071778e5d36]
+[2018-09-18 13:48:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:48:00,209: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[02b4e3e6-0297-4da4-a82e-0194da719d86] succeeded in 0.09620153997093439s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:48:02,973: INFO/MainProcess] Task performance.task.updateperformancescore[58118c7a-99ae-4364-8e44-0071778e5d36] succeeded in 2.7636719399597496s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:48:30,647: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 13:49:00,648: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:50:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:50:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[69b6475f-4f48-4f60-be29-7fd7abf0b7e5]
+[2018-09-18 13:50:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:50:02,008: INFO/MainProcess] Task performance.task.updateperformanceresults[69b6475f-4f48-4f60-be29-7fd7abf0b7e5] succeeded in 1.951865628012456s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:50:30,652: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:50:49,970: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:51:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:51:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[7a50e370-873f-4b29-b11d-d17336883c39]
+[2018-09-18 13:51:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:51:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[7a50e370-873f-4b29-b11d-d17336883c39] succeeded in 0.09586038102861494s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:51:30,654: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:52:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:52:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[1857889a-b712-40f0-82c6-0f8799ff0b83]
+[2018-09-18 13:52:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:52:02,750: INFO/MainProcess] Task performance.task.updateperformancescore[1857889a-b712-40f0-82c6-0f8799ff0b83] succeeded in 2.6935010619927198s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:52:30,657: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:53:54,924: INFO/Beat] Writing entries (2)...
+[2018-09-18 13:54:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:54:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[736aec76-02a1-4e2e-ba8a-da40fe158607]
+[2018-09-18 13:54:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:54:00,154: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[736aec76-02a1-4e2e-ba8a-da40fe158607] succeeded in 0.09770016802940518s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:54:30,662: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:55:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 13:55:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[af636441-430b-4c9c-805f-a1590d4d9741]
+[2018-09-18 13:55:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:55:02,032: INFO/MainProcess] Task performance.task.updateperformanceresults[af636441-430b-4c9c-805f-a1590d4d9741] succeeded in 1.9765856019221246s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 13:55:30,664: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:56:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 13:56:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[bd7667a7-bc12-4375-a828-654a52be3574]
+[2018-09-18 13:56:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:56:02,803: INFO/MainProcess] Task performance.task.updateperformancescore[bd7667a7-bc12-4375-a828-654a52be3574] succeeded in 2.7471709770616144s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 13:56:30,667: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:56:54,965: INFO/Beat] Writing entries (3)...
+[2018-09-18 13:57:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 13:57:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[a628ceb5-49b9-4835-a378-09e6a2494782]
+[2018-09-18 13:57:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 13:57:00,151: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[a628ceb5-49b9-4835-a378-09e6a2494782] succeeded in 0.09573586599435657s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 13:57:30,669: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 13:59:59,880: INFO/Beat] Writing entries (1)...
+[2018-09-18 14:00:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账工资明细 (salary.task.updatesrecord)
+[2018-09-18 14:00:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:00:00,002: INFO/MainProcess] Received task: salary.task.updatesrecord[5c501576-74c5-4dd1-a5a5-0808028bafcb]
+[2018-09-18 14:00:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:00:00,004: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:00:00,007: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:00:00,053: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[e202fa67-059b-4ce4-b6c6-54bf440fa12c]
+[2018-09-18 14:00:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:00:00,115: INFO/MainProcess] Received task: performance.task.updateperformanceresults[687f5a37-937e-4aa9-b2e4-4a360057ccad]
+[2018-09-18 14:00:00,115: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:00:00,175: INFO/MainProcess] Received task: performance.task.updateperformancescore[aa3643df-2359-4734-a6c4-6bb675d8a2ab]
+[2018-09-18 14:00:00,175: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:00:00,329: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[e202fa67-059b-4ce4-b6c6-54bf440fa12c] succeeded in 0.09406593604944646s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:00:01,003: INFO/MainProcess] Task salary.task.updatesrecord[5c501576-74c5-4dd1-a5a5-0808028bafcb] succeeded in 0.7695380699587986s: '{"status": "ALLRECORDLOCKED", "successcount": 0, "errcount": 0}'
+[2018-09-18 14:00:02,920: INFO/MainProcess] Task performance.task.updateperformanceresults[687f5a37-937e-4aa9-b2e4-4a360057ccad] succeeded in 1.9168026489205658s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:00:05,667: INFO/MainProcess] Task performance.task.updateperformancescore[aa3643df-2359-4734-a6c4-6bb675d8a2ab] succeeded in 2.7470953890588135s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:02:59,894: INFO/Beat] Writing entries (4)...
+[2018-09-18 14:03:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:03:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[4ee1e9c1-6950-4fb3-9c62-8869e618ceb0]
+[2018-09-18 14:03:00,004: INFO/MainProcess] Scaling down -1 processes.
+[2018-09-18 14:03:00,109: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[4ee1e9c1-6950-4fb3-9c62-8869e618ceb0] succeeded in 0.10445061500649899s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:03:30,681: INFO/MainProcess] Scaling down -1 processes.
+[2018-09-18 14:04:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:04:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[4e191c2e-e3ad-417c-9abe-f71043e41dda]
+[2018-09-18 14:04:00,682: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:04:02,902: INFO/MainProcess] Task performance.task.updateperformancescore[4e191c2e-e3ad-417c-9abe-f71043e41dda] succeeded in 2.898606186034158s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:04:30,683: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:05:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:05:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[ea8a2cac-1d51-4dcb-a5ce-ba7f2f13b09e]
+[2018-09-18 14:05:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:05:02,061: INFO/MainProcess] Task performance.task.updateperformanceresults[ea8a2cac-1d51-4dcb-a5ce-ba7f2f13b09e] succeeded in 2.004175908048637s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:05:30,686: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:05:59,963: INFO/Beat] Writing entries (3)...
+[2018-09-18 14:06:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:06:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[096c1402-cc27-44e6-bd3e-f38a8f3f1202]
+[2018-09-18 14:06:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:06:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[096c1402-cc27-44e6-bd3e-f38a8f3f1202] succeeded in 0.09575322200544178s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:06:30,688: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:08:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:08:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[60200847-6ac4-4c85-8f89-f63ccc5760c9]
+[2018-09-18 14:08:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:08:02,760: INFO/MainProcess] Task performance.task.updateperformancescore[60200847-6ac4-4c85-8f89-f63ccc5760c9] succeeded in 2.703179347096011s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:08:30,690: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:08:59,990: INFO/Beat] Writing entries (2)...
+[2018-09-18 14:09:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:09:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[ad9a2664-2bf9-4986-bba0-689dbe7ef342]
+[2018-09-18 14:09:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:09:00,165: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[ad9a2664-2bf9-4986-bba0-689dbe7ef342] succeeded in 0.10779812699183822s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:09:30,692: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:10:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:10:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[f63e9907-728f-4e3c-b44a-21420e25387a]
+[2018-09-18 14:10:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:10:02,026: INFO/MainProcess] Task performance.task.updateperformanceresults[f63e9907-728f-4e3c-b44a-21420e25387a] succeeded in 1.969113206025213s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:10:30,694: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:12:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:12:00,002: INFO/Beat] Writing entries (3)...
+[2018-09-18 14:12:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[2d7a16d2-81f4-47ab-9ff2-aaa5b22b4b29]
+[2018-09-18 14:12:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:12:00,014: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:12:00,054: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[30dc83d2-c799-45da-99de-6c2d4b0cabcc]
+[2018-09-18 14:12:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:12:02,866: INFO/MainProcess] Task performance.task.updateperformancescore[2d7a16d2-81f4-47ab-9ff2-aaa5b22b4b29] succeeded in 2.7530132840620354s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:12:02,953: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[30dc83d2-c799-45da-99de-6c2d4b0cabcc] succeeded in 0.08671687205787748s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:12:30,697: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 14:13:00,698: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:15:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:15:00,003: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:15:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[78cdbd45-54df-4dc9-b040-702283412a04]
+[2018-09-18 14:15:00,004: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:15:00,053: INFO/MainProcess] Received task: performance.task.updateperformanceresults[a53de431-e8b0-4a93-98ef-96511709a379]
+[2018-09-18 14:15:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:15:00,208: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[78cdbd45-54df-4dc9-b040-702283412a04] succeeded in 0.09564888698514551s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:15:02,185: INFO/MainProcess] Task performance.task.updateperformanceresults[a53de431-e8b0-4a93-98ef-96511709a379] succeeded in 1.9765914750751108s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:15:05,000: INFO/Beat] Writing entries (2)...
+[2018-09-18 14:15:30,704: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 14:16:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:16:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[d2f3bf94-efaa-45fe-849b-af0effc0b473]
+[2018-09-18 14:16:02,745: INFO/MainProcess] Task performance.task.updateperformancescore[d2f3bf94-efaa-45fe-849b-af0effc0b473] succeeded in 2.741769577958621s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:16:30,705: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:18:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:18:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[130514c1-a8c3-4fea-9527-974a82ce5394]
+[2018-09-18 14:18:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:18:00,153: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[130514c1-a8c3-4fea-9527-974a82ce5394] succeeded in 0.09577742300461978s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:18:09,995: INFO/Beat] Writing entries (2)...
+[2018-09-18 14:18:30,710: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:20:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:20:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:20:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[e7b24971-cc01-4219-b8f9-8a1524275f82]
+[2018-09-18 14:20:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:20:00,054: INFO/MainProcess] Received task: performance.task.updateperformancescore[0badd30e-af2f-4e75-98e5-a4522f7e51c3]
+[2018-09-18 14:20:00,055: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:20:02,025: INFO/MainProcess] Task performance.task.updateperformanceresults[e7b24971-cc01-4219-b8f9-8a1524275f82] succeeded in 1.9110179929994047s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:20:04,758: INFO/MainProcess] Task performance.task.updateperformancescore[0badd30e-af2f-4e75-98e5-a4522f7e51c3] succeeded in 2.7329937720205635s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:20:30,714: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 14:21:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:21:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[840344b8-389e-499e-918e-144bef586921]
+[2018-09-18 14:21:00,101: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[840344b8-389e-499e-918e-144bef586921] succeeded in 0.0976826980477199s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:21:00,716: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:21:14,991: INFO/Beat] Writing entries (3)...
+[2018-09-18 14:24:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:24:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:24:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[535eb9c5-7686-4144-9a85-2000d31d344b]
+[2018-09-18 14:24:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:24:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[40f0029b-9926-4b98-b942-bd80b183c4a6]
+[2018-09-18 14:24:00,053: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:24:00,208: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[535eb9c5-7686-4144-9a85-2000d31d344b] succeeded in 0.09519535501021892s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:24:02,939: INFO/MainProcess] Task performance.task.updateperformancescore[40f0029b-9926-4b98-b942-bd80b183c4a6] succeeded in 2.731746834004298s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:24:19,987: INFO/Beat] Writing entries (2)...
+[2018-09-18 14:24:30,726: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 14:25:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:25:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[7d2f4acd-c572-45ef-ab46-074f846bd16f]
+[2018-09-18 14:25:01,948: INFO/MainProcess] Task performance.task.updateperformanceresults[7d2f4acd-c572-45ef-ab46-074f846bd16f] succeeded in 1.944080283981748s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:25:30,729: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:27:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:27:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[10dbe81f-d0cb-42d7-8606-c5d0008b8389]
+[2018-09-18 14:27:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:27:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[10dbe81f-d0cb-42d7-8606-c5d0008b8389] succeeded in 0.0957632299978286s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:27:24,985: INFO/Beat] Writing entries (2)...
+[2018-09-18 14:27:30,734: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:28:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:28:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[de47047c-215d-4172-a88a-1e1b9ee53d2d]
+[2018-09-18 14:28:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:28:02,773: INFO/MainProcess] Task performance.task.updateperformancescore[de47047c-215d-4172-a88a-1e1b9ee53d2d] succeeded in 2.717247730004601s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:28:30,737: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:30:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:30:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:30:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[b0d3e043-dac0-4439-8203-e864b40da909]
+[2018-09-18 14:30:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:30:00,053: INFO/MainProcess] Received task: performance.task.updateperformanceresults[3b358365-3b77-4d3f-9882-c85428b416ca]
+[2018-09-18 14:30:00,053: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:30:00,207: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[b0d3e043-dac0-4439-8203-e864b40da909] succeeded in 0.09516980405896902s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:30:02,178: INFO/MainProcess] Task performance.task.updateperformanceresults[3b358365-3b77-4d3f-9882-c85428b416ca] succeeded in 1.9705713969888166s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:30:29,986: INFO/Beat] Writing entries (3)...
+[2018-09-18 14:30:30,742: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 14:31:00,743: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:32:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:32:00,003: INFO/MainProcess] Received task: performance.task.updateperformancescore[000febc6-1515-4b89-96ae-3d5758abfbef]
+[2018-09-18 14:32:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:32:02,793: INFO/MainProcess] Task performance.task.updateperformancescore[000febc6-1515-4b89-96ae-3d5758abfbef] succeeded in 2.737763890065253s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:32:30,747: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:33:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:33:00,003: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[8a3e804f-3534-431b-92de-1a7457d047a1]
+[2018-09-18 14:33:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:33:00,152: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[8a3e804f-3534-431b-92de-1a7457d047a1] succeeded in 0.09582625504117459s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:33:30,749: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:33:34,979: INFO/Beat] Writing entries (2)...
+[2018-09-18 14:35:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账考核明细 (performance.task.updateperformanceresults)
+[2018-09-18 14:35:00,003: INFO/MainProcess] Received task: performance.task.updateperformanceresults[7d1ff0a2-6f1d-4c9f-85ba-dd27898eb944]
+[2018-09-18 14:35:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:35:01,985: INFO/MainProcess] Task performance.task.updateperformanceresults[7d1ff0a2-6f1d-4c9f-85ba-dd27898eb944] succeeded in 1.9290240249829367s: '{"errcount": 0, "totalcount": 478, "error": []}'
+[2018-09-18 14:35:30,754: INFO/MainProcess] Scaling down -3 processes.
+[2018-09-18 14:36:00,000: INFO/Beat] Scheduler: Sending due task 更新未封账支行考核记录分数 (performance.task.updatebankuploadrecorddetails)
+[2018-09-18 14:36:00,002: INFO/Beat] Scheduler: Sending due task 更新未封账考核分数 (performance.task.updateperformancescore)
+[2018-09-18 14:36:00,002: INFO/MainProcess] Received task: performance.task.updatebankuploadrecorddetails[7d945793-3a49-4a9b-b940-94a8e96ac847]
+[2018-09-18 14:36:00,003: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:36:00,053: INFO/MainProcess] Received task: performance.task.updateperformancescore[6ba8e819-9eee-481b-a0cf-2bd6f98648ce]
+[2018-09-18 14:36:00,054: INFO/MainProcess] Scaling up 1 processes.
+[2018-09-18 14:36:00,208: INFO/MainProcess] Task performance.task.updatebankuploadrecorddetails[7d945793-3a49-4a9b-b940-94a8e96ac847] succeeded in 0.09436188905965537s: '{"errcount": 0, "totalcount": 13, "error": []}'
+[2018-09-18 14:36:02,927: INFO/MainProcess] Task performance.task.updateperformancescore[6ba8e819-9eee-481b-a0cf-2bd6f98648ce] succeeded in 2.7194516470190138s: '{"errcount": 476, "totalcount": 0, "error": []}'
+[2018-09-18 14:36:30,757: INFO/MainProcess] Scaling down -2 processes.
+[2018-09-18 14:36:39,977: INFO/Beat] Writing entries (3)...
+[2018-09-18 14:37:00,758: INFO/MainProcess] Scaling down -3 processes.
