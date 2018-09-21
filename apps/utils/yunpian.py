@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'bobby'
+
 import json
 import requests
 
