@@ -181,99 +181,102 @@ class BankUploadRecordDetail(models.Model):
     def calcscore(self):
 
         #信贷综合员季度营销得分＝存款营销得分 * 50 % +本机构客户经理平均绩效得分 * 50 %
-        ucoe = CoefficientDetail.objects.get(user=self.user)
-        upost = ucoe.rank13coefficent.post
-        if upost != "信贷综合":
-            if self.quota.name == "表外不良资产处置":
-                if self.plan == 0:
-                    return 0
-                else:
-                    if self.complete-self.plan < 0:
-                        score = Decimal(15)*Decimal(self.complete/self.plan)
-                        if score >= 0:
-                            return score
-                        else:
-                            return 0
-                    elif self.complete - self.plan >= 0:
-                        return Decimal(15)
+        #ucoe = CoefficientDetail.objects.get(user=self.user)
+        # upost = ucoe.rank13coefficent.post
+        # if upost != "信贷综合":
+        if self.quota.name == "表外不良资产处置":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete-self.plan < 0:
+                    score = Decimal(15)*Decimal(self.complete/self.plan)
+                    if score >= 0:
+                        return score
                     else:
-                        print("error bwblzccz calc")
-            elif self.quota.name == "表内不良资产处置":
-                if self.plan == 0:
-                    return 0
-                else:
-                    if self.complete-self.plan < 0:
-                        score = Decimal(10)*Decimal(self.complete/self.plan)
-                        if score >= 0:
-                            return score
-                        else:
-                            return 0
-                    elif self.complete - self.plan >= 0:
-                        return Decimal(10)
-                    else:
-                        print("error bnblzccz calc")
-            elif self.quota.name == "欠息贷款压降":
-                if self.plan == 0:
-                    return 0
-                else:
-                    if self.complete-self.plan < 0:
-                        score = Decimal(20)*Decimal(self.complete/self.plan)
-                        if score >= 0:
-                            return score
-                        else:
-                            return 0
-                    elif self.complete - self.plan >= 0:
-                        return Decimal(20)
-                    else:
-                        print("error qxdkyj calc")
-            elif self.quota.name == "未进入不良的逾期贷款清收":
-                if self.plan == 0:
-                    return 0
-                else:
-                    if self.complete-self.plan < 0:
-                        score = Decimal(10)*Decimal(self.complete/self.plan)
-                        if score >= 0:
-                            return score
-                        else:
-                            return 0
-                    elif self.complete - self.plan >= 0:
-                        return Decimal(10)
-                    else:
-                        print("error wjrbldyqdkqs calc")
-            elif self.quota.name == "利息回收":
-                if self.plan == 0:
-                    return 0
-                else:
-                    if self.complete-self.plan < 0:
                         return 0
-                    elif self.complete - self.plan >= 0:
-                        score = Decimal(30)+Decimal((self.complete - self.plan)/self.plan)*Decimal(10)
-                        if score >= 35:
-                            return Decimal(35)
-                        else:
-                            return score
-                    else:
-                        print("error lxhs calc")
-            elif self.quota.name == "到期贷款回收率":
-                if self.plan == 0:
-                    return 0
+                elif self.complete - self.plan >= 0:
+                    return Decimal(15)
                 else:
-                    if self.complete-self.plan < 0:
-                        score = Decimal(25)-Decimal(((self.complete - self.plan)/self.plan)*100*12.5)
-                        if score >= 0:
-                            return score
-                        else:
-                            return 0
-                    elif self.complete - self.plan >= 0:
-                        return Decimal(25)
+                    print("error bwblzccz calc")
+        elif self.quota.name == "表内不良资产处置":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete-self.plan < 0:
+                    score = Decimal(10)*Decimal(self.complete/self.plan)
+                    if score >= 0:
+                        return score
                     else:
-                        print("error dqdkhsl calc")
-            elif self.quota.name == "零售贷款纯投放":
-                if self.plan == 0:
-                    return 0
-                else:
-                    if self.complete-self.plan < 0:
                         return 0
+                elif self.complete - self.plan >= 0:
+                    return Decimal(10)
+                else:
+                    print("error bnblzccz calc")
+        elif self.quota.name == "欠息贷款压降":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete-self.plan < 0:
+                    score = Decimal(20)*Decimal(self.complete/self.plan)
+                    if score >= 0:
+                        return score
+                    else:
+                        return 0
+                elif self.complete - self.plan >= 0:
+                    return Decimal(20)
+                else:
+                    print("error qxdkyj calc")
+        elif self.quota.name == "未进入不良的逾期贷款清收":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete-self.plan < 0:
+                    score = Decimal(10)*Decimal(self.complete/self.plan)
+                    if score >= 0:
+                        return score
+                    else:
+                        return 0
+                elif self.complete - self.plan >= 0:
+                    return Decimal(10)
+                else:
+                    print("error wjrbldyqdkqs calc")
+        elif self.quota.name == "利息回收":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete-self.plan < 0:
+                    return 0
+                elif self.complete - self.plan >= 0:
+                    score = Decimal(30)+Decimal((self.complete - self.plan)/self.plan)*Decimal(10)
+                    if score >= 35:
+                        return Decimal(35)
+                    else:
+                        return score
+                else:
+                    print("error lxhs calc")
+        elif self.quota.name == "到期贷款回收率":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete-self.plan < 0:
+                    score = Decimal(25)-Decimal((self.plan - self.complete)/self.plan)*Decimal(100*12.5)
+                    if score >= 0:
+                        return score
+                    else:
+                        return 0
+                elif self.complete - self.plan >= 0:
+                    return Decimal(25)
+                else:
+                    print("error dqdkhsl calc")
+        elif self.quota.name == "零售贷款纯投放":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete<=0:
+                    return 0
+                else:
+                    if self.complete-self.plan < 0:
+                        return Decimal(self.complete/self.plan)*Decimal(30)
                     elif self.complete - self.plan >= 0:
                         score = Decimal(30)+Decimal((self.complete - self.plan)/self.plan)*Decimal(10)
                         if score >= 35:
@@ -282,12 +285,15 @@ class BankUploadRecordDetail(models.Model):
                             return score
                     else:
                         print("error lsdkctf calc")
-            elif self.quota.name == "对公贷款纯投放":
-                if self.plan == 0:
+        elif self.quota.name == "对公贷款纯投放":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete<=0:
                     return 0
                 else:
                     if self.complete-self.plan < 0:
-                        return 0
+                        return Decimal(self.complete/self.plan)*Decimal(15)
                     elif self.complete - self.plan >= 0:
                         score = Decimal(15)+Decimal((self.complete - self.plan)/self.plan)*Decimal(10)
                         if score >= 20:
@@ -296,12 +302,15 @@ class BankUploadRecordDetail(models.Model):
                             return score
                     else:
                         print("error dgdkctf calc")
-            elif self.quota.name == "零售存款日均额":
-                if self.plan == 0:
+        elif self.quota.name == "零售存款日均额":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete<=0:
                     return 0
                 else:
                     if self.complete-self.plan < 0:
-                        return 0
+                        return Decimal(self.complete/self.plan)*Decimal(25)
                     elif self.complete - self.plan >= 0:
                         score = Decimal(25)+Decimal((self.complete - self.plan)/self.plan)*Decimal(10)
                         if score >= 30:
@@ -310,12 +319,15 @@ class BankUploadRecordDetail(models.Model):
                             return score
                     else:
                         print("error lsckrj calc")
-            elif self.quota.name == "对公存款日均额":
-                if self.plan == 0:
+        elif self.quota.name == "对公存款日均额":
+            if self.plan == 0:
+                return 0
+            else:
+                if self.complete<=0:
                     return 0
                 else:
                     if self.complete-self.plan < 0:
-                        return 0
+                        return Decimal(self.complete/self.plan)*Decimal(20)
                     elif self.complete - self.plan >= 0:
                         score = Decimal(20)+Decimal((self.complete - self.plan)/self.plan)*Decimal(10)
                         if score >= 25:
@@ -324,8 +336,8 @@ class BankUploadRecordDetail(models.Model):
                             return score
                     else:
                         print("error dgrje calc")
-            else:
-                return 0
+        else:
+            return 0
         # elif upost == "信贷综合":
         #     pds = BankUploadRecordDetail.objects.filter(burecord=self.burecord).exclude(user=self.user)
         #     if pds:
@@ -345,24 +357,25 @@ class BankUploadRecordDetail(models.Model):
         #         avgcunkuanscore = 0
         #     return (avgscore+avgcunkuanscore)*Decimal(0.5)
 
-        else:
-            pds = BankUploadRecordDetail.objects.filter(burecord=self.burecord).exclude(user=self.user)
-            if pds:
-                sumscore = 0
-                for p in pds:
-                    sumscore = sumscore + p.score
-                avgscore = sumscore/len(pds)
-            else:
-                avgscore = 0
-            pdcunkuans= BankUploadRecordDetail.objects.filter(burecord=self.burecord,user=self.user,quota__name__in=["零售存款日均额","对公存款日均额"])
-            if pdcunkuans:
-                sumcunkuan = 0
-                for c in pdcunkuans:
-                    sumcunkuan = sumcunkuan + c.score
-                avgcunkuanscore = sumcunkuan/len(pdcunkuans)
-            else:
-                avgcunkuanscore = 0
-            return (avgscore+avgcunkuanscore)*Decimal(0.5)
+        # else:
+        #     print(self.user)
+        #     pds = BankUploadRecordDetail.objects.filter(burecord=self.burecord).exclude(user=self.user)
+        #     if pds:
+        #         sumscore = 0
+        #         for p in pds:
+        #             sumscore = sumscore + p.score
+        #         avgscore = sumscore/len(pds)
+        #     else:
+        #         avgscore = 0
+        #     pdcunkuans= BankUploadRecordDetail.objects.filter(burecord=self.burecord,user=self.user,quota__name__in=["零售存款日均额","对公存款日均额"])
+        #     if pdcunkuans:
+        #         sumcunkuan = 0
+        #         for c in pdcunkuans:
+        #             sumcunkuan = sumcunkuan + c.score
+        #         avgcunkuanscore = sumcunkuan/len(pdcunkuans)
+        #     else:
+        #         avgcunkuanscore = 0
+        #     return (avgscore+avgcunkuanscore)*Decimal(0.5)
 
 
 

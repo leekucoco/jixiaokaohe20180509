@@ -8,7 +8,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.db.models import Q
 from django.db.models import Avg, Sum, Max, Min, Count
-
+from coefficient.models import *
 from depart.models import DepartDetail
 User = get_user_model()
 
@@ -138,60 +138,93 @@ def updateperformancescore():
             brds = BankUploadRecordDetail.objects.filter(user=p.user,burecord__performancerecord=p.perforrecord)
             if brds:
                 for br in brds:
+                    ucoe = CoefficientDetail.objects.get(user=p.user)
+                    upost = ucoe.rank13coefficent.post
                     quoname = br.quota.name
-                    if quoname == "对公存款日均额":
-                        p.dgckrjplan = br.plan
-                        p.dgckrjcomplete = br.complete
-                        p.dgckrjscore = br.score
-                    elif quoname == "零售存款日均额":
-                        p.lsckrjplan = br.plan
-                        p.lsckrjcomplete = br.complete
-                        p.lsckrjscore = br.score
-                    elif quoname == "对公贷款纯投放":
-                        p.dgdkctfplan = br.plan
-                        p.dgdkctfcomplete = br.complete
-                        p.dgdkctfscore = br.score
-                    elif quoname == "零售贷款纯投放":
-                        p.lsdkctfplan = br.plan
-                        p.lsdkctfcomplete = br.complete
-                        p.lsdkctfscore = br.score
-                    elif quoname == "到期贷款回收率":
-                        p.dqdkhslplan = br.plan
-                        p.dqdkhslcomplete = br.complete
-                        p.dqdkhslscore = br.score
-                    elif quoname == "利息回收":
-                        p.lxhsplan = br.plan
-                        p.lxhscomplete = br.complete
-                        p.lxhsscore = br.score
-                    elif quoname == "未进入不良的逾期贷款清收":
-                        p.wjblqsplan = br.plan
-                        p.wjblqscomplete = br.complete
-                        p.wjblqsscore = br.score
-                    elif quoname == "欠息贷款压降":
-                        p.qxdkyjplan = br.plan
-                        p.qxdkyjcomplete = br.complete
-                        p.qxdkyjscore = br.score
-                    elif quoname == "表内不良资产处置":
-                        p.bnblzcczplan = br.plan
-                        p.bnblzcczcomplete = br.complete
-                        p.bnblzcczscore = br.score
-                    elif quoname == "表外不良资产处置":
-                        p.bwblzcczplan = br.plan
-                        p.bwblzcczcomplete = br.complete
-                        p.bwblzcczscore = br.score
-                    elif quoname == "业务笔数":
-                        p.ywamount = br.complete
+                    # print(upost.name)
+                    if upost.name != "信贷综合":
+                        # print(p.user, upost)
+                        if quoname == "对公存款日均额":
+                            p.dgckrjplan = br.plan
+                            p.dgckrjcomplete = br.complete
+                            p.dgckrjscore = br.score
+                        elif quoname == "零售存款日均额":
+                            p.lsckrjplan = br.plan
+                            p.lsckrjcomplete = br.complete
+                            p.lsckrjscore = br.score
+                        elif quoname == "对公贷款纯投放":
+                            p.dgdkctfplan = br.plan
+                            p.dgdkctfcomplete = br.complete
+                            p.dgdkctfscore = br.score
+                        elif quoname == "零售贷款纯投放":
+                            p.lsdkctfplan = br.plan
+                            p.lsdkctfcomplete = br.complete
+                            p.lsdkctfscore = br.score
+                        elif quoname == "到期贷款回收率":
+                            p.dqdkhslplan = br.plan
+                            p.dqdkhslcomplete = br.complete
+                            p.dqdkhslscore = br.score
+                        elif quoname == "利息回收":
+                            p.lxhsplan = br.plan
+                            p.lxhscomplete = br.complete
+                            p.lxhsscore = br.score
+                        elif quoname == "未进入不良的逾期贷款清收":
+                            p.wjblqsplan = br.plan
+                            p.wjblqscomplete = br.complete
+                            p.wjblqsscore = br.score
+                        elif quoname == "欠息贷款压降":
+                            p.qxdkyjplan = br.plan
+                            p.qxdkyjcomplete = br.complete
+                            p.qxdkyjscore = br.score
+                        elif quoname == "表内不良资产处置":
+                            p.bnblzcczplan = br.plan
+                            p.bnblzcczcomplete = br.complete
+                            p.bnblzcczscore = br.score
+                        elif quoname == "表外不良资产处置":
+                            p.bwblzcczplan = br.plan
+                            p.bwblzcczcomplete = br.complete
+                            p.bwblzcczscore = br.score
+                        elif quoname == "业务笔数":
+                            p.ywamount = br.complete
+                        else:
+                            pass
+                        p.totalscore = p.dgckrjscore + p.lsckrjscore + p.dgdkctfscore + p.lsdkctfscore + \
+                                       p.dqdkhslscore + p.lxhsscore + p.wjblqsscore + p.qxdkyjscore + p.bnblzcczscore + p.bwblzcczscore
                     else:
-                        pass
+                        if quoname == "对公存款日均额":
+                            p.dgckrjplan = br.plan
+                            p.dgckrjcomplete = br.complete
+                            p.dgckrjscore = br.score
+                        elif quoname == "零售存款日均额":
+                            p.lsckrjplan = br.plan
+                            p.lsckrjcomplete = br.complete
+                            p.lsckrjscore = br.score
+                        else:
+                            pass
+                        # print(p.user,upost.name)
+                        prdss = PerformanceResultDetail.objects.filter(perforrecord__state=1,depart=p.depart,indexpostlevel__splitlevel__name__in=["客户经理","外勤副行长","行长"])
+                        # print(prdss)
+                        if prdss:
+                            sumscore = 0
+                            for prd in prdss:
+                                # print(prd.user,prd.totalscore)
+                                sumscore = sumscore + prd.totalscore
+                            avgscore = sumscore/len(prdss)
+                            # print(avgscore)
+                        else:
+                            avgscore = 0
+
+                        p.totalscore = (p.dgckrjscore+p.lsckrjscore)/2 + avgscore*Decimal(0.5)
+
+                    count = count + 1
 
             else:
-                errcount = errcount + 1
+                pass
                 # error.append(p.user.name)
-            p.totalscore = p.dgckrjscore + p.lsckrjscore + p.dgdkctfscore + p.lsdkctfscore +\
-            p.dqdkhslscore + p.lxhsscore +  p.wjblqsscore + p.qxdkyjscore +  p.bnblzcczscore + p.bwblzcczscore
             p.save()
     else:
-        error.append("no PerformanceResultDetail! all record locked")
+        # error.append("no PerformanceResultDetail! all record locked")
+        errcount = errcount + 1
     data["errcount"] = errcount
     data["totalcount"] = count
     data["error"] = error
@@ -234,9 +267,9 @@ def updateperformanceresults():
         vpointernalmoney = linguimenberstotalmoney * splitmethod.vpointernal
         clerkmoney = linguimenberstotalmoney * splitmethod.clerk
         custmorsermanagermoney = custmorsertotalmoney * splitmethod.custmorsermanager
-        vpofieldmoney = custmorsertotalmoney * splitmethod.custmorsermanager
-        creditgeneralmoney = custmorsertotalmoney * splitmethod.custmorsermanager
-        presidentmoney = custmorsertotalmoney * splitmethod.custmorsermanager
+        vpofieldmoney = custmorsertotalmoney * splitmethod.vpofield
+        creditgeneralmoney = custmorsertotalmoney * splitmethod.creditgeneral
+        presidentmoney = custmorsertotalmoney * splitmethod.president
     else:
         accountingsupervisormoney,vpointernalmoney,clerkmoney,custmorsermanagermoney,\
         vpofieldmoney,creditgeneralmoney,presidentmoney = 0,0,0,0,0,0,0

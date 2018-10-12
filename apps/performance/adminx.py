@@ -70,7 +70,7 @@ class PerformanceResultDetailAdmin(object):
                     "bnblzcczcomplete","bnblzcczscore","bwblzcczplan","bwblzcczcomplete",
                     "bwblzcczscore","ywamount","totalscore","scoremoney","ywamountmoney",
                     "totalmoney","add_time"]
-    search_fields = ["perforrecord", "user","depart","indexpostlevel","add_time"]
+    search_fields = ["user__name","depart",]
     list_filter = ["perforrecord", "user__name", "user__username","depart","indexpostlevel","add_time"]
 
 xadmin.site.register(SplitLevel, SplitLevelAdmin)

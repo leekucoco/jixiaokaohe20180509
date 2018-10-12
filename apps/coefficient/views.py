@@ -102,4 +102,4 @@ class CoefficientDetailViewset(CacheResponseMixin,viewsets.ModelViewSet):
             else:
                 return "用户没有部门，请查证"
         else:
-            return "用户不在考核管理员组"
+            return CoefficientDetail.objects.all().order_by("-id")
