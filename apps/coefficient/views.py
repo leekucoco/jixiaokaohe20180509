@@ -94,7 +94,6 @@ class CoefficientDetailViewset(CacheResponseMixin,viewsets.ModelViewSet):
             # user = self.request.user
             # departs = IndexUserDepart.objects.filter(user=user)
             # print(departs)
-
             userdepart = self.request.user.user_depart.depart
             deusers = User.objects.filter(user_depart__depart=userdepart)
             if deusers:
